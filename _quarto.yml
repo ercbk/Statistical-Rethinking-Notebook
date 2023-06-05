@@ -1,3 +1,6 @@
+project:
+  type: book
+
 book:
   title: "Statistical Rethinking Notebook"
   author: "Eric Book"
@@ -13,6 +16,7 @@ book:
         href: https://ericbook.netlify.app/
   chapters:
     - index.qmd
+    - qmd/statistical-rethinking.qmd
 
 format:
   html:

@@ -3607,22 +3607,32 @@ posterior_samples(b11.12) %>%
 -   **Multinomial and categorical models**
 
     -   aka Categorical Rregression or Maximum Entropy Classifier
+
     -   The likelihood is tricky because as the event types multiply, so too, do your modeling choices
+
         1.  explicit apppoach: The first is based directly on the multinomial likelihood and uses a generalization of the logit link
         2.  transforms the multinomial likelihood into a series of Poisson likelihoods
+
     -   Uses a **multinomial logit** (aka **softmax**) link![](./_resources/Untitled_Note.resources/Screenshot%20(228).png)
+
         -   Takes a vector of scores, one for each of K event types, and computes the probability of a particular type of event K (also see results section)
             -   **Scores**, si, are the parameters that are estimated by the multinomial model
             -   K is the number of levels of the categorical outcome variable
+
     -   in a multinomial (or categorical) GLM, you need K − 1 linear models for K types of events. One of the outcome values is chosen as a "pivot" (i.e. reference category) and the others are modeled relative to it.
+
     -   In each the K − 1 linear models, you can use any predictors and parameters you like---they don't have to be the same, and there are often good reasons for them to be different
-    -   There are two basic cases:
-        -   
 
-            (1) Predictors matched to outcomes
+    -   
 
-            -   predictors have different values for different values the outcome, and
-            -   useful when each type of event has its own quantitative traits, and you want to estimate the association between those traits and the probability each type of event appears in the data
+        ## There are two basic cases:
+
+        ```         
+        (1) Predictors matched to outcomes
+
+        -   predictors have different values for different values the outcome, and
+        -   useful when each type of event has its own quantitative traits, and you want to estimate the association between those traits and the probability each type of event appears in the data
+        ```
 
         -   
 
@@ -3630,10 +3640,14 @@ posterior_samples(b11.12) %>%
 
             -   parameters are distinct for each value of the outcome
             -   useful when you are interested instead in features of some entity that produces each event, whatever type it turns out to be
-    -   [Example]{.ribbon-highlight}: Multinomial Logistic Regression
-        -   
 
-            (1) Predictors matched to outcomes
+    -   
+
+        ## [Example]{.ribbon-highlight}: Multinomial Logistic Regression
+
+        ```         
+        (1) Predictors matched to outcomes
+        ```
 
         -   Description
 
