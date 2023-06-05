@@ -1,0 +1,32 @@
+book:
+  title: "Statistical Rethinking Notebook"
+  author: "Eric Book"
+  date: "6/05/2023"
+  reader-mode: true
+  repo-url: https://github.com/ercbk/Statistical-Rethinking-Notebook
+  sidebar: 
+    collapse-level: 1
+    background: "#fffaf0"
+    foreground: "#335f83"
+    tools: 
+      - icon: house-fill
+        href: https://ericbook.netlify.app/
+  chapters:
+    - index.qmd
+
+format:
+  html:
+    theme: paper
+    css: styles.css
+    code-link: true
+    backgroundcolor: "#fffaf0"
+    fontcolor: "#404d59"
+    mainfont: 'Lora'
+    monofont: 'Fira Code Retina'
+    linkcolor: '#0064B6FF'
+    highlight-style: printing
+
+editor: visual
+
+execute:
+    freeze: auto
