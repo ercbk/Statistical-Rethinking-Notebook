@@ -16,6 +16,7 @@ book:
         href: https://ericbook.netlify.app/
   chapters:
     - index.qmd
+    - qmd/summaries.qmd
     - qmd/statistical-rethinking.qmd
 
 format:
