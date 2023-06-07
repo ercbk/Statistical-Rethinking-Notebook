@@ -1,4 +1,4 @@
-# Summaries {#sec-summ .unnumbered}
+# Chapter Summaries {#sec-summ .unnumbered}
 
 ## Chapter 2 {#sec-summ-ch2 .unnumbered}
 

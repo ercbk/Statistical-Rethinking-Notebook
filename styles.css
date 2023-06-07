@@ -38,8 +38,10 @@
 }
 
 
-
-
+/* in-line latex equations */
+.math.inline {
+  font-size: 105%;
+}
 
 
 

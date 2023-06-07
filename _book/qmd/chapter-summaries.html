@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistical Rethinking Notebook - Chapter Summaries</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../qmd/chapter-2.html" rel="next">
+<link href="../index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/chapter-summaries.html">Chapter Summaries</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Statistical Rethinking Notebook</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://ericbook.netlify.app/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://github.com/ercbk/Statistical-Rethinking-Notebook" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/chapter-summaries.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Chapter Summaries</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/statistical-rethinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-summ-ch2" id="toc-sec-summ-ch2" class="nav-link active" data-scroll-target="#sec-summ-ch2">Chapter 2</a></li>
+  <li><a href="#sec-summ-ch3" id="toc-sec-summ-ch3" class="nav-link" data-scroll-target="#sec-summ-ch3">Chapter 3 - Sampling</a></li>
+  <li><a href="#sec-summ-ch4" id="toc-sec-summ-ch4" class="nav-link" data-scroll-target="#sec-summ-ch4">Chapter 4 - Linear Models</a></li>
+  <li><a href="#sec-summ-ch5" id="toc-sec-summ-ch5" class="nav-link" data-scroll-target="#sec-summ-ch5">Chapter 5 - Multi-Variable Linear Models</a></li>
+  <li><a href="#sec-summ-ch6" id="toc-sec-summ-ch6" class="nav-link" data-scroll-target="#sec-summ-ch6">Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias</a></li>
+  <li><a href="#sec-summ-ch7" id="toc-sec-summ-ch7" class="nav-link" data-scroll-target="#sec-summ-ch7">Chapter 7 - Information Theory, Prediction Metrics, Model Comparison</a></li>
+  <li><a href="#sec-summ-ch8" id="toc-sec-summ-ch8" class="nav-link" data-scroll-target="#sec-summ-ch8">Chapter 8 - Interactions</a></li>
+  <li><a href="#sec-summ-ch9" id="toc-sec-summ-ch9" class="nav-link" data-scroll-target="#sec-summ-ch9">Chapter 9 - MCMC</a></li>
+  <li><a href="#sec-summ-ch10" id="toc-sec-summ-ch10" class="nav-link" data-scroll-target="#sec-summ-ch10">Chapter 10 - GLM Concepts</a></li>
+  <li><a href="#sec-summ-ch11" id="toc-sec-summ-ch11" class="nav-link" data-scroll-target="#sec-summ-ch11">Chapter 11</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-summ" class="quarto-section-identifier">Chapter Summaries</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-summ-ch2" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch2">Chapter 2</h2>
+<ul>
+<li>Using counts
+<ul>
+<li>Garden of forking paths - all the potential ways we can get our sample data (sequence of marbles drawn from a bag) given a hypothesis is true (e.g.&nbsp;1 blue, 3 white marbles in a bag)</li>
+<li>“Conjectures” are potential outcomes (1 blue and 3 white marbles in a bag) and each conjecture is a path in the garden of forking paths</li>
+<li>With data, we count the number of ways (forking paths) the data is consistent with each conjecture (aka likelihood)</li>
+<li>With new data, old counts become a prior, and updated total path counts = prior * new path counts (i.e.&nbsp;prior * likelihood)</li>
+</ul></li>
+<li>As components of a model
+<ul>
+<li>The conjecture (aka parameter value), p,&nbsp; with the most paths is our best guess at the truth. They’re converted to probabilities (i.e.&nbsp;probability of a parameter value) and now called “relative plausibilities”.</li>
+<li>The likelihood is a function (e.g.&nbsp;dbinom) that gives the probability of an observation given a parameter value (conjecture)</li>
+<li>Prior probabilities (or relative plausibilities) must be assigned to each unknown parameter.</li>
+<li>The updated relative plausibility of a conjecture, p, is the posterior probability</li>
+<li>posteriorp1 = (priorp1 * likelihoodp1) / sum(all prior*likelihood products for each possible value of parameter, p)
+<ul>
+<li>The denominator normalizes the updated plausability so that the sum of&nbsp; updated plausabilities for all the parameter values is 1 (necessary to formally be a proability density)</li>
+</ul></li>
+</ul></li>
+<li><code>dbinom(x, size, prob)</code> - probability density function for the binomial distribution
+<ul>
+<li>x = # of observations of the event (e.g.&nbsp;hitting water on the globe)</li>
+<li>size = sample size (N) (number of tosses)</li>
+<li>prob = parameter value (conjecture)(i.e.&nbsp;hypothesized proportion of water on the earth) (p)</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-summ-ch3" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch3">Chapter 3 - Sampling</h2>
+<ul>
+<li>Sampling from the posterior
+<ul>
+<li>rbinom - random variable generator of the binomial distribution</li>
+</ul></li>
+<li>Summarizing the posterior - mean, median, MAP, HPDI</li>
+<li>posterior prediction distribution
+<ul>
+<li>GOF Question: If we were to make predictions about the most probable p using this model, how consistent is our model with the data?
+<ul>
+<li>Answer: if the shape of the PPD matches the shape of the sampled posterior distribution, then the model is consistent with the data. (i.e.&nbsp;good fit)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-summ-ch4" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch4">Chapter 4 - Linear Models</h2>
+<ul>
+<li>The posterior distribution is the probability density of every combination of all the parameter values
+<ul>
+<li>posterior distribution: after considering every possible combination of the parameters, it’s the assigned relative plausibilities to every combination, conditional on this model and these data. (from Ch.6)
+<ul>
+<li>The posterior is the joint distribution of all combinations of the parameters at the same time, Pr(parameters|outcome, predictors)</li>
+</ul></li>
+<li>Many posterior distributions are approximately gaussian/multivariate gaussian</li>
+<li>Example: intercept model
+<ul>
+<li>it’s a density of every combination of value of mean and sd</li>
+</ul></li>
+<li>Example: Height ~ Weight
+<ul>
+<li>The posterior is Pr(α, β , σ | H, W)
+<ul>
+<li>which is proportional to Normal(W|μ,σ) ⨯ Normal(α|178,100) ⨯ LogNormal(β|0,1) ⨯ Uniform(σ|0,10)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Intro to priors</li>
+<li>Model Notation
+<ul>
+<li>Example single variable regression where height is the response and weight the predictor
+<ul>
+<li>hi ~ Normal(μ, σ)&nbsp; # response</li>
+<li>μi = α + βxi&nbsp; # response mean (deterministic, i.e.&nbsp;no longer a parameter)</li>
+<li>α ~ Normal(178, 100) # intercept</li>
+<li>β ~ Normal(0, 10) # slope</li>
+<li>σ ~ Uniform(0, 50) # response s.d.</li>
+<li>parameters are α, β, and σ</li>
+</ul></li>
+</ul></li>
+<li>Centering/standardization of predictors can remove correlation between parameters
+<ul>
+<li>Without this transformation, parameters and their uncertainties will co-vary within the posterior distribution
+<ul>
+<li>e.g.&nbsp;high intercepts will often mean high slopes</li>
+</ul></li>
+<li>Without independent parameters
+<ul>
+<li>They can’t be interpreted independently</li>
+<li>Effects on prediction aren’t independent</li>
+</ul></li>
+</ul></li>
+<li>CIs, PIs</li>
+<li>basis splines (aka b-splines)</li>
+</ul>
+</section>
+<section id="sec-summ-ch5" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch5">Chapter 5 - Multi-Variable Linear Models</h2>
+<ul>
+<li>Model Notation
+<ul>
+<li>DivorceRatei ~ Normal(μi, σ)</li>
+<li>μi = α + β1MedianAgeMarriage_si + β2MarriageRate_si</li>
+<li>α ~ Normal(10, 10)</li>
+<li>β1 ~ Normal(0, 1)</li>
+<li>β2 ~ Normal(0, 1)</li>
+<li>σ ~ Uniform(0, 10)</li>
+</ul></li>
+<li>Interpretation</li>
+<li>DAGs</li>
+<li>Inferential Plots
+<ul>
+<li>predictor residual, counter-factual, and posterior prediction</li>
+</ul></li>
+<li>masking
+<ul>
+<li>correlation between predictors and opposite sign correlation of each with the outcome variable can lead increased estimated effects in a multi-regression as compared to individual bivariable regressions</li>
+</ul></li>
+<li>categorical variables (not ordinals)
+<ul>
+<li>Using an index variable is preferred to dummy variables
+<ul>
+<li>the index method allows the priors for each category to have the same uncertainty</li>
+</ul></li>
+<li>no intercepts used in the model specifications</li>
+<li>Contrasts</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-summ-ch6" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch6">Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias</h2>
+<ul>
+<li>multicollinearity
+<ul>
+<li>Consequences
+<ul>
+<li>the posterior distribution will seem to suggest that none of the collinear variables is reliably associated with the outcome, even if all of the collinear variables are in reality strongly associated with the outcome.
+<ul>
+<li>The posterior distributions of the parameter estimates will have very large spreads (std.devs)</li>
+<li>i.e.&nbsp;parameter mean estimates shrink and their std.devs inflate as compared to the bivariate regression results.</li>
+</ul></li>
+<li>predictions won’t be biased but interpretation of effects will be impossible</li>
+</ul></li>
+<li>solutions
+<ul>
+<li>Think causally about what links the collinear variables and regress using that variable instead of the collinear ones</li>
+<li>Use data reduction methods</li>
+</ul></li>
+</ul></li>
+<li>post-treatment bias
+<ul>
+<li>mistaken inferences arising from including variables that are consequences of other variables
+<ul>
+<li>i.e.&nbsp;the values of the variable are a result after treatment has been applied</li>
+<li>e.g.&nbsp;using presence of fungus as a predictor even though it’s value is determined after the anti-fungus treatment has been applied</li>
+</ul></li>
+<li>Consequence: it can mask or unmask treatment effects depending the causal model (DAG)</li>
+</ul></li>
+<li>collider bias
+<ul>
+<li>When you condition on a collider, it induces statistical—but not necessarily causal— associations.</li>
+<li>Consequence:
+<ul>
+<li>The statistical correlations/associations are present in the data and may mislead us into thinking they are causal.
+<ul>
+<li>Although, the variables involved may be useful for predictive models as the backdoor paths do provide valid information about statistical associations within the data.</li>
+</ul></li>
+<li>Depending on the causal model, these induced effects can be inflated</li>
+</ul></li>
+<li>A more complicated demonstration of Simpson’s Paradox (see My Appendix)</li>
+</ul></li>
+<li>Applications of Backdoor Criterion
+<ul>
+<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/causal-inference.html#sec-causinf-sr" style="color: green">Causal Inference &gt;&gt; Statistical Rethinking</a></li>
+<li>Recipe
+<ol type="1">
+<li>List all of the paths connecting X (the potential cause of interest) and Y (the outcome).</li>
+<li>Classify each path by whether it is open or closed. A path is open unless it contains a collider.</li>
+<li>Classify each path by whether it is a backdoor path. A backdoor path has an arrow entering X.</li>
+<li>If there are any backdoor paths that are also open, decide which variable(s) to condition on to close it.</li>
+</ol></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-summ-ch7" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch7">Chapter 7 - Information Theory, Prediction Metrics, Model Comparison</h2>
+<ul>
+<li>Regularizing prior (type of skeptical prior)
+<ul>
+<li>Typicall priors with smaller sd values</li>
+<li>Flat priors result in a posterior that encodes as much of the training sample as possible. (i.e.&nbsp;overfitting)</li>
+<li>When tuned properly, reduces overfitting while still allowing the model to learn the regular features of a sample.
+<ul>
+<li>Too skeptical (i.e.&nbsp;sd too small) results in underfitting</li>
+</ul></li>
+</ul></li>
+<li>Information Entropy
+<ul>
+<li>The uncertainty contained in a probability distribution is the average log-probability of an event.</li>
+</ul></li>
+<li>Kullback-Leibler Divergence (K-L Divergence)
+<ul>
+<li>The additional uncertainty induced by using probabilities from one distribution to describe another distribution.</li>
+</ul></li>
+<li>Log Pointwise Predictive Density (lppd)
+<ul>
+<li>Sum of the log average probabilities
+<ul>
+<li><strong>larger is better</strong></li>
+</ul></li>
+<li>The log average probability is an approximation of information entropy</li>
+</ul></li>
+<li>Deviance
+<ul>
+<li>-2*lppd
+<ul>
+<li><strong>smaller is better</strong></li>
+</ul></li>
+<li>An approximation for the K-L divergence</li>
+</ul></li>
+<li>Predictive accuracy metrics Can’t use any information criteria prediction metrics to compare models with different likelihood functions
+<ol type="1">
+<li>Pareto-Smoothed Importance Sampling Cross-Validation (PSIS)
+<ul>
+<li>Estimates out-of-sample LOO-CV lppd
+<ul>
+<li>loo pkg
+<ul>
+<li>“elpd_loo” - <strong>larger is better</strong></li>
+<li>“looic” - is just (-2 * elpd_loo) to convert it to the deviance scale, therefore <strong>smaller is better</strong></li>
+</ul></li>
+<li>Rethinking pkg: <strong>smaller is better</strong></li>
+</ul></li>
+<li>Weights observations based on influence on the posterior</li>
+<li>Uses highly influential observations to formulate a pareto distribution and sample from it(?)</li>
+</ul></li>
+<li>Widely Applicable Information Criterion (WAIC)
+<ul>
+<li>Deviance with a penalty term based on the variance of the outcome variable’s observation-level log-probabilities from the posterior</li>
+<li>Estimates out-of-sample deviance
+<ul>
+<li>loo pkg:
+<ul>
+<li>“elpd_waic”: <strong>larger is better</strong></li>
+<li>“waic”:&nbsp; is just (-2 * elpd_waic) to convert it to deviance scale, therefore <strong>smaller is better</strong></li>
+</ul></li>
+<li>Rethinking pkg: <strong>smaller is better</strong></li>
+</ul></li>
+</ul></li>
+<li>Bayes Factor
+<ul>
+<li>The ratio (or difference when logged) of the average likelihoods (the denominator of bayes theorem) of two models.</li>
+</ul></li>
+</ol></li>
+<li>Model Comparison
+<ul>
+<li>To judge whether two models are “easy to distinguish” (i.e.&nbsp;kinda like whether their scores are statistically different), we look at the differences between the model with the best WAIC and the WAICs of the other models along with the standard error of the difference of the WAIC scores</li>
+<li>Leave-one-out cross-validation (LOO-CV)
+<ul>
+<li>Has serious issues, I think (see Vehtari <a href="https://arxiv.org/abs/2008.10296v3">paper</a> for recommendations, (haven’t read it yet))</li>
+</ul></li>
+</ul></li>
+<li>Outliers
+<ul>
+<li>Detection - High p_waic (WAIC) and k (PSIS) values can indicate outliers</li>
+<li>Solutions
+<ul>
+<li>Mixture Model</li>
+<li>Robust Regression using t-distribution for outcome variable. As shape parameter, v, approaches 1+, tails become thicker.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-summ-ch8" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch8">Chapter 8 - Interactions</h2>
+<ul>
+<li>continuous:categorical interaction
+<ul>
+<li>Coded similarly to coding categoricals (index method)</li>
+</ul></li>
+<li>continuous:continuous interaction
+<ul>
+<li>Coded very similar to the traditional R formula</li>
+<li>Interaction prior is the same as the variables used in the interaction</li>
+</ul></li>
+<li>Plots
+<ul>
+<li>A counterfactual plot can be used to show the reverse of the typical interaction interpretation (i.e.&nbsp;association of continuous predictor conditioned on the categorical)</li>
+<li>Triptych plots are a type of facetted predictor (one of the interaction variables) vs fitted graph where you facet by bins, quantiles, levels of the other interaction variable</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-summ-ch9" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch9">Chapter 9 - MCMC</h2>
+<ul>
+<li>Gibbs
+<ul>
+<li>Optimizes sampling the joint posterior density by using conjugate priors</li>
+<li>Inefficient for complex models</li>
+<li>Can’t discern bad chains as well as HMC</li>
+</ul></li>
+<li>Hamiltonian Monte Carlo (HMC)
+<ul>
+<li>Uses Hamiltonian differential equations in a particle physics simulation to sample the joint posterior density
+<ul>
+<li>Momentum and direction are randomly chosen</li>
+</ul></li>
+<li>Hyperparameters
+<ul>
+<li>Used to reduce autocorrelation of the sampling (sampling is sequential) (U-Turn Problem)</li>
+<li>Determined during warm-up in HMC
+<ul>
+<li>Stan uses NUTS2</li>
+</ul></li>
+<li>Leapfrog steps (L) - paths between sampled posterior value combinations are made up of leapfrog steps</li>
+<li>Step Size (ε) - The length of a leapfrog step is the step size</li>
+</ul></li>
+</ul></li>
+<li>Diagnostics
+<ul>
+<li>Effective Sample Size (ESS) - Measures the amount by which autocorrelation in samples increases uncertainty (standard errors) relative to an independent sample
+<ul>
+<li>Bulk_ESS - effective sample size around the bulk of the posterior (i.e.&nbsp;around the mean or median)
+<ul>
+<li>When value is much lower than the actual number of iterations (minus warmup) of your chains, it means the chain is inefficient, but possibly still okay</li>
+</ul></li>
+<li>Tail_ESS - effective sample size in the tails of the posterior
+<ul>
+<li>No idea what’s good here.</li>
+</ul></li>
+</ul></li>
+<li>Rhat (Gelman-Rubin convergence diagnostic) - estimate of the convergence of Markov chains to the target distribution
+<ul>
+<li>If converges, Rhat = 1+</li>
+<li>If value is above 1.00, it usually indicates that the chain has not yet converged, and probably you shouldn’t trust the samples.
+<ul>
+<li>Early versions of this diagnostic can fail for more complex models (i.e.&nbsp;bad chains even when value = 1)</li>
+</ul></li>
+</ul></li>
+<li>Trace Plots
+<ul>
+<li>Multi-line plot depicting the sampling of parameter values in the joint posterior</li>
+<li>lazy, fat caterpillars = good chains</li>
+<li>Not recommended since 1 pathological chain can remain hidden in the plot</li>
+</ul></li>
+<li>Trank plots
+<ul>
+<li>A layered histogram method that is easier to discern each chain’s health than using trace plots</li>
+</ul></li>
+</ul></li>
+<li>Set-up
+<ul>
+<li>Warm-up samples
+<ul>
+<li>More complex models require more warm-up</li>
+<li>Start will default and adjust based on ESS values</li>
+</ul></li>
+<li>Post-Warmup samples
+<ul>
+<li>200 for mean estimates using not-too-complex regression models</li>
+<li>Much moar required for
+<ul>
+<li>Complex models</li>
+<li>Finer resolution of the tails</li>
+<li>Non-Gaussian distributions</li>
+</ul></li>
+</ul></li>
+<li>Chains
+<ul>
+<li>debugging: 1
+<ul>
+<li>Some stan errors only display when 1 chain is used</li>
+</ul></li>
+<li>Validation of chains: 3 or 4</li>
+<li>Final Run: only need 1 but can use more depending on compute power/# of vCPUs</li>
+</ul></li>
+</ul></li>
+<li>Problems with ugly chains in trace/trank plots
+<ul>
+<li>Solutions for the 2 examples were to use weakly informative priors ¯\_(ツ)_/¯</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-summ-ch10" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch10">Chapter 10 - GLM Concepts</h2>
+<ul>
+<li>The principle of maximum entropy provides an empirically successful way to choose likelihood functions. Information entropy is essentially a measure of the number of ways a distribution can arise, according to stated assumptions. By choosing the distribution with the biggest information entropy, we thereby choose a distribution that obeys the constraints on outcome variables, without importing additional assumptions. Generalized linear models arise naturally from this approach, as extensions of the linear models in previous chapters.</li>
+<li>The maximum entropy distribution is the one with the greatest information entropy (i.e.&nbsp;log number of ways per event) and is the most plausible distribution.
+<ul>
+<li>No guarantee that this is the best probability distribution for the real problem you are analyzing. But there is a guarantee that no other distribution more conservatively reflects your assumptions.</li>
+<li>maximum entropy also provides a way to generate a more informative prior that embodies the background information, while assuming as little else as possible.</li>
+</ul></li>
+<li>Omitted variable bias can have worse effects with GLMs</li>
+<li>Gaussian
+<ul>
+<li>A perfectly uniform distribution would have infinite variance, in fact. So the variance constraint is actually a severe constraint, forcing the high-probability portion of the distribution to a small area around the mean.</li>
+<li>The Gaussian distribution gets its shape by being as spread out as possible for a distribution with fixed variance.</li>
+<li>The Gaussian distribution is the most conservative distribution for a continuous outcome variable with finite variance.
+<ul>
+<li>The mean µ doesn’t matter here, because entropy doesn’t depend upon location, just shape.</li>
+</ul></li>
+</ul></li>
+<li>Binomial
+<ul>
+<li>Binomial distribution has the largest entropy of any distribution that satisfies these constraints:
+<ul>
+<li>only two unordered events (i.e.&nbsp;dichotomous)</li>
+<li>constant expected value (i.e.&nbsp;exp_val = sum(prob*num_events))</li>
+</ul></li>
+<li>If only two un-ordered outcomes are possible and you think the process generating them is invariant in time—so that the expected value remains constant at each combination of predictor values— then the distribution that is most conservative is the binomial.</li>
+</ul></li>
+<li>Other distributions</li>
+</ul>
+</section>
+<section id="sec-summ-ch11" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-summ-ch11">Chapter 11</h2>
+<ul>
+<li>Logistic Regression models a 0/1 outcome and data is at the case level
+<ul>
+<li>Example: Acceptance, A; Gender, G; Department, D Ai ~ Bernoulli(pi) logit(pi) = α[Gi, Di]</li>
+</ul></li>
+<li>Binomial Regression models the counts of a Bernoulli variable that have been aggregated by some group variable(s)
+<ul>
+<li>Example: Acceptance counts that have been aggregated by department and gender Ai ~ Binomial(Ni, pi) logit(pi) = α[Gi, Di]</li>
+</ul></li>
+<li>Results are the same no matter whether you choose to fit a logistic regression with case-level data or aggregate the case-level data into counts and fit a binomial regression</li>
+<li>brms models
+<ul>
+<li>Logistic
+<ul>
+<li>family = bernouilli</li>
+<li>formula: outcome_var|trials(1)</li>
+</ul></li>
+<li>Binomial:
+<ul>
+<li>family = binomial</li>
+<li>formula
+<ul>
+<li>balanced: outcome_var|trials(group_n)</li>
+<li>unbalanced: outcome_var|trials(vector_with_n_for_each_group)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>rstanarm models specified just like using glm</li>
+<li>Flat Normal priors for logistic or binomial do NOT have high sds. High sds say that outcome event probability is always close to 0 or close 1.
+<ul>
+<li>For flat intercept: sd = 1.5</li>
+<li>For flat slope: sd = 1.0</li>
+<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/bayes-priors.html" style="color: green">Bayes, priors</a> for details on other options</li>
+</ul></li>
+<li>Effects
+<ul>
+<li>Types
+<ul>
+<li>Absolute Effects - The effect of a (counter-factual) change in predictor value (type of treatment) has on the outcome (probability of an event)
+<ul>
+<li>Contrast of the predicted values (e.g.&nbsp;marginal means)</li>
+</ul></li>
+<li>Relative Effects - The effect of a (counter-factual) change in predictor value (type of treatment) has on the outcome (<em>odds</em> of an event)</li>
+</ul></li>
+</ul></li>
+<li>UC Berkeley gender discrimination analysis
+<ul>
+<li>Typical pipe DAG for many social science analyses where unobserved confounders are often an issue</li>
+<li>Also see
+<ul>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/causal-inference.html#sec-causinf-misc" style="color: green">Causal Inference &gt;&gt; Misc</a> &gt;&gt; Partial Identification</li>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/causal-inference.html#sec-causinf-medanal" style="color: green">Causal Inference &gt;&gt; Mediation Analysis</a></li>
+</ul></li>
+</ul></li>
+<li>Poisson - when N is very large and probability of an event, p, is very small, then expected value and variance are approximately the same. The shape of this distribution is the Poisson</li>
+<li>Flat Normal priors for Poisson also do NOT have high sds
+<ul>
+<li>Not sure if these are standard flat priors, but the priors in the example were
+<ul>
+<li>Intercept sd = 0.5</li>
+<li>Slope sd = 0.2</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../qmd/chapter-2.html" class="pagination-link">
+        <span class="nav-page-text">Chapter 2</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
