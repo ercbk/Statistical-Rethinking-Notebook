@@ -2,15 +2,16 @@ project:
   type: book
 
 book:
-  title: "Statistical Rethinking Notebook"
+  title: "Statistical Rethinking"
   author: "Eric Book"
   date: "6/05/2023"
+  favicon: images/sr-favicon-32.png
   reader-mode: true
   repo-url: https://github.com/ercbk/Statistical-Rethinking-Notebook
   sidebar: 
     collapse-level: 1
     background: "#fffaf0"
-    foreground: "#335f83"
+    foreground: "#1E4477"
     tools: 
       - icon: house-fill
         href: https://ericbook.netlify.app/
