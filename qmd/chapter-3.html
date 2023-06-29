@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistical Rethinking - Chapter 3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../qmd/statistical-rethinking.html" rel="next">
+<link href="../qmd/chapter-2.html" rel="prev">
+<link href="../images/sr-favicon-32.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/chapter-3.html">Chapter 3</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Statistical Rethinking</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://ericbook.netlify.app/" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://ercbk.github.io/Data-Science-Notebook/" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-database-fill-gear"></i></a>
+    <a href="https://github.com/ercbk/Statistical-Rethinking-Notebook" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/chapter-summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter Summaries</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/chapter-3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Chapter 3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/statistical-rethinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-ch3-postdens" id="toc-sec-ch3-postdens" class="nav-link active" data-scroll-target="#sec-ch3-postdens">Posterior Density</a></li>
+  <li><a href="#sec-ch3-summpost" id="toc-sec-ch3-summpost" class="nav-link" data-scroll-target="#sec-ch3-summpost">Summarizing the Posterior</a></li>
+  <li><a href="#sec-ch3-dumdat" id="toc-sec-ch3-dumdat" class="nav-link" data-scroll-target="#sec-ch3-dumdat">Dummy Data</a></li>
+  <li><a href="#sec-ch3-ppd" id="toc-sec-ch3-ppd" class="nav-link" data-scroll-target="#sec-ch3-ppd">Posterior Predictive Distribution</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-ch3" class="quarto-section-identifier">Chapter 3</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-ch3-postdens" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-ch3-postdens">Posterior Density</h2>
+<ul>
+<li><p>Sampling from the posterior distribution means we can work with counts (easier, more intuitive) instead of working with the density which is working with integrals. Plus MCMC results are count based.</p></li>
+<li><p><u>Sampling from the posterior density</u></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample</span>(parameter values vector,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob =</span> posterior density from output of model,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">size =</span> <span class="co"># of samples you want,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Parameter values are the conjectures,</li>
+<li>Posterior is all the parameter values’ likelihood x prior (i.e.&nbsp;updated relative plausibilities of the conjectures)
+<ul>
+<li><p>Grid Approximation of a posterior for 1 parameter:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>p_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>( <span class="at">from=</span><span class="dv">0</span>, <span class="at">to=</span><span class="dv">1</span>, <span class="at">length.out=</span><span class="dv">1000</span>) <span class="co"># parameter values vector</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>prior <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">1000</span>) <span class="co"># repeat 1 a thousand times to create a flat prior</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>likelihood <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(<span class="dv">3</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">prob=</span>p_grid) <span class="co"># plausibility of 3 events out of 3 observations for each each conjectured parameter value</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>posterior_unstd <span class="ot">&lt;-</span> likelihood <span class="sc">*</span> prior</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> posterior_unstd <span class="sc">/</span> <span class="fu">sum</span>(posterior_unstd)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sampling the posterior density</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">sample</span>(p_grid, <span class="at">prob =</span> posterior, <span class="at">size =</span> <span class="dv">10000</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>“size” is how many samples we’re taking</li>
+<li>(See stat.rethinking brms recode bkmk for ggplot graphs and dplyr code)</li>
+</ul></li>
+</ul></li>
+<li><u><code>sum()</code> of posterior samples gives probability for a specified parameter value</u></li>
+<li><u><code>quantile()</code> of posterior samples gives the parameter value for a specified probability</u></li>
+</ul></li>
+<li><p><u>Common questions to ask about the posterior distribution</u></p>
+<ul>
+<li><em>How much of the posterior probability lies below some parameter value?</em>
+<ul>
+<li><span class="ribbon-highlight">Example</span>: Whats the posterior probability that the proportion of water on the globe is below 0.50?</li>
+<li>Answer: <code>sum(samples &lt; 0.50) / total_samples</code> (= 1e4, see above)
+<ul>
+<li>“/total sample” is the procedure if there are 1 or more parameters represented in the posterior density</li>
+</ul></li>
+</ul></li>
+<li><em>How much of the posterior probability is between two parameter values?</em>
+<ul>
+<li><span class="ribbon-highlight">Example</span>: The posterior probability that the proportion of water is between 0.50 and 0.75?</li>
+<li>Answer: <code>sum(samples &gt; 0.50 &amp; samples &lt; 0.75) / total_samples</code></li>
+</ul></li>
+<li><em>Which parameter value marks the lower 5% of the posterior probability?</em>
+<ul>
+<li>i.e.&nbsp;Which proportion of water has a 5% probability?</li>
+<li>Answer: <code>quantile(samples, 0.05)</code></li>
+</ul></li>
+<li><em>Which range of parameter values contains the middle 80% of the posterior probability?</em>
+<ul>
+<li>Defined as the [<strong>Percentile Interval (PI)</strong>
+<ul>
+<li>Frequentist CIs are normally percentile intervals, just of the sampling distribution instead of the posterior</li>
+<li>Fine in practice for the most part, but bad for highly skewed posterior distributions as it’s not guaranteed to contain the most probable value.. In such cases use HPDI (see below).
+<ul>
+<li>If you do have an a posterior that’s highly skewed, make sure to also report the entire distribution.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><em>Which range of proportions of water is the true value likely to be in with a 80% probability?</em>
+<ul>
+<li>Answer: <code>quantile(samples, c( 0.10, 0.90))</code></li>
+</ul></li>
+<li><em>Which parameter value has the highest posterior probability?</em>
+<ul>
+<li>Answer: the MAP (see below)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-ch3-summpost" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-ch3-summpost">Summarizing the Posterior</h2>
+<ul>
+<li><p><span style="color: #009499"><strong>Credible Interval</strong></span> - General Bayesian term that is interchangeable with confidence interval. Instead an interval of probability density or mass, it’s based on an interval of the posterior probability. If choice of interval (percentile or hdpi) affects inferences being made, then also report entire posterior distribution.</p></li>
+<li><p><span style="color: #009499"><strong>Highest Posterior Density Interval (HPDI)</strong></span> - The narrowest interval containing the specified probability mass. Guaranteed to have the value with the highest posterior probability.<br>
+<img src="./_resources/Untitled_Note.resources/image.png" class="img-fluid" width="532"></p>
+<ul>
+<li><p>Left: 50% percentile interval assigns equal mass (25%) to both the left and right tail. As a result, it omits the most probable parameter value, p = 1.</p></li>
+<li><p>Right: 50% HPDI finds the narrowest region with 50% of the posterior probability. Such a region always includes the most probable parameter value.</p></li>
+<li><p>Disadvantages:</p>
+<ul>
+<li>Expensive</li>
+<li>Suffers from Simulation Variance (i.e.&nbsp;sensitive to number of samples).</li>
+<li>Less familiar to most audiences</li>
+</ul></li>
+<li><p>See <a href="chapter-4.qmd#sec-ch4-uncert" style="color: green">Chapter 4 &gt;&gt; Uncertainty</a> for brms code</p></li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Maximum a posteriori (MAP)</strong></span> - value with the highest posterior probability, aka mode of the posterior.</p></li>
+<li><p>The choice of type of point estimate (MAP, median, mean) should depend on a loss function (e.g.&nbsp;L1, squared –&gt; median, L2 aka quadratic –&gt; mean, etc).</p>
+<ul>
+<li>If the loss is asymmetrical, e.g.&nbsp;cost rises exponentially as loss increases, then I think he’s saying that’s a good time to use MAP.</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-ch3-dumdat" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-ch3-dumdat">Dummy Data</h2>
+<ul>
+<li><p><span style="color: #009499"><strong>Dummy Data</strong></span> are simulated data (aka fake data) to take the place of real data.</p>
+<ul>
+<li>Uses
+<ul>
+<li>Checking model fit and model behavior</li>
+<li>Checking the effectiveness of a research design (e.g.&nbsp;power analysis)</li>
+<li>Forecasting</li>
+</ul></li>
+<li><code>dbinom(0:2, size = 2 , prob = 0.70)</code> gives likelihoods for observing 0Ws, 1W, 2Ws for a trial with 2 flips given conjecture, p = 0.70</li>
+<li><code>rbinom(10, size = 2, prob = 0.70)</code> is generating 10 data points given the conjecture (aka parameter value), p = 70%
+<ul>
+<li>10 experiments (or trials) of flipping the globe twice
+<ul>
+<li>output being how many Ws were observed in each experiment</li>
+<li>the output are <em>dummy observations</em></li>
+</ul></li>
+<li>rbinom means its a binomial distribution, so only two possible outcomes in each trial</li>
+<li>size = 2 means there are 2 flips per trial and means there are to be either 2 events, 1 event, or 0 events.
+<ul>
+<li>In the globe flipping <span class="ribbon-highlight">Example</span> where the event is landing on Water: 2 Water - 0 Land, 1 W - 1 L, 0 W - 2 L</li>
+</ul></li>
+<li>prob = 0.70 is probability (plausibility of an event) (e.g.&nbsp;landing on Water)</li>
+<li><code>table(rbinom(100000, 2, 0.70) / 100000)</code> is very similar to the output of dbinom above.</li>
+<li>Increasing the size from 2 to 9 yields a distribution where the mode is around the true proportion (which would be 0.70 * 9 = 6.3 Ws)<br>
+<img src="./_resources/Untitled_Note.resources/Screenshot (76).png" class="img-fluid" width="221">
+<ul>
+<li>The sampling distribution is still wide though, so the majority of experiments don’t result in the around 6 Ws.</li>
+<li>Represents the “garden of forking paths” from Ch. 2</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-ch3-ppd" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-ch3-ppd">Posterior Predictive Distribution</h2>
+<ul>
+<li><p>The PPD is the (simulated) distribution of outcome values we expect to see in the wild given this model and these data.</p></li>
+<li><p>Equivalent to computing all the sampling distributions for each p and then averaging (by using the posterior distribution) them together (or integrating over the posterior density). This propagates the uncertainty about p of the posterior distribution into the PPD.<br>
+<img src="./_resources/Untitled_Note.resources/Screenshot (77).png" class="img-fluid" width="632"></p></li>
+<li><p><u>(Intuitive) Steps in creating the PPD for the globe example</u></p>
+<ol type="1">
+<li>A probability of hitting water (aka parameter value) is sampled from the posterior density (top pic)
+<ul>
+<li>More likely parameter values get sampled more often</li>
+</ul></li>
+<li>That sampled probability is associated with a count distribution (aka sampling distribution histogram) (middle pic) where the x-axis values are possible total counts of the event after each trial.
+<ul>
+<li>Each p’s sampling distribution is the distribution we’d expect to see if that p was true. (e.g.&nbsp;bell curve for p = 0.50)</li>
+<li>e.g.&nbsp;<code>rbinom(10, size = 9, prob = 0.70)</code> where the sampled probability is 0.70, trials = 10, and 9 is the number of globe tosses per trial
+<ul>
+<li>Therefore, there’s a maximum of 9 events (i.e.&nbsp;hitting the water) possible per trial</li>
+</ul></li>
+</ul></li>
+<li>This count distribution (middle pic) gets sampled, and that sampled count is tallied in the PPD (bottom pic)
+<ul>
+<li>e.g.&nbsp;if a 6 is sampled from the count distribution, it’s tallied in the PPD for the “6” on the x-axis</li>
+</ul></li>
+<li>Repeat (e.g.&nbsp;1e4 times)</li>
+</ol></li>
+<li><p><u>Computing a PPD:</u></p>
+<ul>
+<li><code>rbinom(number of trials, size = number of flips per trial, prob = samples from posterior density)</code></li>
+<li>These are counts unlike the posterior density
+<ul>
+<li>therefore maybe the shape is dependent on “size”</li>
+</ul></li>
+<li>The posterior distribution is used as weights to calculate a weighted, average frequency of W observations for each trial.</li>
+<li><span class="ribbon-highlight">Example</span>: <code>rbinom(10000, 9, samples)</code>
+<ul>
+<li>For trial 1, a coin is flipped 9 times.
+<ul>
+<li>The total number of heads for each trial is determined by sampling the posterior density</li>
+</ul></li>
+<li>Repeat another 999 times</li>
+<li>A vector is returned where each value is the total number of heads for that trial (e.g.&nbsp;length in example = 10000)</li>
+</ul></li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: PPD for tossing the globe</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>( <span class="at">from=</span><span class="dv">0</span>, <span class="at">to=</span><span class="dv">1</span>, <span class="at">length.out=</span><span class="dv">1000</span>) <span class="co"># parameter values vector</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>prior <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">1000</span>) <span class="co"># repeat 1 a thousand times to create a flat prior</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>likelihood <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">prob=</span>p_grid) <span class="co"># plausibility of 3 events out of 3 observations for each each conjectured parameter value</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>posterior_unstd <span class="ot">&lt;-</span> likelihood <span class="sc">*</span> prior</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> posterior_unstd <span class="sc">/</span> <span class="fu">sum</span>(posterior_unstd)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">sample</span>(p_grid, <span class="at">prob =</span> posterior, <span class="at">size =</span> <span class="fl">1e4</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># sample from posterior</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ppd <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">10000</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">prob =</span> samples) <span class="co"># simulate observations to get the PPD</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ppd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><span class="ribbon-highlight">Example</span>: brms way</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>b3<span class="fl">.1</span> <span class="ot">&lt;-</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">brm</span>(<span class="at">data =</span> <span class="fu">list</span>(<span class="at">w =</span> <span class="dv">6</span>),&nbsp;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"identity"</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; w <span class="sc">|</span> <span class="fu">trials</span>(<span class="dv">9</span>) <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> Intercept,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; <span class="co"># this is a flat prior</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; <span class="fu">prior</span>(<span class="fu">beta</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="at">class =</span> b, <span class="at">lb =</span> <span class="dv">0</span>, <span class="at">ub =</span> <span class="dv">1</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; <span class="at">iter =</span> <span class="dv">5000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; <span class="at">seed =</span> <span class="dv">3</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; <span class="at">file =</span> <span class="st">"fits/b03.01"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># sampling the posterior</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">fitted</span>(b3<span class="fl">.1</span>,&nbsp;</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; <span class="at">summary =</span> F,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co"># says we want simulated draws and not summary stats</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; <span class="at">scale =</span> <span class="st">"linear"</span>) <span class="sc">%&gt;%</span>&nbsp; &nbsp; <span class="co"># linear outputs probabilities</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span>&nbsp;</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">set_names</span>(<span class="st">"p"</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># posterior probability density (top pic)</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>f <span class="sc">%&gt;%</span>&nbsp;</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> p)) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"grey50"</span>, <span class="at">color =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x =</span> .<span class="dv">08</span>, <span class="at">y =</span> <span class="fl">2.5</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="at">label =</span> <span class="st">"Posterior probability"</span>) <span class="sc">+</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">scale_x_continuous</span>(<span class="st">"probability of water"</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">5</span>, <span class="dv">1</span>),</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="at">limits =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">scale_y_continuous</span>(<span class="cn">NULL</span>, <span class="at">breaks =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="co"># ppd</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>&nbsp; f <span class="sc">%&gt;%</span>&nbsp;</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">mutate</span>(<span class="at">w =</span> <span class="fu">rbinom</span>(<span class="fu">n</span>(), <span class="at">size =</span> n_trials,&nbsp; <span class="at">prob =</span> p))</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co"># ppd histogram (bottom pic)</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>f <span class="sc">%&gt;%</span>&nbsp;</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> w)) <span class="sc">+</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">center =</span> <span class="dv">0</span>,</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="at">color =</span> <span class="st">"grey92"</span>, <span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">scale_x_continuous</span>(<span class="st">"number of water samples"</span>,</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">9</span>, <span class="at">by =</span> <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">scale_y_continuous</span>(<span class="cn">NULL</span>, <span class="at">breaks =</span> <span class="cn">NULL</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5000</span>)) <span class="sc">+</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">ggtitle</span>(<span class="st">"Posterior predictive distribution"</span>) <span class="sc">+</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Same process is used for a <span style="color: #009499"><strong>Prior Predictive Distribution</strong></span></p>
+<ul>
+<li>The prior distribution takes the place of the posterior density in this case</li>
+</ul></li>
+<li><p>For a continuous distribution, see example in <a href="chapter.4.qmd#sec-ch4-ppd" style="color: green">Chapter 4 &gt;&gt; Prior Predictive Distribution</a></p></li>
+<li><p>Model fit</p>
+<ul>
+<li>2 types of uncertainty:
+<ul>
+<li>Predicted Observation Uncertainty
+<ul>
+<li>Even if we did know the correct conjecture, p, we wouldn’t know with certainty the outcome of the next trial, unless the correct p = 0 or p = 1.</li>
+<li>See histogram in previous section
+<ul>
+<li>Even if the “true” conjecture (e.g.&nbsp;p = 0.70) is known, there is uncertainty in the count of W observations the next trial will yield.</li>
+</ul></li>
+<li>Sounds like this is quantified by predictive intervals (PI) given some α</li>
+</ul></li>
+<li>Uncertainty About p
+<ul>
+<li>The posterior distribution over p embodies this uncertainty.</li>
+<li>And this is quantified by credible intervals (CI) given some α</li>
+</ul></li>
+</ul></li>
+<li><em>GOF Question: If we were to make predictions about the most probable p using this model, how consistent is our model with the data?</em>
+<ul>
+<li>Answer: If the shape of the PPD matches the shape of the sampled posterior distribution, then the model is consistent with the data. (i.e.&nbsp;good fit)</li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../qmd/chapter-2.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chapter 2</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../qmd/statistical-rethinking.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

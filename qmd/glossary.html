@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Rethinking - Chapter 2</title>
+<title>Statistical Rethinking - Glossary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmd/chapter-3.html" rel="next">
-<link href="../qmd/chapter-summaries.html" rel="prev">
+<link href="../qmd/statistical-rethinking.html" rel="prev">
 <link href="../images/sr-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -78,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/chapter-2.html">Chapter 2</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/glossary.html">Glossary</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -127,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/chapter-2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmd/chapter-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 2</span></a>
   </div>
 </li>
@@ -145,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/glossary.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmd/glossary.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Glossary</span></a>
   </div>
 </li>
@@ -155,23 +154,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#sec-ch2-count" id="toc-sec-ch2-count" class="nav-link active" data-scroll-target="#sec-ch2-count">Counting the Ways</a></li>
-  <li><a href="#sec-ch2-plaus" id="toc-sec-ch2-plaus" class="nav-link" data-scroll-target="#sec-ch2-plaus">Plausibilities</a></li>
-  <li><a href="#sec-ch2-bayescomp" id="toc-sec-ch2-bayescomp" class="nav-link" data-scroll-target="#sec-ch2-bayescomp">In Bayesian Language</a></li>
-  <li><a href="#sec-ch2-numsolv" id="toc-sec-ch2-numsolv" class="nav-link" data-scroll-target="#sec-ch2-numsolv">Numerical Solvers for the Posterior Distribution</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-ch2" class="quarto-section-identifier">Chapter 2</span></h1>
+<h1 class="title"><span id="sec-gloss" class="quarto-section-identifier">Glossary</span></h1>
 </div>
 
 
@@ -186,161 +176,43 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="sec-ch2-count" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-ch2-count">Counting the Ways</h2>
 <ul>
-<li><p>One blue marble is drawn from the bag and replaced. The bag is shaken, and a white marble is drawn and replaced. Finally, the bag is shaken, and a blue marble is drawn and replaced</p>
-<p><img src="./_resources/Untitled_Note.resources/Screenshot (62).png" class="img-fluid" width="470"></p>
-<ul>
-<li>Each ring is a iid observation (bag shaken and a marble drawn and replaced)</li>
-<li>In this example, the “garden of forking paths” is set of all <em>potential</em> draws (consisting of 3 observations), given the conjecture of there being 1 blue and 3 white marbles in the bag</li>
-</ul></li>
-<li><p>If we actually do draw a marble, record the observation, replace the marble, repeat 2 more times, and the result is blue, white, blue, then these are the number of paths in each conjecture’s garden that are consistent with that outcome</p>
-<p><img src="./_resources/Untitled_Note.resources/Screenshot (64).png" class="img-fluid" width="234"></p>
-<ul>
-<li>For conjecture 1 blue, 3 white, (1, 3, 1) is the number of paths in each ring, respectively, that remain consistent with the sequence of recorded observations.
-<ul>
-<li>When multiplied together, the product equals the total consistent paths.</li>
-</ul></li>
-</ul></li>
-<li><p>After the bag is shaken, a new marble is drawn (new data) — it’s blue. Previous counts are now the <em>prior</em> counts.</p>
-<p><img src="./_resources/Untitled_Note.resources/Screenshot (65).png" class="img-fluid" width="270"></p>
-<ul>
-<li><p>The ways this new blue marble can be drawn, given a conjecture, is used to update each prior count through multiplication.</p>
-<ul>
-<li>This is equivalent to starting over and drawing another marble after the previous 3 iid observations.</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="sec-ch2-plaus" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-ch2-plaus">Plausibilities</h2>
-<ul>
-<li>The plausibility of a conjecture (p1) is the (prior plausibility given p1) ⨯ (“New Count” given p1). Then, that product is standardized into a probability so that it is comparable to other conjectures.
-<ul>
-<li>plausibility<sub>p1</sub> = (prior_plausibility<sub>p1</sub> ⨯ new_counts<sub>p1</sub>) / the sum of all (new_counts<sub>pi</sub> ⨯ prior_plausibility<sub>pi</sub>) products of the other conjectures</li>
-<li>It’s the probability of the conjecture given the new data</li>
-</ul></li>
-<li>The plausibility of a conjecture, p, after seeing new evidence, D<sub>new</sub>, is proportional to the ways the conjecture, p, can produce the new evidence, D<sub>new</sub>, times the prior plausibility of the conjecture, p.
-<ul>
-<li>Equivalent Notations:
-<ul>
-<li><p>Plausibility of <em>p</em> after D<sub>new</sub> ∝ ways <em>p</em> can produce D<sub>new</sub> ⨯ prior plausibility of <em>p</em></p></li>
-<li><p>Plausibility of <em>p</em> after <span class="math inline">\(D_{new} = \frac {\text{Ways} \; p \; \text{can produce}\ D_{new}\ \times\ \text{Prior plausibility}\ p}{\text{Sum of products}}\)</span></p>
-<ul>
-<li><p>Sum of products = sum of the WAYS of each conjecture. For</p>
-<ul>
-<li>Conjecture 0 blues = 0 ways</li>
-<li>Conjecture 1 blue &nbsp; = 3 ways (current example)</li>
-<li>Conjecture 2 blues = 8 ways</li>
-<li>Conjecture 3 blues = 9 ways</li>
-<li>Conjecture 4 blues = 0 ways</li>
-<li>Therefore sum of products = 20</li>
-</ul></li>
-<li><p>If the prior plausibility of conjecture, p, of 1 blue marble = 1 (and the rest of the conjectures, i.e.&nbsp;flat prior), then plausibility of conjecture 1 blue = (3 ⨯ 1)/20 = 0.15. The plausibility calculation normalizes the counts to be between 0 and 1.</p>
-<p><img src="./_resources/Untitled_Note.resources/Screenshot (66).png" class="img-fluid" width="350"></p></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="sec-ch2-bayescomp" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-ch2-bayescomp">In Bayesian Language</h2>
-<ul>
-<li>A conjectured proportion of blue marbles, p, is usually called a <span style="color: #14adff"><strong>parameter value</strong></span>. It’s just a way of indexing possible explanations of the data
-<ul>
-<li>In the example below, the proportion of surface water is the unknown parameter, but the conjecture could also be other things like sample size, treatment effect, group variation, etc.</li>
-<li>There can also be multiple unknown parameters for the likelihood to consider.</li>
-<li>Every parameter must have a corresponding prior probability assigned to it.</li>
-</ul></li>
-<li>The relative number of ways that a value p can produce the data is usually called a <span style="color: #14adff"><strong>likelihood</strong></span>.
+<li><span style="color: #009499"><strong>Credible Interval</strong></span> - General Bayesian term that is interchangeable with confidence interval. Instead an interval of probability density or mass, it’s based on an interval of the posterior probability. If choice of interval (percentile or hdpi) affects inferences being made, then also report entire posterior distribution.</li>
+<li><span style="color: #009499"><strong>Dummy Data</strong></span> are simulated data (aka fake data) to take the place of real data.</li>
+<li><span style="color: #009499"><strong>Highest Posterior Density Interval (HPDI)</strong></span> - The narrowest interval containing the specified probability mass. Guaranteed to have the value with the highest posterior probability.</li>
+<li>The relative number of ways that a value p can produce the data is usually called a <span style="color: #009499"><strong>likelihood</strong></span>.
 <ul>
 <li>It is derived by the enumerating all the possible data sequences that could have happened and then eliminating those sequences inconsistent with the data (i.e.&nbsp;paths_consistent_with_data / total_paths).</li>
 <li>As a model component, the likelihood is a function that gives the probability of an observation given a parameter value (conjecture)
 <ul>
 <li>“How likely your sample data is out of all sample data of the same length?”</li>
 </ul></li>
-<li><span class="ribbon-highlight">Example</span>: The proportion of water to land on the earth:
+</ul></li>
+<li><span style="color: #009499"><strong>Maximum a posteriori (MAP)</strong></span> - value with the highest posterior probability, aka mode of the posterior.</li>
+<li>A conjectured proportion of blue marbles, p, is usually called a <span style="color: #009499"><strong>parameter value</strong></span>. It’s just a way of indexing possible explanations of the data
 <ul>
-<li>W is distributed Binomially with N trials and a probability of p for W in each trial, <span class="math inline">\(W \sim \mbox{Binomial}(N, p)\)</span></li>
-<li>“The count of ‘water’ observations (globe is tossed and finger lands on water), W, is distributed binomially, with probability p of ‘water’ on each toss of a globe and N tosses in total.”</li>
-<li>Notation: <span class="math inline">\(L(p \ | \ W, N)\)</span></li>
-<li>Assumptions:
-<ol type="1">
-<li>Observations are independent of each other</li>
-<li>The probability of observation of W (water) is the same for every observation</li>
-</ol></li>
-<li><code>dbinom(x, size, prob)</code>
-<ul>
-<li>Finds the probability (i.e.&nbsp;likelihood) of getting a certain number of successes (x) in a certain number of trials (size) where the probability of success on each trial is fixed (prob).</li>
-<li>Args
-<ul>
-<li>x = # of observations of water (W)</li>
-<li>size = sample size (N) (number of tosses)</li>
-<li>prob = parameter value (conjecture)(i.e.&nbsp;hypothesized proportion of water on the earth) (p)</li>
+<li>Here p, proportion of surface water (See example below), is the unknown parameter, but the conjecture could also be other things like sample size, treatment effect, group variation, etc.</li>
+<li>There can also be multiple unknown parameters for the likelihood to consider.</li>
+<li>Every parameter must have a corresponding prior probability assigned to it.</li>
 </ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>The prior plausibility of any specific p is usually called the <span style="color: #14adff"><strong>prior probability</strong></span>.
+<li>The new, updated relative plausibility of a specific <em>p</em> is called the <span style="color: #009499"><strong>posterior probability</strong></span>.</li>
+<li>The set of estimates, aka relative plausibilities of different parameter values, aka posterior probabilities, conditional on the data — is known as the <span style="color: #009499"><strong>posterior distribution</strong></span> or <span style="color: #009499"><strong>posterior density</strong></span> (e.g.&nbsp;<span class="math inline">\(Pr(p | N, W)\)</span>).</li>
+<li>The prior plausibility of any specific p is usually called the <span style="color: #009499"><strong>prior probability</strong></span>.
 <ul>
 <li>A distribution initial plausibilities for every value of a parameter</li>
 <li>Expresses prior knowledge about a parameter and constrains estimates to reasonable ranges</li>
 <li>Unless there’s already strong evidence for using a particular prior, multiple priors should be tried to see how sensitive the estimates are to the choice of a prior</li>
 <li>Example where the prior is a probability distribution for the parameter:
 <ul>
-<li>p is distributed Uniformly between 0 and 1, (i.e.&nbsp;each conjecture is equally likely), <span class="math inline">\(p \sim \mbox{Uniform}(0, 1)\)</span></li>
-</ul></li>
-<li><span style="color: #14adff"><strong>Weakly Informative</strong></span> or <span style="color: #14adff"><strong>Regularizing priors</strong></span>: conservative; guards against inferences of strong association
-<ul>
-<li>Mathematically equivalent to penalized likelihood</li>
+<li>p is distributed Uniformly between 0 and 1, (i.e.&nbsp;each conjecture is equally likely), <span class="math inline">\(p \sim \mbox{Uniform}(0, 1)\)</span><br>
+</li>
 </ul></li>
 </ul></li>
-<li>The new, updated relative plausibility of a specific <em>p</em> is called the <span style="color: #14adff"><strong>posterior probability</strong></span>.</li>
-<li>The set of estimates, aka relative plausibilities of different parameter values, aka posterior probabilities, conditional on the data — is known as the <span style="color: #14adff"><strong>posterior distribution</strong></span> or <span style="color: #14adff"><strong>posterior density</strong></span> (e.g.&nbsp;<span class="math inline">\(Pr(p \ | \ N, W)\)</span>).</li>
-<li>Thoughts
-<ul>
-<li>The likelihood, prior, and posterior densities are probability densities each with an area = 1. Looking at the marble tables it looks like the individual posterior probabilities sum to 1. So, the sum (we’re talking densities so this “sum” = integration) of all the products of the multiiplication of the prior and likelihood densities must not have an area = 1. Therefore, the denominator (i.e.&nbsp;sum of products) then standardizes each of these products so the posterior density does have an area of 1.</li>
-</ul></li>
-</ul>
-</section>
-<section id="sec-ch2-numsolv" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-ch2-numsolv">Numerical Solvers for the Posterior Distribution</h2>
-<ul>
-<li>Grid Approximation - compute the posterior distribution from only a portion of potential values (the grid of parameter values) for a set of unknown parameters
-<ul>
-<li>Doesn’t scale well as the number of parameters grows</li>
-<li>Steps:
-<ol type="1">
-<li>Decide how many values you want to use in your grid (e.g.&nbsp;<code>seq( from = 0, to = 1, len = 1000)</code> )
-<ul>
-<li>Number of parameter values in your grid is equal to the number of points in your posterior distribution</li>
-</ul></li>
-<li>Compute the prior value for each parameter value in your grid (e.g.&nbsp;<code>rep(1, 1000)</code> , uniform prior)</li>
-<li>Compute the likelihood (e.g.&nbsp;using <code>dbinom(x, size, p = grid))</code> for each grid value</li>
-<li>Multiply the likelihood times the prior which is the unstandardized posterior</li>
-<li>Standardize that posterior by dividing by <code>sum(unstd_posterior)</code></li>
-</ol></li>
-</ul></li>
-<li>Quadratic approximation - the posterior distribution can be represented by the Gaussian distribution quite well. The log of a Gaussian (posterior) distribution is quadratic.
-<ul>
-<li>Steps:
-<ol type="1">
-<li>Find the mode of the posterior. Uses quadratic approximation. With a uniform prior this is equivalent to MLE</li>
-<li>Estimate the curvature of the posterior using another numerical method</li>
-</ol></li>
-<li>Needs larger sample sizes. How large is model dependent.</li>
-<li><span style="color: #990000">{rethinking}</span> function, <code>quap( )</code>
-<ul>
-<li>Inputs are likelihood function (e.g.&nbsp;dbinom) and prior function (e.g.&nbsp;punif), and data for the likelihood function</li>
-<li>Outputs mean posterior probability and the std dev of the posterior distribution</li>
-</ul></li>
-</ul></li>
-<li>MCMC only briefly mentioned</li>
+<li><span style="color: #009499"><strong>Regularizing priors</strong></span> - See Weakly Informative Priors</li>
+<li><span style="color: #009499"><strong>Weakly Informative priors</strong></span> - conservative; guards against inferences of strong association - Mathematically equivalent to penalized likelihood</li>
 </ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -578,14 +450,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/chapter-summaries.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chapter Summaries</span>
+      <a href="../qmd/statistical-rethinking.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/chapter-3.html" class="pagination-link">
-        <span class="nav-page-text">Chapter 3</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
