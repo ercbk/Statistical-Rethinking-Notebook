@@ -42,7 +42,7 @@ TOC
 
 -   [{rethinking}]{style="color: #990000"} functions
 
--   Stan code examples
+-   Stan code [Example]{.ribbon-highlight}s
 
 Summaries
 
@@ -75,14 +75,14 @@ Summaries
         -   posterior distribution: after considering every possible combination of the parameters, it's the assigned relative plausibilities to every combination, conditional on this model and these data. (from Ch.6)
             -   The posterior is the joint distribution of all combinations of the parameters at the same time, Pr(parameters\|outcome, predictors)
         -   Many posterior distributions are approximately gaussian/multivariate gaussian
-        -   Example: intercept model
+        -   [Example]{.ribbon-highlight}: intercept model
             -   it's a density of every combination of value of mean and sd
-        -   Example: Height \~ Weight
+        -   [Example]{.ribbon-highlight}: Height \~ Weight
             -   The posterior is Pr(α, β , σ \| H, W)
                 -   which is proportional to Normal(W\|μ,σ) ⨯ Normal(α\|178,100) ⨯ LogNormal(β\|0,1) ⨯ Uniform(σ\|0,10)
     -   Intro to priors
     -   Model Notation
-        -   Example single variable regression where height is the response and weight the predictor
+        -   [Example]{.ribbon-highlight} single variable regression where height is the response and weight the predictor
             -   hi \~ Normal(μ, σ)  \# response
             -   μi = α + βxi  \# response mean (deterministic, i.e. no longer a parameter)
             -   α \~ Normal(178, 100) \# intercept
@@ -245,7 +245,7 @@ Summaries
             -   Validation of chains: 3 or 4
             -   Final Run: only need 1 but can use more depending on compute power/# of vCPUs
     -   Problems with ugly chains in trace/trank plots
-        -   Solutions for the 2 examples were to use weakly informative priors ¯\\\_(ツ)\_/¯
+        -   Solutions for the 2 [Example]{.ribbon-highlight}s were to use weakly informative priors ¯\\\_(ツ)\_/¯
 -   Ch 10 - GLM Concepts
     -   The principle of maximum entropy provides an empirically successful way to choose likelihood functions. Information entropy is essentially a measure of the number of ways a distribution can arise, according to stated assumptions. By choosing the distribution with the biggest information entropy, we thereby choose a distribution that obeys the constraints on outcome variables, without importing additional assumptions. Generalized linear models arise naturally from this approach, as extensions of the linear models in previous chapters.
     -   The maximum entropy distribution is the one with the greatest information entropy (i.e. log number of ways per event) and is the most plausible distribution.
@@ -265,9 +265,9 @@ Summaries
     -   Other distributions
 -   Ch 11
     -   Logistic Regression models a 0/1 outcome and data is at the case level
-        -   Example: Acceptance, A; Gender, G; Department, D Ai \~ Bernoulli(pi) logit(pi) = α\[Gi, Di\]
+        -   [Example]{.ribbon-highlight}: Acceptance, A; Gender, G; Department, D Ai \~ Bernoulli(pi) logit(pi) = α\[Gi, Di\]
     -   Binomial Regression models the counts of a Bernoulli variable that have been aggregated by some group variable(s)
-        -   Example: Acceptance counts that have been aggregated by department and gender Ai \~ Binomial(Ni, pi) logit(pi) = α\[Gi, Di\]
+        -   [Example]{.ribbon-highlight}: Acceptance counts that have been aggregated by department and gender Ai \~ Binomial(Ni, pi) logit(pi) = α\[Gi, Di\]
     -   Results are the same no matter whether you choose to fit a logistic regression with case-level data or aggregate the case-level data into counts and fit a binomial regression
     -   brms models
         -   Logistic
@@ -277,7 +277,7 @@ Summaries
             -   family = binomial
             -   formula
                 -   balanced: outcome_var\|trials(group_n)
-                -   unbalanced: outcome_var\|trials(vector_with_n\_for_each_group)
+                -   unbalanced: outcome_var\|trials(vector_with_n_for_each_group)
     -   rstanarm models specified just like using glm
     -   Flat Normal priors for logistic or binomial do NOT have high sds. High sds say that outcome event probability is always close to 0 or close 1.
         -   For flat intercept: sd = 1.5
@@ -295,7 +295,7 @@ Summaries
             -   Mediation Analysis
     -   Poisson - when N is very large and probability of an event, p, is very small, then expected value and variance are approximately the same. The shape of this distribution is the Poisson
     -   Flat Normal priors for Poisson also do NOT have high sds
-        -   Not sure if these are standard flat priors, but the priors in the example were
+        -   Not sure if these are standard flat priors, but the priors in the [Example]{.ribbon-highlight} were
             -   Intercept sd = 0.5
             -   Slope sd = 0.2
 
@@ -431,7 +431,7 @@ General Notes
         -   Pr(w)( also referred to as a Marginal Probability) averages the likelihood over the prior. The integral is how you calculate an average over a continuous distribution of values (e.g. all possible prior values). Pr(w)'s job is to standardize the posterior (i.e. values between 0 and 1)
         -   This says the probability of the parameter given the data is equal to the likelihood x the prior (which is standardized by the average likelihood to make it a probability).
 
-    -   Using the model definition for human heights example (pg 83):
+    -   Using the model definition for human heights [Example]{.ribbon-highlight} (pg 83):
 
         -   ![](./_resources/Untitled_Note.resources/unknown_filename.14.png)
         -   for height, hi \~ Normal(μ, σ), μ \~ Normal(178, 20), σ \~ Uniform(0,50)
@@ -468,12 +468,12 @@ General Notes
 
     -   Model Definitions
 
-        -   Example: Globe tossing
+        -   [Example]{.ribbon-highlight}: Globe tossing
             -   w \~ Binomial (n, p)
             -   p \~ Uniform (0, 1)
             -   "The count w is distributed binomially with sample size n and probability p. The prior for p is assumed to be uniform between 0 and 1."
             -   A Uniform prior is often called a "**flat prior**."
-        -   Example single variable regression where height is the outcome and weight the predictor
+        -   [Example]{.ribbon-highlight} single variable regression where height is the outcome and weight the predictor
             -   hi \~ Normal(μ, σ)
             -   μi = α + βxi
             -   α \~ Normal(178, 100)
@@ -498,12 +498,12 @@ General Notes
         -   ![](./_resources/Untitled_Note.resources/unknown_filename.11.png)
             -   ![](./_resources/Untitled_Note.resources/unknown_filename.12.png)  and  ![](./_resources/Untitled_Note.resources/unknown_filename.13.png)
 
-Chapter 2
+## Chapter 2
 
 -   1 blue marble is drawn from the bag and replaced. The bag is shaken, and a white marble is drawn and replaced. Finally, the bag is shaken, and a blue marble is drawn and replaced
 -   ![](./_resources/Untitled_Note.resources/Screenshot%20(62).png)
     -   each ring is a iid observation (bag shaken and a marble drawn and replaced)
-    -   In this example, the "garden of forking paths" is set of all *potential* draws (consisting of 3 observations), given the conjecture of there being 1 blue and 3 white marbles in the bag
+    -   In this [Example]{.ribbon-highlight}, the "garden of forking paths" is set of all *potential* draws (consisting of 3 observations), given the conjecture of there being 1 blue and 3 white marbles in the bag
 -   ![](./_resources/Untitled_Note.resources/Screenshot%20(64).png)
     -   If we actually do draw a marble, record the observation, replace the marble, repeat 2 more times, and the result is blue, white, blue, then these are the number of paths in each conjecture's garden that are consistent with that outcome
     -   For conjecture 1 blue, 3 white,  1, 3, 1 is the number of paths in each ring, respectively, that remain consistent with the sequence of recorded observations.
@@ -532,7 +532,7 @@ Chapter 2
     -   It is derived by the enumerating all the possible data sequences that could have happened and then eliminating those sequences inconsistent with the data  (i.e. paths_consistent_with_data / total_paths).
     -   As a model component, the likelihood is a function that gives the probability of an observation given a parameter value (conjecture)
         -   "how likely your sample data is out of all sample data of the same length?"
-    -   [Example]{.ribbon-highlight} (the proportion of water to land on the earth):
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight} (the proportion of water to land on the earth):
         -   W is distributed Binomially with N trials and a probability of p for W in each trial,  ![](./_resources/Untitled_Note.resources/unknown_filename.3.png)
         -   "The count of 'water' observations (finger landing on water), W, is distributed binomially, with probability p of 'water' on each toss of a globe and N tosses in total."
         -   L(p \| W, N) is another likelihood notation
@@ -547,7 +547,7 @@ Chapter 2
     -   A distribution initial plausibilities for every value of a parameter
     -   Expresses prior knowledge about a parameter and constrains estimates to reasonable ranges
     -   Unless there's already strong evidence for using a particular prior, multiple priors should be tried to see how sensitive the estimates are to the choice of a prior
-    -   Example where the prior is a probability distribution for the parameter:
+    -   [Example]{.ribbon-highlight} where the prior is a probability distribution for the parameter:
         -   p is distributed Uniformly between 0 and 1,  (i.e. each conjecture is equally likely)  ![](./_resources/Untitled_Note.resources/unknown_filename.4.png)
     -   **Weakly Informative** or **Regularizing priors**: conservative; guards against inferences of strong association
         -   mathematically equivalent to penalized likelihood
@@ -575,7 +575,7 @@ Chapter 2
             -   outputs mean posterior probability and the std dev of the posterior distribution
     -   MCMC only briefly mentioned
 
-Chapter 3 - Sampling
+## Chapter 3 - Sampling
 
 -   Sampling from the posterior distribution means we can work with counts (easier, more intuitive) instead of working with the density which is working with integrals. Plus MCMC results are count based.
     -   **Sampling from the posterior density**: `samples <- sample(parameter values vector, prob = posterior density from output of model,  size = # of samples you want, replace = T)`
@@ -601,11 +601,11 @@ samples <- sample(p_grid, prob = posterior, size = 10000, replace = T)
 -   Common questions to ask about the posterior distribution
 
     -   How much of the posterior probability lies below some parameter value?
-        -   Example: Whats the posterior probability that the proportion of water on the globe is below 0.50?
+        -   [Example]{.ribbon-highlight}: Whats the posterior probability that the proportion of water on the globe is below 0.50?
         -   Answer: `sum(samples < 0.50) / total_samples`  (= 1e4, see above)
             -   "/total sample" is the procedure if there are 1 or more parameters represented in the posterior density
     -   How much of the posterior probability is between two parameter values?
-        -   Example: The posterior probability that  the proportion of water is between 0.50 and 0.75?
+        -   [Example]{.ribbon-highlight}: The posterior probability that  the proportion of water is between 0.50 and 0.75?
         -   Answer: `sum(samples > 0.50 & samples < 0.75) / total_samples`
     -   \*\* `sum()` of posterior samples gives probability for a specified parameter value \*\*
     -   \*\* `quantile()` of posterior samples gives the parameter value for a specified probability \*\*
@@ -657,7 +657,7 @@ samples <- sample(p_grid, prob = posterior, size = 10000, replace = T)
             -   the output are *dummy observations*
         -   rbinom means its a binomial distribution, so only two possible outcomes in each trial
         -   size = 2 means there are 2 flips per trial and means there are to be either 2 events, 1 event, or 0 events.
-            -   In the globe flipping example where the event is landing on Water: 2 Water - 0 Land, 1 W - 1 L, 0 W - 2 L
+            -   In the globe flipping [Example]{.ribbon-highlight} where the event is landing on Water: 2 Water - 0 Land, 1 W - 1 L, 0 W - 2 L
         -   prob = 0.70 is probability (plausibility of an event) (e.g. landing on Water)
         -   `table(rbinom(100000, 2, 0.70) / 100000)`  is very similar to the output of dbinom above.
         -   Increasing the size from 2 to 9 yields a distribution where the mode is around the true proportion (which would be 0.70 \* 9 = 6.3 Ws) ![](./_resources/Untitled_Note.resources/Screenshot%20(76).png)
@@ -668,7 +668,7 @@ samples <- sample(p_grid, prob = posterior, size = 10000, replace = T)
 
     -   The PPD is the (simulated) distribution of outcome values we expect to see in the wild given this model and these data.
     -   Equivalent to computing all the sampling distributions for each p and then averaging (by using the posterior distribution) them together (or integrating over the posterior density). This propagates the uncertainty about p of the posterior distribution into the PPD.![](./_resources/Untitled_Note.resources/Screenshot%20(77).png)
-    -   (Intuitive) Steps in creating the PPD for the globe example
+    -   (Intuitive) Steps in creating the PPD for the globe [Example]{.ribbon-highlight}
         1.  A  probability of hitting water (aka parameter value) is sampled from the posterior density (top pic)
             -   More likely parameter values get sampled more often
         2.  That sampled probability is associated with a count distribution (aka sampling distribution histogram) (middle pic) where the x-axis values are possible total counts of the event after each trial.
@@ -683,12 +683,12 @@ samples <- sample(p_grid, prob = posterior, size = 10000, replace = T)
         -   these are counts unlike the posterior density
             -   therefore maybe the shape is dependent on "size"
         -   the posterior distribution is used as weights to calculate a weighted, average frequency of W observations for each trial.
-        -   [Example]{.ribbon-highlight}: `rbinom(10000, 9, samples)`
+        -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: `rbinom(10000, 9, samples)`
             -   For trial 1, a coin is flipped 9 times.
                 -   The total number of heads for each trial is determined by sampling the posterior density
             -   Repeat another 999 times
-            -   A vector is returned where each value is the total number of heads for that trial (e.g. length in example = 10000)
-    -   [Example]{.ribbon-highlight}: PPD for tossing the globe
+            -   A vector is returned where each value is the total number of heads for that trial (e.g. length in [Example]{.ribbon-highlight} = 10000)
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: PPD for tossing the globe
 
 ```         
 p_grid <- seq( from=0, to=1, length.out=1000) # parameter values vector
@@ -703,7 +703,7 @@ ppd <- rbinom(10000, size = 9, prob = samples) # simulate observations to get th
 hist(ppd)
 ```
 
--   [Example]{.ribbon-highlight}: brms way
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: brms way
 
 ```         
 b3.1 <-
@@ -758,7 +758,7 @@ f %>% 
 
     -   The prior distribution takes the place of the posterior density in this case
 
--   For a continuous distribution, see Ch 4 \>\> Prior Predictive Distribution example
+-   For a continuous distribution, see Ch 4 \>\> Prior Predictive Distribution [Example]{.ribbon-highlight}
 
 -   Model fit
 
@@ -774,21 +774,21 @@ f %>% 
     -   GOF Question: If we were to make predictions about the most probable p using this model, how consistent is our model with the data?
         -   Answer: if the shape of the PPD matches the shape of the sampled posterior distribution, then the model is consistent with the data. (i.e. good fit)
 
-Chapter 4 - Linear Models, CIs, Splines
+## Chapter 4 - Linear Models, CIs, Splines
 
 -   Gaussian Distribution
-    -   Good toy example that explains the shape of a Normal distribution
-        -   1000 people stand at the 50 yd line and flip a coin 16 times (doesn't seem like a lot). Tails move one step left, heads move one step right. The shape of the people after the 16 flips will be a bell curve. If you picture people zigging left and right after flips, there are more possible sequences of flips that end with the person back where they started at the 50 yd line than say, for example, at the 30 yd line (either goal). Therefore, ending up at the 50 yd line is most probable.
+    -   Good toy [Example]{.ribbon-highlight} that explains the shape of a Normal distribution
+        -   1000 people stand at the 50 yd line and flip a coin 16 times (doesn't seem like a lot). Tails move one step left, heads move one step right. The shape of the people after the 16 flips will be a bell curve. If you picture people zigging left and right after flips, there are more possible sequences of flips that end with the person back where they started at the 50 yd line than say, for [Example]{.ribbon-highlight}, at the 30 yd line (either goal). Therefore, ending up at the 50 yd line is most probable.
             -   Reminds me of how there is only one way for your ear bud wires not to be tangled and many, many more ways for them to be tangled.
     -   Additive effects make convergence to a Gaussian inevitable - Each flip can be thought of as a fluctuation from the average of the distribution with large positive fluctuations cancelling out large negative fluctuations. The more samples taken (flips), the more opportunities for fluctuations of varying sizes and sign to be paired with a fluctuation of equal size and opposite sign , resulting in a cancellation and a final sum of zero. Therefore, normality emerges as sample sizes get larger. The speed at which the sampling distribution converges to normality depends on the underlying data generating distribution.
     -   Small multiplicative effects converge to a Gaussian - if the effect of interaction is a small percent (e.g. between 0 and 10% increase/decrease) then the resulting product of fluctuations converges to a Gaussian distribution as well. Small multiplicative effects can be well approximated additively.
     -   The log of large multiplicative effects converge to a Gaussian - if the effect of interactions is a large percent (e.g. 10-50% increase/decrease), then the product of the fluctuations are Gaussian on the log-scale (Log-Normal).
 -   See General Notes -\> Notation:  for the notation and syntax used in model specification
 -   It's a good idea to plot your priors to get a sense of the assumptions in your model.
-    -   [Example]{.ribbon-highlight}: `curve(dunif( x, 0, 50), from = -10,  to = 60)`  for σ \~ Uniform( 0, 50 ) constrains the σ to have a positive probability from 0 to 50 cm for a height outcome variable
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: `curve(dunif( x, 0, 50), from = -10,  to = 60)`  for σ \~ Uniform( 0, 50 ) constrains the σ to have a positive probability from 0 to 50 cm for a height outcome variable
 -   Prior Predictive Distribution
     -   Priors can be previous posterior distributions, so they can be sampled in order to see the *expected distribution*, averaged over the priors, which is a distribution of relative plausibilities before seeing the data.
-    -   Example: height \~ 1![](./_resources/Untitled_Note.resources/unnamed-chunk-27-1.png)
+    -   [Example]{.ribbon-highlight}: height \~ 1![](./_resources/Untitled_Note.resources/unnamed-chunk-27-1.png)
 
 ```         
 sample_mu <- rnorm(1e4, 178, 20) # where mean = 178 and sigma = 20
@@ -852,7 +852,7 @@ plot(b4.1)
         -   The marginal distribution for mu means the plausibility of each value of mu, after averaging over the plausibilities of each value of sigma.
             -   The "averaging over" effect can be seen in the marginal distribution of sigma if you change the the prior for mu to normal(178, 0.1). The posterior estimate for mu will hardly move off the prior, but the estimate for sigma will move quite a bit from before, since the plausibilities for each value of mu changed. ![](./_resources/Untitled_Note.resources/unnamed-chunk-51-1.png)
                 -   So the posterior density for sigma gets more squatted and widens with that narrow mu prior. The right tail lengthens as well.
-                -   I think this is an example of how the marginal distribution of sigma is affected by mu since it has been averaged over the values of mu.
+                -   I think this is an [Example]{.ribbon-highlight} of how the marginal distribution of sigma is affected by mu since it has been averaged over the values of mu.
 -   `posterior_summary`  just gives the estimates, errors, CIs in a matrix object
 -   `posterior_samples`  extracts samples from the posterior for each parameter
     -   extracts samples HMC chains
@@ -867,7 +867,7 @@ plot(b4.1)
     -   ![](./_resources/Untitled_Note.resources/unknown_filename.16.png)
         -   Extremely weak prior
 -   Model
-    -   [Example]{.ribbon-highlight} single variable regression where height is the outcome and weight the predictor
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight} single variable regression where height is the outcome and weight the predictor
         -   hi \~ Normal(μ, σ)
         -   μi = α + βxi
         -   α \~ Normal(178, 100)
@@ -936,7 +936,7 @@ posterior_samples(b4.4) %>%
     -   The posterior distribution is a distribution about all possible combinations of α and β  with an assigned plausibility for each combination.
         -   Each combo can fit a line. A plot of these regression lines is an intuitive representation of the uncertainty. The CI for a regression line. 
     -   Interpretation of HDPI when x = x0
-        -   [Example]{.ribbon-highlight}: Given a person's weight = 50kg, what does an 89% HDPI around our model's height prediction mean?
+        -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Given a person's weight = 50kg, what does an 89% HDPI around our model's height prediction mean?
             -   "The central 89% of the ways for the model to produce the data place the average height between about 159cm and 160cm (conditional on the model and data), assuming a weight of 50kg."
 
 ```         
@@ -958,7 +958,7 @@ mu_at_50 %>%
 ```
 
 -   Confidence Interval - repeating the calculation for every x0 will give you the regression line CI
-    -   [Example]{.ribbon-highlight} brms regression line CI
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight} brms regression line CI
 
 ```         
 # x value (weight) range we want for the CI of the line
@@ -992,7 +992,7 @@ theme(text = element_text(family = "Times"),
         1.  Generate the range/number of weights (predictor variable) you want a PI for
         2.  Sample σ, α, and β from the posterior distribution the same number of times as the number of weights in your range
         3.  simulate the heights from a gaussian distribution (think rnorm) using the weights (along with α and β) in a linear expression for mean argument and the standard deviations from the posterior (see details in book)
-    -   [Example]{.ribbon-highlight} PI and CI around regression line![](./_resources/Untitled_Note.resources/unnamed-chunk-101-1.png)
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight} PI and CI around regression line![](./_resources/Untitled_Note.resources/unnamed-chunk-101-1.png)
 
 ```         
 # 95% PIs generated by default
@@ -1031,21 +1031,21 @@ dat %>%  ggplot(aes(x = weight)) +
                 -   B values turn on/off weights in different regions
             -   w is the parameter estimate (negative or positive) used to adjust the influence of the basis function on µ
                 -   This value adjusts the height of each basis function in its region relative to an intercept
-                    -   The intercept is depicted in fig in the example below as horizontal solid black line (y = 0) in the first 2 facets and a dotted line in the bottom facet.
-    -   [Example]{.ribbon-highlight}: Temperature vs Time![](./_resources/Untitled_Note.resources/Screenshot%20(87).png)
+                    -   The intercept is depicted in fig in the [Example]{.ribbon-highlight} below as horizontal solid black line (y = 0) in the first 2 facets and a dotted line in the bottom facet.
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Temperature vs Time![](./_resources/Untitled_Note.resources/Screenshot%20(87).png)
         -   "+" indicates a knot (pivot point); there is a (linear in this case) basis function for each knot
         -   At year 1306, *only* basis functions B2 and B3 are turned on. w2 and w3 weight the value of each basis function to best fit the mean temperature of that year
             -   Unlike polynomial regression, where parameters influence the entire shape of the curve.
-    -   The fit in the example isn't very good. 2 ways to improve:
+    -   The fit in the [Example]{.ribbon-highlight} isn't very good. 2 ways to improve:
         1.  Add more knots which essentially adds more basis functions
-            -   Might be useful to place knots at different evenly-spaced quantiles of the predictor variable. For example, you might use 0%, 25%, 50%, 75%, and 100%.
+            -   Might be useful to place knots at different evenly-spaced quantiles of the predictor variable. For [Example]{.ribbon-highlight}, you might use 0%, 25%, 50%, 75%, and 100%.
                 -   e.g. using 15 knots would mean 3 knots at each quantile
         2.  Use polynomial basis functions
             -   The higher the degree of polynomial means the more basis functions turned of a particular point
                 -   degree 1 (linear): 2 basis functions turned on per point, 1 basis function per knot
                 -   degree 2 (quadratic): 3 basis functions turned on per point, 1 basis function per knot + 1
                 -   degree 3 (cubic): 4 basis functions turned on per point, 1 basis function per knot + 2
-    -   [Example]{.ribbon-highlight}: 15 knots at 5 quantiles, cubic basis functions![](./_resources/Untitled_Note.resources/Screenshot%20(88).png)
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: 15 knots at 5 quantiles, cubic basis functions![](./_resources/Untitled_Note.resources/Screenshot%20(88).png)
         -   Model specification![](./_resources/Untitled_Note.resources/ql_1ce75c1d952219fd5f6d8db1e3984252_l3.png)
 
 ```         
@@ -1099,7 +1099,7 @@ ggplot(b4.11_fits, aes(x = year, y = temp, ymin = Q2.5, ymax = Q97.5)) +
 -   I'm more comfortable with the single-level method, but I'd probably choose the multi-level method based on the SEs.
 -   See scrapsheet.R in Statistical Rethinking directory for code. A comparison between the two methods estimates shown in a chart is also there.
 
-Chapter 5 - Multivariable Linear Models, Diagnostic Plots, Categoricals, DAGs
+## Chapter 5 - Multivariable Linear Models, Diagnostic Plots, Categoricals, DAGs
 
 -   Useful because:
     -   Statistical "control" for confounds. A **confound** is something that misleads us about a causal influence. They can hide real important variables just as easily as they can produce false ones.
@@ -1120,7 +1120,7 @@ Chapter 5 - Multivariable Linear Models, Diagnostic Plots, Categoricals, DAGs
         -   Super flat priors here, see below for better ones
 -   Question answered from a multivariate regression with two predictors
     -   What is the predictive value of this variable, once I know the other predictor variable(s)?
-    -   Example: Outcome = Divorce rate (D),a Predictor 1 = state's median marriage age (A), Predictor 2 = state's marriage rate (M)
+    -   [Example]{.ribbon-highlight}: Outcome = Divorce rate (D),a Predictor 1 = state's median marriage age (A), Predictor 2 = state's marriage rate (M)
         -   After already knowing the marriage rate, what additional value is there in knowing the median age at marriage?
         -   After already knowing the median age of marriage, what additional value is there in knowing the marriage rate?
 -   μi = α + β1MedianAgeMarriage_si + β2Marriage_si
@@ -1168,7 +1168,7 @@ ggplot(aes(x = value, y = reorder(key, value))) +
 -   m5.1: D \~ α + βA![](./_resources/Untitled_Note.resources/Screenshot%20(94).png)
     -   The positive effect of marriage rate disappears after adjusting for median age
     -   Interpretation: Once we know median age at marriage for a State, there is little or no additional predictive power in also knowing the rate of marriage in that State.
--   2nd ed explains DAGs and **conditional independencies** using this example. See [Causal Inference](Causal%20Inference) \>\> Statistical Rethinking
+-   2nd ed explains DAGs and **conditional independencies** using this [Example]{.ribbon-highlight}. See [Causal Inference](Causal%20Inference) \>\> Statistical Rethinking
 -   3 types of inferential plots
     -   Predictor Residual plots - Shows outcome vs residual predictor values
         -   It's a clever multi-variable version of the typical observed response vs observed predictor scatter plot plus fitted regression line.
@@ -1249,7 +1249,7 @@ r %>%
         -   Reminder: The slope of lines are coefficients in the multi-regression model. These charts illustrate how those models are measuring the left-over variation of a predictor's linear relationship with the response after the other predictors' values are known.
 -   Counterfactual plots - Shows the implied predictions for imaginary experiments in which the different predictor variables can be changed independently of one another
     -   Shows how predictions change as you change only one predictor at a time.
-    -   2-stage process (See example): Input each value of the predictor of interest into an assumed causal model to get the values of the other predictors. Then, fit the multi-regression model to get the predictions.
+    -   2-stage process (See [Example]{.ribbon-highlight}): Input each value of the predictor of interest into an assumed causal model to get the values of the other predictors. Then, fit the multi-regression model to get the predictions.
         -   1st Stage: Association of predictor variable of interest is regressed out of each predictor variable and predictions are calculated from these models.
         -   2nd Stage:  The final regression model uses these predicted values as inputs for all the predictors *except* the predictor of interest
     -   Similar to a partial dependence plot, except for the causal model being used to calculate values of the other predictors.
@@ -1257,7 +1257,7 @@ r %>%
         -   Both probably end up in a very similar place but the counterfactual plots sounds much less computationally intensive.
     -   The scale is that of the data unlike the Predictor Residual plot
     -   Plot can visualize unrealistic scenarios, so must be careful with interpretation.
-    -   [Example]{.ribbon-highlight}: How does Divorce Rate (D) (outcome) change when we change Median Age at Marriage (predictor) values? Assumed causal model: ![](./_resources/Untitled_Note.resources/Screenshot%20(98).png)
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: How does Divorce Rate (D) (outcome) change when we change Median Age at Marriage (predictor) values? Assumed causal model: ![](./_resources/Untitled_Note.resources/Screenshot%20(98).png)
         -   m_model is the relationship between Median Age of Marriage (A) and State Marriage Rate (M) in the causal model. The values of the predictor of interest, A, will be used in this model to get the values of the other predictor, M.
         -   d_model uses the values of A and the modeled values of M to calculate the estimated values of D.
 
@@ -1332,7 +1332,7 @@ p1 + p2 + plot_annotation(title = "Counterfactual plots for the multivariate div
 
 -   This predicted trend in D include both paths: A → D and A → M → D. (left side)![](./_resources/Untitled_Note.resources/Screenshot%20(107).png) As the multi-regression showed, marriage rate, m, has little influence on d. Might be why we see little difference in this graphs.
 
--   [Example]{.ribbon-highlight}: What is the expected causal effect of increasing median age at marriage from 20 to 30?
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: What is the expected causal effect of increasing median age at marriage from 20 to 30?
 
 ```         
 nd <- tibble(a = (c(20, 30) - 26.1) / 1.24,
@@ -1347,7 +1347,7 @@ predict(b5.3_A,
   summarise(mean = mean(difference))
 ```
 
--   [Example]{.ribbon-highlight}: How does Divorce Rate (outcome) change when we change values of Marriage Rate (predictor)? The arrow A → M is deleted, because if we control the values of M, then A no longer influences it ![](./_resources/Untitled_Note.resources/Screenshot%20(108).png)
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: How does Divorce Rate (outcome) change when we change values of Marriage Rate (predictor)? The arrow A → M is deleted, because if we control the values of M, then A no longer influences it ![](./_resources/Untitled_Note.resources/Screenshot%20(108).png)
 
 ```         
 # see comments above
@@ -1445,7 +1445,7 @@ residuals(b5.3) %>%
         -   multi-variable regression result
             -   pred_var1's negative estimated effect on the outcome will increase as compared to its estimated effect in a bivariable regression
             -   pred_var2's positive estimated effect on the outcome will increase as compared to its estimated effect in a bivariable regression
-        -   [Example]{.ribbon-highlight}
+        -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}
             -   K (outcome) = mother's milk kilocalories
             -   M (pred_var1) = log(Body Mass)
             -   N (pred_var2) = Neocortex percent
@@ -1469,13 +1469,13 @@ residuals(b5.3) %>%
             4.  Multi-level models can use information across categories
         -   Including a categorical (no interaction) allows the model to predict different means for each category/level.
     -   Binary
-        -   ❌ Example with the categorical variable as an indicator variable
+        -   ❌ [Example]{.ribbon-highlight} with the categorical variable as an indicator variable
             -   hi ∼ Normal(µi, σ) µi = α + βmmi α ∼ Normal(178, 20) βm ∼ Normal(0, 10) σ ∼ Uniform(0, 50)
                 -   h = height, m = sexmale
                 -   βm represents the expected difference between males and females in height
                 -   α is the average female height
             -   The problem with this method is that male has two parameters, α and βm, associated with it and therefore twice the uncertainty as compared to female which only has α.
-        -   ✔ Example with the categorical variable as an index variable
+        -   ✔ [Example]{.ribbon-highlight} with the categorical variable as an index variable
             -   hi ∼ Normal(µi , σ) µi = αsex\[i\] αj ∼ Normal(178, 20) , for j = 1 & 2 σ ∼ Uniform(0, 50)
                 -   results in two α parameters, one for each sex, and both can use the same prior. Therefore, both sexes have the same uncertainty. 
             -   Always been taught that this approach inherently orders the categories, e.g. since 2 \> 1, but I guess this is kosher is bayesian models
@@ -1654,14 +1654,14 @@ posterior_samples(b5.8) %>% 
 
 -   Visualizing contrasts
 
-    -   [Example]{.ribbon-highlight}: Posterior Mean Contrast (1 predictor) (From [Lecture 4](https://youtu.be/QiHKdvAbYII)) ![](./_resources/Untitled_Note.resources/Screenshot%20(709).png)
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Posterior Mean Contrast (1 predictor) (From [Lecture 4](https://youtu.be/QiHKdvAbYII)) ![](./_resources/Untitled_Note.resources/Screenshot%20(709).png)
         -   Weight was the response with height and sex as predictors
             -   Contrast is Male - Female
         -   Calculation is show above
         -   Model: W \~ S in order the measure the *total* causal effect (also see [Causal Inference](Causal%20Inference) \>\> Statistical Rethinking \>\> Misc)  of Sex on Weight
         -   Interpretation: The difference in mean weights between the sexes is likely around 6.8 kg but could potentially be from \~5 to \~8.5
         -   Posterior means for each sex![](./_resources/Untitled_Note.resources/Screenshot%20(709).1.png)
-    -   [Example]{.ribbon-highlight}: Posterior Predictive Contrast (1 predictor) (From [Lecture 4](https://youtu.be/QiHKdvAbYII))![](./_resources/Untitled_Note.resources/Screenshot%20(708).png)
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Posterior Predictive Contrast (1 predictor) (From [Lecture 4](https://youtu.be/QiHKdvAbYII))![](./_resources/Untitled_Note.resources/Screenshot%20(708).png)
         -   Contrast of the individual gender category PPDs
         -   Weight was the response with height and sex as predictors
             -   Contrast is Male - Female
@@ -1681,7 +1681,7 @@ female_prop <- sum(W_contrast < 0) / 1000
     -   The reason for the conflicting results in the posterior is that there are likely other causal influences that can affect difference in weights between men and women
         -   This is indicated by the overlap of the individual ppds![](./_resources/Untitled_Note.resources/Screenshot%20(708).1.png)
         -   These are distributions of female and male weights we expect to see in the wild given the model and these data
--   [Example]{.ribbon-highlight}: Posterior Mean Contrast vs Predictor (2 predictors) (From [Lecture 4](https://youtu.be/QiHKdvAbYII))![](./_resources/Untitled_Note.resources/Screenshot%20(704).png)
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Posterior Mean Contrast vs Predictor (2 predictors) (From [Lecture 4](https://youtu.be/QiHKdvAbYII))![](./_resources/Untitled_Note.resources/Screenshot%20(704).png)
     -   Weight was the response with height and sex as predictors
         -   Contrast is Female - Male
     -   Model: W \~ S + H in order the measure the *direct* causal effect (also see [Causal Inference](Causal%20Inference) \>\> Statistical Rethinking \>\> Misc)  of Sex on Weight
@@ -1691,7 +1691,7 @@ female_prop <- sum(W_contrast < 0) / 1000
             -   As height increases women tend to be heavier than men
         -   Tilt suggests "most of the causal influence of sex on weight goes through height" (not sure why this is the case)
 
-Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias
+## Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias
 
 -   Comparing the parameter of interest's posterior density to its prior will tell you how much information your data is providing
     -   If the posterior density is similar to the prior, then the data is not providing much information.
@@ -1709,10 +1709,10 @@ Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias
         -   The predictions estimated by the model will be fine, but there can be no inference drawn from the parameter estimates.
         -   In the case of strongly, negatively correlated predictors that are oppositely correlated with the outcome, the effect estimates for each predictor shrink to/near zero and therefore each may be a good predictor, but including both is redundant. (sect 5.3.2 1st ed; 6.1.2 2nd ed).
             -   "And what matters isn't just the correlation between a pair of variables. Rather, what matters is the correlation that remains after accounting for any other predictors."
-        -   \*\* Also see Ch 11 \>\> (last one) Example: "aggregated binomial" regression (**unbalanced** number of trials) \>\> over-parameterization
+        -   \*\* Also see Ch 11 \>\> (last one) [Example]{.ribbon-highlight}: "aggregated binomial" regression (**unbalanced** number of trials) \>\> over-parameterization
         -   Solutions
             -   Identifying and *automatically* dropping highly correlated predictors is a mistake. Pairwise correlations are not the problem. It is the conditional associations---not correlations---that matter. And even then, the right thing to do will depend upon what is causing the collinearity. The associations within the data alone are not enough to decide what to do.
-                -   [Example]{.ribbon-highlight}: Thinking the situation through causally in order to deal with multicollinearity![](./_resources/Untitled_Note.resources/Screenshot%20(113).png)
+                -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Thinking the situation through causally in order to deal with multicollinearity![](./_resources/Untitled_Note.resources/Screenshot%20(113).png)
                     -   L, F, and K are highly correlated with each other and therefore have a multicollinearity issue when used in a multivariate regression.
                     -   Unobserved Density, D, influences both lactose, L, and Fat, F.
                     -   Regressing Kilocalorie, K, only on D and dropping L and F solves the multicollinearity problem.
@@ -1724,7 +1724,7 @@ Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias
             -   i.e. the values of the variable are a result after treatment has been applied
         -   Bad for causation but not necessarily bad for prediction (sect. 7.5, pg 232)
             -   "...a useful measure of the expected improvement in prediction that comes from conditioning on the fungus. Although the treatment works, it isn't 100% effective, and so knowing the treatment is no substitute for knowing whether fungus is present."
-        -   [Example]{.ribbon-highlight} (adjusting for F masks the treatment effect)
+        -   [[Example]{.ribbon-highlight}]{.ribbon-highlight} (adjusting for F masks the treatment effect)
             -   You want to know the difference in growth under different anti-fungal soil treatments, because fungus on the plants tends to reduce their growth.
                 -   Plants are initially seeded and sprout.
                 -   Their heights are measured.
@@ -1783,7 +1783,7 @@ brm(data = d, 
         -   H1 \~ Normal (μi, σ) μi = H0 ⨯ pi pi = α + βTTi
 
         -   See above for the brms model specification (although includes F) and definition of terms
--   [Example]{.ribbon-highlight} (adjusting for F unmasks the treatment effect)
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight} (adjusting for F unmasks the treatment effect)
     -   Same but Moisture, M,  (unobserved) influences both Fungus, F, and Final Height, H![](./_resources/Untitled_Note.resources/Screenshot%20(116).png)
     -   A regression of H1 on T will show no association between the treatment and plant growth. But if we include F in the model, suddenly there will be an association.
     -   Fungus confounds inference about the treatment, this time by making it seem like having Fungus helped the plants, even though it had no effect.
@@ -1791,24 +1791,24 @@ brm(data = d, 
 -   Collider Bias
     -   When you condition on a collider, it induces statistical---but not necessarily causal--- associations among its causes.
         -   Although, the variables involved may be useful for predictive models as the backdoor paths do provide valid information about statistical associations within the data
-    -   [Example]{.ribbon-highlight} (non-misleading)![](./_resources/Untitled_Note.resources/Screenshot%20(120).png)
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight} (non-misleading)![](./_resources/Untitled_Note.resources/Screenshot%20(120).png)
         -   Adjusting for S (collider) induces an association between T and N.
         -   Once you learn that a grant proposal has been selected (S), then learning its trustworthiness (T) (i.e. the rigorousness of the experimental design) also provides information about its newsworthiness (N) (i.e. importance of the experiment to the public).
             -   We only see the selected grants not the failed grant proposals (i.e. selection bias, adjusting by S), so while there is no association between T and N in the population, if we look at the subset of selected grants (S), we will see an association.
-    -   [Example]{.ribbon-highlight} (misleading)![](./_resources/Untitled_Note.resources/Screenshot%20(121).png)
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight} (misleading)![](./_resources/Untitled_Note.resources/Screenshot%20(121).png)
         -   Colliders, by inducing a statistical association, can also lead to misleading inferences.
         -   (fictitious scenario) Happiness, H, and Age, A, are independent of one another, but are influences of Marriage, M.
         -   Adjusting for M (collider) induces a spurious association between H and A which would lead to the false inference that Happiness changes with Age
         -   Once we know whether someone is married or not, then their age does provide information about how happy they are. But this is a statistical association and not a causal association.
 -   More DAGS (sections 6.3 and 6.4)
-    -   See My Appendix for discussion on section 6.3's more advance Simpson's Paradox example
-        -   Simpson's Paradox is a statistical phenomenon where adding a conditioning variable(s) changes the effect and interpretation of the variable of interest. The variables that are causing the change are adding backdoor paths. So, the scientific question and its DAG determine causality. An example of why you just can't keep adding control variables.
+    -   See My Appendix for discussion on section 6.3's more advance Simpson's Paradox [Example]{.ribbon-highlight}
+        -   Simpson's Paradox is a statistical phenomenon where adding a conditioning variable(s) changes the effect and interpretation of the variable of interest. The variables that are causing the change are adding backdoor paths. So, the scientific question and its DAG determine causality. An [Example]{.ribbon-highlight} of why you just can't keep adding control variables.
     -   See [Causal Inference](Causal%20Inference) note
-        -   Statistical Rethinking \>\> Shutting the Backdoor - details and examples for "shutting the backdoor" to confounding paths
+        -   Statistical Rethinking \>\> Shutting the Backdoor - details and [Example]{.ribbon-highlight}s for "shutting the backdoor" to confounding paths
         -   Handling unobserved confounds
             -   Misc \>\> Partial Identification
-            -   Structural Causal Models \>\> (Bayesian) Examples
-    -   See the book's 2nd example (Waffle House and Divorce) for good walkthrough on designing a DAG
+            -   Structural Causal Models \>\> (Bayesian) [Example]{.ribbon-highlight}s
+    -   See the book's 2nd [Example]{.ribbon-highlight} (Waffle House and Divorce) for good walkthrough on designing a DAG
     -   \*\* The data alone can never tell us when a DAG is right. But the data can tell us when a DAG is wrong.\*\*
         -   e.g. testing conditional independencies of a DAG with the data can invalidate a DAG.
         -   Me: Experiment and theory are needed to also prove a DAG is right.
@@ -1820,7 +1820,7 @@ brm(data = d, 
         -   These models can still be analyzed and have causal interventions designed from them.
     -   Multivariable regression models describe conditional associations, not causal influences. Therefore additional information, from outside the model, is needed to make sense of it (e.g. the DAG/causal model).
 
-Chapter 7 - Information Theory, Prediction Metrics, Model Comparison
+## Chapter 7 - Information Theory, Prediction Metrics, Model Comparison
 
 -   overfitting and underfitting
     -   Polynomial fits can result in overfitting
@@ -1843,7 +1843,7 @@ Chapter 7 - Information Theory, Prediction Metrics, Model Comparison
     -   where there are n different possible events and each event i has probability pi
     -   The smaller the probability of an event, pi, the larger the uncertainty, H, is.
     -   A precise definition of "uncertainty" with which we can provide a baseline measure of how hard something is to predict, as well as how much improvement is possible.
-    -   Example (information entropy for the weather):
+    -   [Example]{.ribbon-highlight} (information entropy for the weather):
         -   If true probabilities of rain and shine are p1 = 0.3 and p2 = 0.7, respectively H(p) = − (p1 log(p1) + p2 log(p2)) ≈ 0.6
 
         -   If true probabilities of rain and shine are p1 = 0.01 and p2 = 0.99, respectively H(p) = − (p1 log(p1) + p2 log(p2)) ≈ 0.06
@@ -1920,7 +1920,7 @@ sum(lppd)
         -   type of skeptical prior
         -   When tuned properly, reduces overfitting while still allowing the model to learn the regular features of a sample.
             -   Too skeptical results in underfitting
-        -   Examples: (all sd values are considered to be skeptical)![](./_resources/Untitled_Note.resources/Screenshot%20(144).png)
+        -   [Example]{.ribbon-highlight}s: (all sd values are considered to be skeptical)![](./_resources/Untitled_Note.resources/Screenshot%20(144).png)
             -   prior β ∼ Normal(0, 1) says the machine should be very skeptical of values above 2 and below −2
                 -   a Gaussian prior with a standard deviation of 1 assigns only 5% plausibility to values above and below 2 standard deviations.
                 -   Because the predictor variable x is standardized, you can interpret this as meaning that a change of 1 standard deviation in x is very unlikely to produce 2 units of change in the outcome.
@@ -2146,7 +2146,7 @@ loo(b8.3) %>% loo::pareto_k_table()
                     -   As v --\> 1+ , tails start becoming fat
                     -   ν can be estimated with very large datasets that have plenty of rare events
 
-Chapter 8 - Interactions
+## Chapter 8 - Interactions
 
 -   Interactions estimate the association between a predictor and an outcome when that association depends upon the value of another predictor.
     -   Can't be shown in DAGs
@@ -2157,12 +2157,12 @@ Chapter 8 - Interactions
         -   Indexing keeps the estimate's uncertainty (i.e. std.errors) the same for each category (see ch 5 \>\> categoricals for details).
             -   Since the uncertainty will be the same for all the categories with indexing, it's easier make sensible priors for the variable's parameter
                 -   Also, 1 prior can be used for all categories.
-        -   [Example]{.ribbon-highlight}: ruggedness x gid (cont x cat) interaction (also see below)
+        -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: ruggedness x gid (cont x cat) interaction (also see below)
             -   Traditional (sort of, it's algabraically manipulated some)![](./_resources/Untitled_Note.resources/Screenshot%20(878).png)
                 -   After moving (r-r_bar) inside the parenthesis, γ is the interaction coefficient
             -   Indexing![](./_resources/Untitled_Note.resources/Screenshot%20(877).png)
                 -   The CID subscript shows that both the intercept and the slope are indexed by CID.
-        -   Indexing just reparameterizes the model output (See continuous x categorical example for details)
+        -   Indexing just reparameterizes the model output (See continuous x categorical [Example]{.ribbon-highlight} for details)
             -   Instead of contrasts with the traditional specification, you get marginal means (intercepts) and marginal effects (interaction slopes) with the indexing specification
             -   See [Regression, Interactions](Regression,%20Interactions) \>\> Terms for definitions of marginal means and marginal effects
 -   Interaction between a continuous predictor and a categorical predictor
@@ -2209,7 +2209,7 @@ b_cid1    0.13      0.08    -0.02    0.28 1.00    4156    2613
 b_cid2    -0.14      0.05    -0.25    -0.03 1.00    4112    2957
 ```
 
--   Can also use a syntax shortcut, `a + b ~ 0 + cid` instead of separate equations (see Ch. 11, Poisson example)
+-   Can also use a syntax shortcut, `a + b ~ 0 + cid` instead of separate equations (see Ch. 11, Poisson [Example]{.ribbon-highlight})
 
 -   Traditional Specification
 
@@ -2251,7 +2251,7 @@ marginaleffects(stan_mod) %>%
         -   a 1 unit increase in ruggedness results in a 0.13 increase in log GDP on average.
 -   Interactions are symmetric
     -   Normally we interpret the interaction as the association of the continuous predictor varying by or conditioned on the categorical predictor, but the reverse is also valid.
-    -   Example: the difference in expected log GDP between a nation in Africa and outside Africa, conditional on geographical ruggedness
+    -   [Example]{.ribbon-highlight}: the difference in expected log GDP between a nation in Africa and outside Africa, conditional on geographical ruggedness
         -   i.e. interpreting model output where it's the association between log GDP and Africa/non-Africa that's conditional on ruggedness
     -   Counterfactual plot
 
@@ -2366,7 +2366,7 @@ rbind(fitted(b8.4, newdata = nd, summary = F, nsamples = 20),
 
 -   Choosing facet values: generally, you might use a representative low value, the median, and a representative high value or quantile values for the facets.
 
-Chapter 9 - MCMC
+## Chapter 9 - MCMC
 
 -   The search for a sampling algorithm that can produce a good description of the posterior in the fewest amount of samples of the joint posterior distribution.
 -   Quadratic approximation, `quap( )`, assumes the posterior is a multivariate gaussian. These algorithms allow us to drop that assumption.
@@ -2442,7 +2442,7 @@ Chapter 9 - MCMC
                     -   "assesses how well the centre of the distribution is resolved"
                         -   i.e. measures how well HMC sampled the posterior around the bulk of the distribution in order to determine its shape.
                     -   When value is much lower than the actual number of iterations (minus warmup) of your chains, it means the chains are inefficient, but possibly still okay
-                        -   In the example, 2000 total samples with 1000 of those used for warm-up which is brms default. 4 chains x 1000 samples = 4000 post-warm-up samples. So for each parameter, the ESS should be around that or above
+                        -   In the [Example]{.ribbon-highlight}, 2000 total samples with 1000 of those used for warm-up which is brms default. 4 chains x 1000 samples = 4000 post-warm-up samples. So for each parameter, the ESS should be around that or above
                 -   **Tail_ESS** - effective sample size in the tails of the posterior
                     -   i.e. measures how well HMC sampled the posterior in the tails of the distribution in order to determine their shape.
                     -   estimates the Monte Carlo Standard Error (MCSE) for samples in posterior tails
@@ -2476,7 +2476,7 @@ bayesplot::mcmc_trace(post[, c(1:5, 7)],  # we need to include column 7 because
       theme(legend.position = c(.95, .2))
 ```
 
--   Also see issues section below for example of bad trace plots
+-   Also see issues section below for [Example]{.ribbon-highlight} of bad trace plots
 
 -   Each parameter gets it's own plot which shows all the chains together
 
@@ -2511,7 +2511,7 @@ post %>% 
       theme(legend.position = c(.95, .2))
 ```
 
--   Also see issues section below for example of bad trank plots
+-   Also see issues section below for [Example]{.ribbon-highlight} of bad trank plots
 -   Rank all the samples for each individual parameter. Lowest sample gets rank = 1. Then make a histogram for each chain.
 -   All histograms should look similar, overlap, and stay within the same range.
     -   If a chain is consistently above or below the other chains, then that's an issue
@@ -2539,7 +2539,7 @@ post %>% 
         -   Final Run
             -   Only need 1 chain
                 -   Good since within chain parallelization is now possible with brms
-            -   [Example]{.ribbon-highlight}:
+            -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}:
                 -   We find out we need 1000 warmup samples and about 9000 real samples in total.
                 -   Equivalent settings
                     1.  warmup=1000 and iter=10000
@@ -2553,7 +2553,7 @@ post %>% 
         -   *Most often caused by flat priors with not enough data*
         -   Occurs when there are broad, flat regions of the posterior density.
         -   Erratically samples extremely positive and extremely negative parameter values
-        -   [Example]{.ribbon-highlight}
+        -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}
             -   priors: alpha \~ dnorm( 0 , 1000 ) , sigma \~ dexp( 0.0001 )
 
 ```         
@@ -2590,11 +2590,11 @@ brms::pairs(b9.2, 
 -   Non-identifiable parameters
     -   *Likely caused by highly correlated predictors*
     -   Often, a model that is very slow to sample is under-identified.
-    -   [Example]{.ribbon-highlight} (bad) priors: a1 \~ dnorm( 0 , 1000 ), a2 \~ dnorm( 0 , 1000 ) ![](./_resources/Untitled_Note.resources/Screenshot%20(193).png)
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight} (bad) priors: a1 \~ dnorm( 0 , 1000 ), a2 \~ dnorm( 0 , 1000 ) ![](./_resources/Untitled_Note.resources/Screenshot%20(193).png)
     -   Solution
         -   weakly informative priors again: a1 \~ dnorm( 0 , 10 ), a2 \~ dnorm( 0 , 10 )
 
-Chapter 10 - GLM Concepts
+## Chapter 10 - GLM Concepts
 
 -   The principle of maximum entropy provides an empirically successful way to choose likelihood functions. Information entropy is essentially a measure of the number of ways a distribution can arise, according to stated assumptions. By choosing the distribution with the biggest information entropy, we thereby choose a distribution that obeys the constraints on outcome variables, without importing additional assumptions. Generalized linear models arise naturally from this approach, as extensions of the linear models in previous chapters.
 -   The **maximum entropy distribution** is the one with the greatest information entropy (i.e. log number of ways per event) and is the most plausible distribution.
@@ -2648,15 +2648,15 @@ Chapter 10 - GLM Concepts
         -   solves the problem of constraining the parameter to be positive, it may also create a problem when the model is asked to predict well outside the range of data used to fit it.
             -   Eventually there's a ceiling or change from the exponential behavior.
                 -   e.g. the property damage caused by a hurricane may be approximately exponentially related to wind speed for smaller storms. But for very big storms, damage may be capped by the fact that everything gets destroyed.
--   Aside (Histomancy): at most what a Gaussian likelihood assumes is not that the aggregated data look Gaussian, but rather that the residuals, after fitting the model, look Gaussian. So for example the combined histogram of male and female body weights is certainly not Gaussian. But it is (approximately) a mixture of Gaussian distributions. So after conditioning on sex, the residuals may be quite normal. Other times, people decide not to use a Poisson model, because the variance of the aggregate outcome exceeds its mean (see Chapter 11). But again, at most what a Poisson likelihood assumes is that the variance equals the mean after conditioning on predictors.
+-   Aside (Histomancy): at most what a Gaussian likelihood assumes is not that the aggregated data look Gaussian, but rather that the residuals, after fitting the model, look Gaussian. So for [Example]{.ribbon-highlight} the combined histogram of male and female body weights is certainly not Gaussian. But it is (approximately) a mixture of Gaussian distributions. So after conditioning on sex, the residuals may be quite normal. Other times, people decide not to use a Poisson model, because the variance of the aggregate outcome exceeds its mean (see Chapter 11). But again, at most what a Poisson likelihood assumes is that the variance equals the mean after conditioning on predictors.
 -   Omitted Variable Bias
     -   can be worse in GLMs, because even a variable that isn't technically a confounder can bias inference, once we have a link function. The reason is that the ceiling and floor effects can distort estimates by suppressing the causal influence of a variable
         -   e.g. A unit change in a predictor variable no longer produces a constant change in the mean of the outcome variable. Instead, a unit change in xi may produce a larger or smaller change in the probability pi , depending upon how far from zero the log-odds are.
-    -   Suppose for example that two variables X and Z independently influence a binary outcome Y. If either X and Z is large enough, then Y = 1. Both variables are sufficient causes of Y. Now if we don't measure Z but only X, we might consistently underestimate the causal effect of X. Why? Because Z is sufficient for Y to equal 1, and we didn't measure Z. So there are cases in the data where X is small but Y = 1. These cases imply X does not influence Y very strongly, but only because we are ignoring Z. This phenomenon doesn't occur in ordinary linear regression, because independent causes just contribute to the mean. There are no ceiling or floor effects (in theory).
+    -   Suppose for [Example]{.ribbon-highlight} that two variables X and Z independently influence a binary outcome Y. If either X and Z is large enough, then Y = 1. Both variables are sufficient causes of Y. Now if we don't measure Z but only X, we might consistently underestimate the causal effect of X. Why? Because Z is sufficient for Y to equal 1, and we didn't measure Z. So there are cases in the data where X is small but Y = 1. These cases imply X does not influence Y very strongly, but only because we are ignoring Z. This phenomenon doesn't occur in ordinary linear regression, because independent causes just contribute to the mean. There are no ceiling or floor effects (in theory).
 -   When using link functions, each parameter represents a relatAive difference on the scale of the linear model, ignoring other parameters, while we are really interested in absolute differences in outcomes that must incorporate all parameters
 -   Can't use any information criteria prediction metrics to compare models with different likelihood functions
 
-Chapter 11 Binomial and Poisson
+## Chapter 11 Binomial and Poisson
 
 -   Misc
     -   For glms, all predictors moderate each other.
@@ -2665,12 +2665,12 @@ Chapter 11 Binomial and Poisson
         -   Almost always better to use these types of distributions rather than the typical Binomial and Poisson distributions
         -   Multilevel models also have a robustness quality even without using these robust distributions.
 -   **Logistic Regression** models a 0/1 outcome and data is at the case level
-    -   Example: Acceptance, A; Gender, G; Department, D Ai \~ Bernoulli(pi) logit(pi) = α\[Gi, Di\]
+    -   [Example]{.ribbon-highlight}: Acceptance, A; Gender, G; Department, D Ai \~ Bernoulli(pi) logit(pi) = α\[Gi, Di\]
 -   **Binomial Regression** models the counts of a Bernoulli variable that have been aggregated by some group variable(s)
-    -   Example: Acceptance counts that have been aggregated by department and gender Ai \~ Binomial(Ni, pi) logit(pi) = α\[Gi, Di\]
+    -   [Example]{.ribbon-highlight}: Acceptance counts that have been aggregated by department and gender Ai \~ Binomial(Ni, pi) logit(pi) = α\[Gi, Di\]
 -   **Parameter estimates are the same no matter whether you use Logistic or Binomial Regression**
     -   If you want to use PSIS or WAIC to compare models, use a 0/1 logistic model and NOT a Binomial regression model
--   [Example]{.ribbon-highlight}: 0/1 logistic regression
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: 0/1 logistic regression
     -   Objective: Measure prosocial behavior in chimps.
     -   Experiment: A chimp is at a long table with a lever on the left side and the right side of table. When a lever is pulled, the chimp gets a plate of food. Depending on the lever that's pulled, a plate of food also goes to the opposite end of the table. Treatment alternates which lever sends food to other end of the table and whether or not there's another chimp at the far end of the table. Prosocial behavior is defined as the chimp pulling the lever that also sends food to other side of table when another chimp is present.
         -   Each chimp is exposed to each of the 4 treatments 18 times![](./_resources/Untitled_Note.resources/Screenshot%20(201).png)
@@ -2901,7 +2901,7 @@ library(patchwork)
 -   **Absolute Effects**: The effect of a (counter-factual) change in predictor value (type of treatment) has on the outcome (*probability* of an event)
     -   Rate that the event happens in the world (i.e. change in outcome event probability)
     -   Base rate matters
-        -   [Example]{.ribbon-highlight} (fictional)
+        -   [[Example]{.ribbon-highlight}]{.ribbon-highlight} (fictional)
             -   1/1000 women develop blood clots (base rate), and an experiment shows that taking a pill raises the risk by 200% (relative risk)!! But that's actually only 3/1000 now. So the absolute risk was only raised by 0.002.
 -   **Relative Effects**: The effect of a (counter-factual) change in predictor value (type of treatment) has on the outcome (*odds* of an event)
     -   Contrast differences on the log-odds scale (raw output) while holding all other predictors constant
@@ -2910,12 +2910,12 @@ library(patchwork)
     -   Needed to make causal inferences
     -   Relative measures measures like proportional odds is they ignore what you might think of as the reference or the baseline.
     -   Can be conditionally very important, when baseline rates of predictor variables change.
-        -   [Example]{.ribbon-highlight}: Conditional on being in the ocean, sharks are much more dangerous than bees. So in this situation the relative risk is more important than the absolute risk.
+        -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Conditional on being in the ocean, sharks are much more dangerous than bees. So in this situation the relative risk is more important than the absolute risk.
             -   The absolute risk says that bees are more dangerous to humans since the base rate for death by bee is larger because humans spend much more time on land with bees than in the ocean with sharks.
 
 ```         
 # Difference in treatment 4 and treatment 2
-posterior_samples(b11.4) %>%  # model b11.4 is from the 1st example
+posterior_samples(b11.4) %>%  # model b11.4 is from the 1st [Example]{.ribbon-highlight}
   mutate(proportional_odds = exp(b_b_treatment4 - b_b_treatment2)) %>% 
   tidybayes::mean_qi(proportional_odds)
 
@@ -2927,9 +2927,9 @@ posterior_samples(b11.4) %>%  # model b11.4 is from the 1st example
 
     -   Whatever the odds of pulling the left lever were before, by switching from treatment 2 to treatment 4 you expect to reduce the odds of the pulling the left lever by 7%
 
--   This is what is meant by proportional odds. The new odds are calculated by taking the old odds and multiplying them by the proportional odds, which is 0.93 in this example.
+-   This is what is meant by proportional odds. The new odds are calculated by taking the old odds and multiplying them by the proportional odds, which is 0.93 in this [Example]{.ribbon-highlight}.
 
--   [Example]{.ribbon-highlight}: Binomial regression (*balanced* number of trials)
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Binomial regression (*balanced* number of trials)
 
     -   balanced - meaning all chimps had 18 trials for each treatment
 
@@ -2955,7 +2955,7 @@ b11.6 <- 
       file = "fits/b11.06")
 ```
 
--   To fit an aggregated binomial model with brms, we augment the <criterion> \| trials() syntax where the value that goes in trials() is either a fixed number, as in this case, or variable in the data indexing the number of trials, n. (for further details on this syntax see 0/1 logistic regression example above)
+-   To fit an aggregated binomial model with brms, we augment the <criterion> \| trials() syntax where the value that goes in trials() is either a fixed number, as in this case, or variable in the data indexing the number of trials, n. (for further details on this syntax see 0/1 logistic regression [Example]{.ribbon-highlight} above)
 
 -   Comparison between logistitic and binomial model
 
@@ -2967,7 +2967,7 @@ b11.6 <- 
         -   WAIC penalty terms also affected
     -   \*\* If you want to use PSIS or WAIC to compare models, use a 0/1 logistic model and NOT an aggregated logistic regression model \*\*
 
--   [Example]{.ribbon-highlight}: Binomial regression (*unbalanced* number of trials)
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Binomial regression (*unbalanced* number of trials)
 
     -   Question: What are the average probabilities of admission for females and males, across all departments?
     -   Data
@@ -2998,7 +2998,7 @@ rm(UCBadmit)
 ```
 
 -   Specification![](./_resources/Untitled_Note.resources/Screenshot%20(207).png)
-    -   Same flat prior used in 0/1 logistic regression example
+    -   Same flat prior used in 0/1 logistic regression [Example]{.ribbon-highlight}
 -   Model
 
 ```         
@@ -3035,11 +3035,11 @@ posterior_samples(b11.7) %>%
 
 -   The log-odds difference is certainly positive, corresponding to a higher probability of admission for male applicants.
 
--   Also see conclusion of next example
+-   Also see conclusion of next [Example]{.ribbon-highlight}
 
--   [Example]{.ribbon-highlight}: Binomial regression (*unbalanced* number of trials)
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Binomial regression (*unbalanced* number of trials)
 
-    -   Description: Same data as previous example
+    -   Description: Same data as previous [Example]{.ribbon-highlight}
     -   Question: "What is the average difference in probability of admission between females and males within departments?"
     -   Specification![](./_resources/Untitled_Note.resources/Screenshot%20(209).png)
         -   It may not answer the whether there's gender discrimination in admittance (i.e. Is there a direct causal influence of gender on admission)![](./_resources/Untitled_Note.resources/Screenshot%20(211).png)
@@ -3106,7 +3106,7 @@ posterior_samples(b11.8) %>% 
 ## 2 diff_p -0.0215 -0.0514 0.00693  0.89 mean  qi
 ```
 
--   Conditioning on Department causes the gender effect seen in the previous example to disappear.
+-   Conditioning on Department causes the gender effect seen in the previous [Example]{.ribbon-highlight} to disappear.
     -   On the absolute scale, males are now 2% less likely to be admitted than females but CIs do overlap zero.
     -   Conditioning on Department matters because the rates of admission vary a lot across departments. Furthermore, women and men applied to different departments.
 -   Posterior Predictions![](./_resources/Untitled_Note.resources/unnamed-chunk-52-1.png)
@@ -3144,7 +3144,7 @@ predict(b11.8) %>% 
 
 -   Females in these data tended not to apply to departments like A and B, which had high overall admission rates. Instead they applied in large numbers to departments like F, which admitted less than 10% of applicants.
 
--   [Example]{.ribbon-highlight}: UCB Admissions Binomial Regression (lecture 9 [video](https://www.youtube.com/watch?v=nPi5yGbfxuo))
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: UCB Admissions Binomial Regression (lecture 9 [video](https://www.youtube.com/watch?v=nPi5yGbfxuo))
 
     -   A: Accepted into Grad School
     -   G: Gender, D: Department
@@ -3353,7 +3353,7 @@ ggplot(counter_dat, aes(x = fm_contrast)) +
         -   [Center for health equity](Center%20for%20health%20equity) for descriptions of **direct** and **indirect** discrimination
         -   2022 Lecture 9 [video](https://www.youtube.com/watch?v=nPi5yGbfxuo)
             -   He also describes how a proper analysis of this phenomenon would be conducted which includes sampling the applicant pool and ranking candidates to collect data in order to deal potential confounders to admission and department (e.g. latent variables like talent and ability)
-                -   This is also mentioned in the Specification section of this example
+                -   This is also mentioned in the Specification section of this [Example]{.ribbon-highlight}
     -   There is no direct discrimation detected (effect with conditioning on department, A \~ G + D).
         -   On average, there is no discrimination detected by application reviewers within departments.
         -   If this effect was detected, it would be the worst one if you're the college. It would indicate people in the college are actively discriminating during the application process.
@@ -3361,7 +3361,7 @@ ggplot(counter_dat, aes(x = fm_contrast)) +
     -   There might be indirect discrimination (aka structural discrimination) 
         -   If this effect is detected, it might be the worst one if you're a woman since the cause is likely something that can't be easily fixed (e.g. by firing someone).
         -   To figure this out you have to calculate the Average Causal Mediation Effect (ACME)
-            -   See [Causal Inference](Causal%20Inference) \>\> Mediation Analysis for examples and formulas.
+            -   See [Causal Inference](Causal%20Inference) \>\> Mediation Analysis for [Example]{.ribbon-highlight}s and formulas.
             -   Remember that this is NOT Admissions \~ Gender. This would the total effect which is both paths.
             -   In Lecture 9 video, he uses an interaction. So if you model it that way, it complicates the ACME formula some.
         -   Since we measured a significant total effect (A \~ G) but no direct effect (A \~ G + D), it seems reasonable that there could be indirect discrimination.
@@ -3370,7 +3370,7 @@ ggplot(counter_dat, aes(x = fm_contrast)) +
             -   Females and males may apply disproportionately to different departments
                 -   From the data, we see that females apply to particular departments much more than others and more to departments with higher base rejection rates. Therefore, they got turned down more.
                     -   If females applied more evenly across departments, the discrimination effect should disappear.
-                -   Maybe something societal that makes females less comfortable in certain subjects. For example, girls being told that girls aren't as good at math as boys so they end up applying to less technical departments more.
+                -   Maybe something societal that makes females less comfortable in certain subjects. For [Example]{.ribbon-highlight}, girls being told that girls aren't as good at math as boys so they end up applying to less technical departments more.
             -   Variation among departmental base rates of acceptance
                 -   Some departments may receive more funding which leads to accepting more students and a higher acceptance rate.
             -   He shows in Lecture 9 2022 video how variation in both of these aspects (at the same time) result in this type of discrimination effect.
@@ -3400,7 +3400,7 @@ posterior_samples(b11.8) %>% 
     -   Poisson is a special case of the Binomial Distribution
         -   The expected value of a binomial distribution is just Np, and its variance is Np(1 − p).
         -   But when N is very large and p is very small, then expected value and variance are approximately the same. The shape of this distribution is the Poisson
-    -   [Example]{.ribbon-highlight}
+    -   [[Example]{.ribbon-highlight}]{.ribbon-highlight}
         -   Description![](./_resources/Untitled_Note.resources/Screenshot%20(888).png)
             -   Dataset on primitive civilizations in Oceania.
                 -   "Tools" are counts of unique tools that get developed in the civilization.
@@ -3447,7 +3447,7 @@ b_cidhigh    0.20      0.16    -0.13    0.51 1.00    3638    2865
 b_cidlow      0.38      0.05    0.28    0.48 1.00    3700    2878
 ```
 
--   formula: a + b \~ 0 + cid is a shortcut that can be used instead of separate a and b statements (see Ch. 8 cont \* cat interaction example)
+-   formula: a + b \~ 0 + cid is a shortcut that can be used instead of separate a and b statements (see Ch. 8 cont \* cat interaction [Example]{.ribbon-highlight})
 -   priors: no separate prior specifications for each level
     -   Separate specifications only required if we want to use `prior_samples` (see My Appendix \>\> [{brms}]{style="color: #990000"} syntax for more details)
 -   Fitted vs Predictor![](./_resources/Untitled_Note.resources/unnamed-chunk-73-1.png)
@@ -3526,7 +3526,7 @@ p2 <-
     -   Use a negative binomial model (aka Gamma-Poisson)
     -   Use a more principled scientific model (see 2022 Lecture video for details, it's just a scientific nonlinear model though)
 
--   [Example]{.ribbon-highlight}: Counts with varying rates![](./_resources/Untitled_Note.resources/Screenshot%20(10).png)
+-   [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Counts with varying rates![](./_resources/Untitled_Note.resources/Screenshot%20(10).png)
 
     -   Where tau is the offset or exposure (time, area, etc).
 
@@ -3643,7 +3643,7 @@ posterior_samples(b11.12) %>%
 
     -   
 
-        ## [Example]{.ribbon-highlight}: Multinomial Logistic Regression
+        ## [[Example]{.ribbon-highlight}]{.ribbon-highlight}: Multinomial Logistic Regression
 
         ```         
         (1) Predictors matched to outcomes
@@ -3802,9 +3802,9 @@ My Appendix
     -   The likelihood, prior, and posterior densities are probability densities each with an area = 1. Looking at the marble tables it looks like the individual posterior probabilities sum to 1. So, the sum (we're talking densities so probably this "sum" = integration actually) of all the products of the multiiplication of the prior and likelihood densities must not have an area = 1. Therefore, the denominator (i.e. sum of products) then standardizes these products so the posterior density does have an area of 1.
     -   Would this make the posterior a joint density of parameter combinations (aka conjectures)?  It does (pg 96)
 -   Getting a handle on characteristics of masking and multicollinearity
-    -   The examples seem quite similar because of the correlation structures between the variables. This is just me brainstorming. tldr in Take away section
+    -   The [Example]{.ribbon-highlight}s seem quite similar because of the correlation structures between the variables. This is just me brainstorming. tldr in Take away section
     -   Masking is in Ch. 5 and Multicollinearity in Ch. 6
-    -   Masking Example
+    -   Masking [Example]{.ribbon-highlight}
         -   correlations
             -   pred_var1 and pred_var1 are (strongly) positively correlated
             -   pred_var1 is (mildly) *negatively* correlated with the outcome
@@ -3812,7 +3812,7 @@ My Appendix
         -   multivariate vs bivariate effects
             -   the magnitude of each predictor's effect is increased
             -   sd increased slightly but the sd/effect ratio decreases since the effect increased
-    -   Multicollinearity Example
+    -   Multicollinearity [Example]{.ribbon-highlight}
         -   correlations
             -   same but predictors are (strongly) negatively correlated with each other and (strongly) correlated with the outcome
         -   multivariate vs bivariate effects
@@ -3827,7 +3827,7 @@ My Appendix
                 -   but PIs inflated?
         -   strength of correlation of predictors with outcome was mild then strong
         -   strength of correlation of predictors with each other was strong in both
-    -   Differences between multicollinearity and masking in examples
+    -   Differences between multicollinearity and masking in [Example]{.ribbon-highlight}s
         -   set-up
             -   sign of correlation between predictors
                 -   multicollinearity: negative
@@ -3875,7 +3875,7 @@ My Appendix
             -   masking: I think it's just a phenomenon that's rarely an issue
             -   multicollinearity: important in both but will be evident in inference; not so much in prediction
     -   Questions
-        -   if the sign of the collinearity were positive in the multicollinearity example, would the effects increase?
+        -   if the sign of the collinearity were positive in the multicollinearity [Example]{.ribbon-highlight}, would the effects increase?
         -   As the strength of the collinearity increases, does sd gradually increase or is there some kind of threshold? (r \> .90)
         -   Is there a sort of linear path from masking to full multicollinearity?
             -   would need to figure out if correlation signs matter, pred vs pred and pred vs outcome
@@ -3885,7 +3885,7 @@ My Appendix
 -   The Haunted DAG
     -   section 6.3.2
     -   Most texts use only 3 variables when introducing Simpson's Paradox but McElreath uses 4 here
-        -   Simpson's Paradox is a statistical phenomenon where adding conditioning variables changes the effect and interpretation of the variable of interest. The variables that are causing the change are adding backdoor paths. So, the scientific question and its DAG determine causality. An example of why you just can't keep adding control variables.
+        -   Simpson's Paradox is a statistical phenomenon where adding conditioning variables changes the effect and interpretation of the variable of interest. The variables that are causing the change are adding backdoor paths. So, the scientific question and its DAG determine causality. An [Example]{.ribbon-highlight} of why you just can't keep adding control variables.
     -   Variables
         -   C is the outcome variable, Child's education level
         -   G is grandparent's education level
@@ -3992,7 +3992,7 @@ sigma         1.12 1.11 0.10 0.10 0.97 1.29    1    3014    2776
         -   For GLM, e.g. logistic regression w/logit link, outputs predictions in logits (aka log-odds)
     -   `posterior_epred` - draws of the expected value/mean of the posterior predictive distribution
         -   Outputs a distribution of means which shows the amount of uncertainty around the mean ([doc](https://paul-buerkner.github.io/brms/reference/posterior_epred.brmsfit.html))
-        -   Example: Heiss [notebook](https://bayesf22-notebook.classes.andrewheiss.com/rethinking/03-video.html#validate-model-and-analyze-data), uses `add_epred_draws`![](./_resources/Untitled_Note.resources/image.6.png)
+        -   [Example]{.ribbon-highlight}: Heiss [notebook](https://bayesf22-notebook.classes.andrewheiss.com/rethinking/03-video.html#validate-model-and-analyze-data), uses `add_epred_draws`![](./_resources/Untitled_Note.resources/image.6.png)
 
 ```         
 priors <- c(prior(normal(60, 10), class = Intercept),
@@ -4060,7 +4060,7 @@ prior = c(prior(normal(0, 1.5), nlpar = a),
     -   Think it's like a R bootstrap function
     -   e.g. for a prediction interval
     -   args: model, data
--   Stan code examples
+-   Stan code [Example]{.ribbon-highlight}s
     -   pg 343 logistic regression
     -   pg 368-9 multinomial logistic regression
 

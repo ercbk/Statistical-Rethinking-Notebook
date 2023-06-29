@@ -15,11 +15,15 @@ book:
     tools: 
       - icon: house-fill
         href: https://ericbook.netlify.app/
+      - icon: database-fill-gear
+        href: https://ercbk.github.io/Data-Science-Notebook/
   chapters:
     - index.qmd
     - qmd/chapter-summaries.qmd
     - qmd/chapter-2.qmd
+    - qmd/chapter-3.qmd
     - qmd/statistical-rethinking.qmd
+    - qmd/glossary.qmd
 
 format:
   html:

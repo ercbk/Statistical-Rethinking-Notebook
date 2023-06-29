@@ -3,5 +3,6 @@
 .RData
 .Ruserdata
 
+R/
 qmd2/
 /.quarto/

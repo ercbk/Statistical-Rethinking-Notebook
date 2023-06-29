@@ -1,22 +1,24 @@
-# Glossary
+# Glossary {#sec-gloss .unnumbered}
 
-
-
--   A conjectured proportion of blue marbles, p, is usually called a [**parameter value**]{style="color: #14adff"}. It's just a way of indexing possible explanations of the data
+-   [**Credible Interval**]{style="color: #009499"} - General Bayesian term that is interchangeable with confidence interval. Instead an interval of probability density or mass, it's based on an interval of the posterior probability. If choice of interval (percentile or hdpi) affects inferences being made, then also report entire posterior distribution.
+-   [**Dummy Data**]{style="color: #009499"} are simulated data (aka fake data) to take the place of real data.
+-   [**Highest Posterior Density Interval (HPDI)**]{style="color: #009499"} - The narrowest interval containing the specified probability mass. Guaranteed to have the value with the highest posterior probability.
+-   The relative number of ways that a value p can produce the data is usually called a [**likelihood**]{style="color: #009499"}.
+    -   It is derived by the enumerating all the possible data sequences that could have happened and then eliminating those sequences inconsistent with the data (i.e. paths_consistent_with_data / total_paths).
+    -   As a model component, the likelihood is a function that gives the probability of an observation given a parameter value (conjecture)
+        -   "How likely your sample data is out of all sample data of the same length?"
+-   [**Maximum a posteriori (MAP)**]{style="color: #009499"} - value with the highest posterior probability, aka mode of the posterior.
+-   A conjectured proportion of blue marbles, p, is usually called a [**parameter value**]{style="color: #009499"}. It's just a way of indexing possible explanations of the data
     -   Here p, proportion of surface water (See example below), is the unknown parameter, but the conjecture could also be other things like sample size, treatment effect, group variation, etc.
     -   There can also be multiple unknown parameters for the likelihood to consider.
     -   Every parameter must have a corresponding prior probability assigned to it.
--   The relative number of ways that a value p can produce the data is usually called a [**likelihood**]{style="color: #14adff"}.
-    -   It is derived by the enumerating all the possible data sequences that could have happened and then eliminating those sequences inconsistent with the data (i.e. paths_consistent_with_data / total_paths).
-    -   As a model component, the likelihood is a function that gives the probability of an observation given a parameter value (conjecture)
-        -   "how likely your sample data is out of all sample data of the same length?"
--   The prior plausibility of any specific p is usually called the [**prior probability**]{style="color: #14adff"}.
+-   The new, updated relative plausibility of a specific *p* is called the [**posterior probability**]{style="color: #009499"}.
+-   The set of estimates, aka relative plausibilities of different parameter values, aka posterior probabilities, conditional on the data --- is known as the [**posterior distribution**]{style="color: #009499"} or [**posterior density**]{style="color: #009499"} (e.g. $Pr(p | N, W)$).
+-   The prior plausibility of any specific p is usually called the [**prior probability**]{style="color: #009499"}.
     -   A distribution initial plausibilities for every value of a parameter
     -   Expresses prior knowledge about a parameter and constrains estimates to reasonable ranges
     -   Unless there's already strong evidence for using a particular prior, multiple priors should be tried to see how sensitive the estimates are to the choice of a prior
     -   Example where the prior is a probability distribution for the parameter:
-        -   p is distributed Uniformly between 0 and 1, (i.e. each conjecture is equally likely), $p \sim \mbox{Uniform}(0, 1)$
-    -   [**Weakly Informative**]{style="color: #14adff"} or [**Regularizing priors**]{style="color: #14adff"}: conservative; guards against inferences of strong association
-        -   mathematically equivalent to penalized likelihood
--   The new, updated relative plausibility of a specific *p* is called the [**posterior probability**]{style="color: #14adff"}.
--   The set of estimates, aka relative plausibilities of different parameter values, aka posterior probabilities, conditional on the data --- is known as the [**posterior distribution**]{style="color: #14adff"} or [**posterior density**]{style="color: #14adff"} (e.g. $Pr(p | N, W)$).
+        -   p is distributed Uniformly between 0 and 1, (i.e. each conjecture is equally likely), $p \sim \mbox{Uniform}(0, 1)$\
+-   [**Regularizing priors**]{style="color: #009499"} - See Weakly Informative Priors
+-   [**Weakly Informative priors**]{style="color: #009499"} - conservative; guards against inferences of strong association - Mathematically equivalent to penalized likelihood

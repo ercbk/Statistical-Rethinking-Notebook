@@ -100,7 +100,7 @@
         1.  Find the mode of the posterior. Uses quadratic approximation. With a uniform prior this is equivalent to MLE
         2.  Estimate the curvature of the posterior using another numerical method
     -   Needs larger sample sizes. How large is model dependent.
-    -   [{rethinking}]{style='color: #990000'} function, `quap( )`
+    -   [{rethinking}]{style="color: #990000"} function, `quap( )`
         -   Inputs are likelihood function (e.g. dbinom) and prior function (e.g. punif), and data for the likelihood function
         -   Outputs mean posterior probability and the std dev of the posterior distribution
 -   MCMC only briefly mentioned
