@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Rethinking - 2&nbsp; Statistical Rethinking</title>
+<title>Statistical Rethinking - 1&nbsp; Statistical Rethinking</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../qmd/glossary.html" rel="next">
 <link href="../qmd/chapter-3.html" rel="prev">
 <link href="../images/sr-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -74,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/statistical-rethinking.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/statistical-rethinking.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -130,13 +131,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/chapter-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapter 3</span></span></a>
+ <span class="menu-text">Chapter 3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/statistical-rethinking.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
     </ul>
@@ -149,16 +156,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#chapter-2" id="toc-chapter-2" class="nav-link active" data-scroll-target="#chapter-2"><span class="header-section-number">2.1</span> Chapter 2</a></li>
-  <li><a href="#chapter-3---sampling" id="toc-chapter-3---sampling" class="nav-link" data-scroll-target="#chapter-3---sampling"><span class="header-section-number">2.2</span> Chapter 3 - Sampling</a></li>
-  <li><a href="#chapter-4---linear-models-cis-splines" id="toc-chapter-4---linear-models-cis-splines" class="nav-link" data-scroll-target="#chapter-4---linear-models-cis-splines"><span class="header-section-number">2.3</span> Chapter 4 - Linear Models, CIs, Splines</a></li>
-  <li><a href="#chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags" id="toc-chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags" class="nav-link" data-scroll-target="#chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags"><span class="header-section-number">2.4</span> Chapter 5 - Multivariable Linear Models, Diagnostic Plots, Categoricals, DAGs</a></li>
-  <li><a href="#chapter-6---colliders-multicollinearity-post-treatment-bias" id="toc-chapter-6---colliders-multicollinearity-post-treatment-bias" class="nav-link" data-scroll-target="#chapter-6---colliders-multicollinearity-post-treatment-bias"><span class="header-section-number">2.5</span> Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias</a></li>
-  <li><a href="#chapter-7---information-theory-prediction-metrics-model-comparison" id="toc-chapter-7---information-theory-prediction-metrics-model-comparison" class="nav-link" data-scroll-target="#chapter-7---information-theory-prediction-metrics-model-comparison"><span class="header-section-number">2.6</span> Chapter 7 - Information Theory, Prediction Metrics, Model Comparison</a></li>
-  <li><a href="#chapter-8---interactions" id="toc-chapter-8---interactions" class="nav-link" data-scroll-target="#chapter-8---interactions"><span class="header-section-number">2.7</span> Chapter 8 - Interactions</a></li>
-  <li><a href="#chapter-9---mcmc" id="toc-chapter-9---mcmc" class="nav-link" data-scroll-target="#chapter-9---mcmc"><span class="header-section-number">2.8</span> Chapter 9 - MCMC</a></li>
-  <li><a href="#chapter-10---glm-concepts" id="toc-chapter-10---glm-concepts" class="nav-link" data-scroll-target="#chapter-10---glm-concepts"><span class="header-section-number">2.9</span> Chapter 10 - GLM Concepts</a></li>
-  <li><a href="#chapter-11-binomial-and-poisson" id="toc-chapter-11-binomial-and-poisson" class="nav-link" data-scroll-target="#chapter-11-binomial-and-poisson"><span class="header-section-number">2.10</span> Chapter 11 Binomial and Poisson</a></li>
+  <li><a href="#chapter-2" id="toc-chapter-2" class="nav-link active" data-scroll-target="#chapter-2"><span class="header-section-number">1.1</span> Chapter 2</a></li>
+  <li><a href="#chapter-3---sampling" id="toc-chapter-3---sampling" class="nav-link" data-scroll-target="#chapter-3---sampling"><span class="header-section-number">1.2</span> Chapter 3 - Sampling</a></li>
+  <li><a href="#chapter-4---linear-models-cis-splines" id="toc-chapter-4---linear-models-cis-splines" class="nav-link" data-scroll-target="#chapter-4---linear-models-cis-splines"><span class="header-section-number">1.3</span> Chapter 4 - Linear Models, CIs, Splines</a></li>
+  <li><a href="#chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags" id="toc-chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags" class="nav-link" data-scroll-target="#chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags"><span class="header-section-number">1.4</span> Chapter 5 - Multivariable Linear Models, Diagnostic Plots, Categoricals, DAGs</a></li>
+  <li><a href="#chapter-6---colliders-multicollinearity-post-treatment-bias" id="toc-chapter-6---colliders-multicollinearity-post-treatment-bias" class="nav-link" data-scroll-target="#chapter-6---colliders-multicollinearity-post-treatment-bias"><span class="header-section-number">1.5</span> Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias</a></li>
+  <li><a href="#chapter-7---information-theory-prediction-metrics-model-comparison" id="toc-chapter-7---information-theory-prediction-metrics-model-comparison" class="nav-link" data-scroll-target="#chapter-7---information-theory-prediction-metrics-model-comparison"><span class="header-section-number">1.6</span> Chapter 7 - Information Theory, Prediction Metrics, Model Comparison</a></li>
+  <li><a href="#chapter-8---interactions" id="toc-chapter-8---interactions" class="nav-link" data-scroll-target="#chapter-8---interactions"><span class="header-section-number">1.7</span> Chapter 8 - Interactions</a></li>
+  <li><a href="#chapter-9---mcmc" id="toc-chapter-9---mcmc" class="nav-link" data-scroll-target="#chapter-9---mcmc"><span class="header-section-number">1.8</span> Chapter 9 - MCMC</a></li>
+  <li><a href="#chapter-10---glm-concepts" id="toc-chapter-10---glm-concepts" class="nav-link" data-scroll-target="#chapter-10---glm-concepts"><span class="header-section-number">1.9</span> Chapter 10 - GLM Concepts</a></li>
+  <li><a href="#chapter-11-binomial-and-poisson" id="toc-chapter-11-binomial-and-poisson" class="nav-link" data-scroll-target="#chapter-11-binomial-and-poisson"><span class="header-section-number">1.10</span> Chapter 11 Binomial and Poisson</a></li>
   </ul>
 </nav>
     </div>
@@ -167,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></h1>
 </div>
 
 
@@ -985,8 +992,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<section id="chapter-2" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="chapter-2"><span class="header-section-number">2.1</span> Chapter 2</h2>
+<section id="chapter-2" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="chapter-2"><span class="header-section-number">1.1</span> Chapter 2</h2>
 <ul>
 <li>1 blue marble is drawn from the bag and replaced. The bag is shaken, and a white marble is drawn and replaced. Finally, the bag is shaken, and a blue marble is drawn and replaced</li>
 <li><img src="./_resources/Untitled_Note.resources/Screenshot (62).png" class="img-fluid">
@@ -1114,8 +1121,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="chapter-3---sampling" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="chapter-3---sampling"><span class="header-section-number">2.2</span> Chapter 3 - Sampling</h2>
+<section id="chapter-3---sampling" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="chapter-3---sampling"><span class="header-section-number">1.2</span> Chapter 3 - Sampling</h2>
 <ul>
 <li>Sampling from the posterior distribution means we can work with counts (easier, more intuitive) instead of working with the density which is working with integrals. Plus MCMC results are count based.
 <ul>
@@ -1366,8 +1373,8 @@ f %&gt;%&nbsp;
 </ul></li>
 </ul>
 </section>
-<section id="chapter-4---linear-models-cis-splines" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="chapter-4---linear-models-cis-splines"><span class="header-section-number">2.3</span> Chapter 4 - Linear Models, CIs, Splines</h2>
+<section id="chapter-4---linear-models-cis-splines" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="chapter-4---linear-models-cis-splines"><span class="header-section-number">1.3</span> Chapter 4 - Linear Models, CIs, Splines</h2>
 <ul>
 <li>Gaussian Distribution
 <ul>
@@ -1781,8 +1788,8 @@ ggplot(b4.11_fits, aes(x = year, y = temp, ymin = Q2.5, ymax = Q97.5)) +
 <li>See scrapsheet.R in Statistical Rethinking directory for code. A comparison between the two methods estimates shown in a chart is also there.</li>
 </ul>
 </section>
-<section id="chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags"><span class="header-section-number">2.4</span> Chapter 5 - Multivariable Linear Models, Diagnostic Plots, Categoricals, DAGs</h2>
+<section id="chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="chapter-5---multivariable-linear-models-diagnostic-plots-categoricals-dags"><span class="header-section-number">1.4</span> Chapter 5 - Multivariable Linear Models, Diagnostic Plots, Categoricals, DAGs</h2>
 <ul>
 <li>Useful because:
 <ul>
@@ -2475,8 +2482,8 @@ female_prop &lt;- sum(W_contrast &lt; 0) / 1000</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="chapter-6---colliders-multicollinearity-post-treatment-bias" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="chapter-6---colliders-multicollinearity-post-treatment-bias"><span class="header-section-number">2.5</span> Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias</h2>
+<section id="chapter-6---colliders-multicollinearity-post-treatment-bias" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="chapter-6---colliders-multicollinearity-post-treatment-bias"><span class="header-section-number">1.5</span> Chapter 6 - Colliders, Multicollinearity, Post-Treatment Bias</h2>
 <ul>
 <li>Comparing the parameter of interest’s posterior density to its prior will tell you how much information your data is providing
 <ul>
@@ -2676,8 +2683,8 @@ brm(data = d,&nbsp;
 </ul></li>
 </ul>
 </section>
-<section id="chapter-7---information-theory-prediction-metrics-model-comparison" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="chapter-7---information-theory-prediction-metrics-model-comparison"><span class="header-section-number">2.6</span> Chapter 7 - Information Theory, Prediction Metrics, Model Comparison</h2>
+<section id="chapter-7---information-theory-prediction-metrics-model-comparison" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="chapter-7---information-theory-prediction-metrics-model-comparison"><span class="header-section-number">1.6</span> Chapter 7 - Information Theory, Prediction Metrics, Model Comparison</h2>
 <ul>
 <li>overfitting and underfitting
 <ul>
@@ -3134,8 +3141,8 @@ loo(b8.3) %&gt;% loo::pareto_k_table()</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="chapter-8---interactions" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="chapter-8---interactions"><span class="header-section-number">2.7</span> Chapter 8 - Interactions</h2>
+<section id="chapter-8---interactions" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="chapter-8---interactions"><span class="header-section-number">1.7</span> Chapter 8 - Interactions</h2>
 <ul>
 <li>Interactions estimate the association between a predictor and an outcome when that association depends upon the value of another predictor.
 <ul>
@@ -3377,8 +3384,8 @@ rbind(fitted(b8.4, newdata = nd, summary = F, nsamples = 20),
 <li><p>Choosing facet values: generally, you might use a representative low value, the median, and a representative high value or quantile values for the facets.</p></li>
 </ul>
 </section>
-<section id="chapter-9---mcmc" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="chapter-9---mcmc"><span class="header-section-number">2.8</span> Chapter 9 - MCMC</h2>
+<section id="chapter-9---mcmc" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="chapter-9---mcmc"><span class="header-section-number">1.8</span> Chapter 9 - MCMC</h2>
 <ul>
 <li>The search for a sampling algorithm that can produce a good description of the posterior in the fewest amount of samples of the joint posterior distribution.</li>
 <li>Quadratic approximation, <code>quap( )</code>, assumes the posterior is a multivariate gaussian. These algorithms allow us to drop that assumption.</li>
@@ -3726,8 +3733,8 @@ post %&gt;%&nbsp;
 </ul></li>
 </ul>
 </section>
-<section id="chapter-10---glm-concepts" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="chapter-10---glm-concepts"><span class="header-section-number">2.9</span> Chapter 10 - GLM Concepts</h2>
+<section id="chapter-10---glm-concepts" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="chapter-10---glm-concepts"><span class="header-section-number">1.9</span> Chapter 10 - GLM Concepts</h2>
 <ul>
 <li>The principle of maximum entropy provides an empirically successful way to choose likelihood functions. Information entropy is essentially a measure of the number of ways a distribution can arise, according to stated assumptions. By choosing the distribution with the biggest information entropy, we thereby choose a distribution that obeys the constraints on outcome variables, without importing additional assumptions. Generalized linear models arise naturally from this approach, as extensions of the linear models in previous chapters.</li>
 <li>The <strong>maximum entropy distribution</strong> is the one with the greatest information entropy (i.e.&nbsp;log number of ways per event) and is the most plausible distribution.
@@ -3830,8 +3837,8 @@ post %&gt;%&nbsp;
 <li>Can’t use any information criteria prediction metrics to compare models with different likelihood functions</li>
 </ul>
 </section>
-<section id="chapter-11-binomial-and-poisson" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="chapter-11-binomial-and-poisson"><span class="header-section-number">2.10</span> Chapter 11 Binomial and Poisson</h2>
+<section id="chapter-11-binomial-and-poisson" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="chapter-11-binomial-and-poisson"><span class="header-section-number">1.10</span> Chapter 11 Binomial and Poisson</h2>
 <ul>
 <li>Misc
 <ul>
@@ -4839,7 +4846,7 @@ print(b11.12)
 </ul></li>
 <li><p>in a multinomial (or categorical) GLM, you need K − 1 linear models for K types of events. One of the outcome values is chosen as a “pivot” (i.e.&nbsp;reference category) and the others are modeled relative to it.</p></li>
 <li><p>In each the K − 1 linear models, you can use any predictors and parameters you like—they don’t have to be the same, and there are often good reasons for them to be different</p></li>
-<li><h2 id="there-are-two-basic-cases" data-number="2.11" class="anchored"><span class="header-section-number">2.11</span> There are two basic cases:</h2>
+<li><h2 id="there-are-two-basic-cases" data-number="1.11" class="anchored"><span class="header-section-number">1.11</span> There are two basic cases:</h2>
 <pre><code>(1) Predictors matched to outcomes
 
 -   predictors have different values for different values the outcome, and
@@ -4853,7 +4860,7 @@ print(b11.12)
 <li>useful when you are interested instead in features of some entity that produces each event, whatever type it turns out to be</li>
 </ul></li>
 </ul></li>
-<li><h2 id="example-multinomial-logistic-regression" data-number="2.12" class="anchored"><span class="header-section-number">2.12</span> <span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Multinomial Logistic Regression</h2>
+<li><h2 id="example-multinomial-logistic-regression" data-number="1.12" class="anchored"><span class="header-section-number">1.12</span> <span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Multinomial Logistic Regression</h2>
 <pre><code>(1) Predictors matched to outcomes</code></pre>
 <ul>
 <li><p>Description</p>
@@ -5650,13 +5657,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../qmd/chapter-3.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapter 3</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chapter 3</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../qmd/glossary.html" class="pagination-link">
+        <span class="nav-page-text">Glossary</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../LICENSE.html">Creative Commons Attribution-NonCommercial 4.0 International Public License</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
