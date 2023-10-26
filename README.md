@@ -1,6 +1,6 @@
 # Statistical-Rethinking-Notebook
 
-Notebook for Statistical Rethinking using quarto
+Notebook for [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) using Quarto.
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
 

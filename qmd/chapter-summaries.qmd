@@ -250,7 +250,7 @@
         -   family = binomial
         -   formula
             -   balanced: outcome_var\|trials(group_n)
-            -   unbalanced: outcome_var\|trials(vector_with_n\_for_each_group)
+            -   unbalanced: outcome_var\|trials(vector_with_n_for_each_group)
 -   rstanarm models specified just like using glm
 -   Flat Normal priors for logistic or binomial do NOT have high sds. High sds say that outcome event probability is always close to 0 or close 1.
     -   For flat intercept: sd = 1.5

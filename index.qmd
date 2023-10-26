@@ -1,6 +1,5 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+These are notes taken while reading [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) by Richard McElreath and watching his lectures. Most of the code is sourced or adapted from Solomon Kurz's [book](https://bookdown.org/content/4857/) which translates the [{]{style="color: #990000"}[rethinking](https://github.com/rmcelreath/rethinking){style="color: #990000"}[}]{style="color: #990000"} code used by McElreath to [{]{style="color: #990000"}[brms](https://paul-buerkner.github.io/brms/){style="color: #990000"}[}]{style="color: #990000"}.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
+These notes were transferred from Evernote to Quarto, so some of notes may be difficult to read as the editing of the note format is still an ongoing process.
