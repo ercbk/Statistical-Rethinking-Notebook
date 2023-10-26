@@ -1,5 +1,6 @@
 
-/* #404d59 body text color */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
 
 h1, .h1 {
  text-transform: uppercase !important;
@@ -24,22 +25,14 @@ h3, .h3 {
     color: #365586FF !important;
 }
 
-/*
-h4, .h4 {
-  font-weight: 530 !important;
-  border-left: 4px solid #dee2e6;
-  padding-left: 3px;
-  color: #1E4477 !important;
-}
-*/
 
-h4, .h4 {
+h4, h5, .h4, .h5 {
   color: #365586FF !important;
   border-bottom: 2px solid #dee2e6;
   padding-bottom: .1rem;
-  width: -moz-min-content;
-  width: -webkit-min-content;
-  width: min-content;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
 }
 
 /* highlight effect around Examples */
@@ -48,7 +41,7 @@ h4, .h4 {
   margin:0.1em;
   color: white;
   padding: 0 14px;
-  margin: 0 15px
+  margin: 0 3px
 }
 .ribbon-highlight:before{
   content:"";
@@ -62,6 +55,17 @@ h4, .h4 {
   width:100%;
   border-left-color:transparent;
   border-right-color:transparent;
+}
+
+/* styling for function argument names */
+.arg-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 80%;
+}
+/* styling for data variable names */
+.var-text {
+  font-family: 'Merienda', cursive;
+  font-size: 80%;
 }
 
 /* old color for title and icons: #0064B6FF */
@@ -89,28 +93,38 @@ h4, .h4 {
 
 /* --------------------------------MathJax LateX attributes ------------------------------------- */
 
-
-/* in-line latex equations */
-.math.inline {
-  font-size: 105%;
-}
-
-
 /*
-.math.display {
+.math.inline .MathJax {
+  font-size: 150%;
+  color: #22b222;
 }
 */
 
-/* aligns display latex equation block text to the left */
+.math.display .MathJax {
+  /*background-color: #FFFDFAFF !important*/
+  background: #C9D6FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #C9D6FF, #E2E2E2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #C9D6FF, #E2E2E2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #1E4477 !important;
+  overflow: auto;
+}
+
+/* aligns latex equation block text to the left */
 mjx-container[jax="CHTML"][display="true"] {
-    text-align: left !important;
+  text-align: left !important;
+  width: -moz-max-content;
+  width: -webkit-max-content; /* all 3 "widths" make the container the width of the text, just for different browsers */
+  width: max-content;
+  padding: 10px; /* adds space around the equations */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  border-radius: 10px; /* rounds edges of box; higher makes them more rounded */
 }
 
 /* outlier note; using equation id to specify a specific equation. There's some extra space on the left side that needs removed.
 #eq-grubbstest > span > mjx-container > mjx-math > mjx-mtable {
   text-align: left;
 }
-
+/*
 /* for all equations using equation ids
 mjx-container [width="full"] {
     width: 100%;
@@ -118,10 +132,52 @@ mjx-container [width="full"] {
 }
 */
 
+/* ----------- Scrollbars -------------*/
+
+/* page and code block scroll bars' color */
+/* also narrows and rounds bar */
+  
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  /*background: #335f83; */
+  background: #B1BEE7FF; 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
 
 
+/* --------- Panel Tabset ------------- */
 
+.tab-content {
+    background-color: #E3DED4FF;
+    border-color: #E3DED4FF #B2ADA3FF #B2ADA3FF ;
+    border-top-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    box-shadow: 0 0.3rem 0.6rem #9A958BFF;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #882815 ;
+    font-weight: bold;
+    background-color: #E3DED4FF ;
+    border-color: #882815 #B2ADA3FF #E3DED4FF ;
+    border-top: 3px solid #882815 ;
+}
 
-
-
-
+.nav-tabs .nav-link {
+    color: #9B3B2DFF;
+    background: none;
+    border-top-left-radius: .30rem;
+    border-top-right-radius: .30rem;
+}

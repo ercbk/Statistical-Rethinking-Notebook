@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Statistical Rethinking",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+    "text": "Preface\nThese are notes taken while reading Statistical Rethinking by Richard McElreath and watching his lectures. Most of the code is sourced or adapted from Solomon Kurz’s book which translates the {rethinking} code used by McElreath to {brms}.\nThese notes were transferred from Evernote to Quarto, so some of notes may be difficult to read as the editing of the note format is still an ongoing process."
   },
   {
     "objectID": "qmd/chapter-summaries.html#sec-summ-ch2",
