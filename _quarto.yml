@@ -18,10 +18,12 @@ book:
     background: "#fffaf0"
     foreground: "#1E4477"
     tools: 
-      - icon: house-fill
+      - icon: house
         href: https://ericbook.netlify.app/
-      - icon: database-fill-gear
+      - icon: database-gear
         href: https://ercbk.github.io/Data-Science-Notebook/
+      - icon: lightbulb
+        href: https://ercbk.github.io/Domain-Knowledge-Notebook/
   chapters:
     - index.qmd
     - qmd/chapter-summaries.qmd
