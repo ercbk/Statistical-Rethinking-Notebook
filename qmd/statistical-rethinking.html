@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -1059,7 +1059,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>“how likely your sample data is out of all sample data of the same length?”</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (the proportion of water to land on the earth):
+<li><span class="ribbon-highlight">Example</span> (the proportion of water to land on the earth):
 <ul>
 <li>W is distributed Binomially with N trials and a probability of p for W in each trial,&nbsp; <img src="./_resources/Untitled_Note.resources/unknown_filename.3.png" class="img-fluid"></li>
 <li>“The count of ‘water’ observations (finger landing on water), W, is distributed binomially, with probability p of ‘water’ on each toss of a globe and N tosses in total.”</li>
@@ -1280,7 +1280,7 @@ samples &lt;- sample(p_grid, prob = posterior, size = 10000, replace = T)</code>
 <li>therefore maybe the shape is dependent on “size”</li>
 </ul></li>
 <li>the posterior distribution is used as weights to calculate a weighted, average frequency of W observations for each trial.</li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: <code>rbinom(10000, 9, samples)</code>
+<li><span class="ribbon-highlight">Example</span>: <code>rbinom(10000, 9, samples)</code>
 <ul>
 <li>For trial 1, a coin is flipped 9 times.
 <ul>
@@ -1290,7 +1290,7 @@ samples &lt;- sample(p_grid, prob = posterior, size = 10000, replace = T)</code>
 <li>A vector is returned where each value is the total number of heads for that trial (e.g.&nbsp;length in <span class="ribbon-highlight">Example</span> = 10000)</li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: PPD for tossing the globe</li>
+<li><span class="ribbon-highlight">Example</span>: PPD for tossing the globe</li>
 </ul></li>
 </ul>
 <pre><code>p_grid &lt;- seq( from=0, to=1, length.out=1000) # parameter values vector
@@ -1304,7 +1304,7 @@ samples &lt;- sample(p_grid, prob = posterior, size = 1e4, replace = TRUE) # sam
 ppd &lt;- rbinom(10000, size = 9, prob = samples) # simulate observations to get the PPD
 hist(ppd)</code></pre>
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: brms way</li>
+<li><span class="ribbon-highlight">Example</span>: brms way</li>
 </ul>
 <pre><code>b3.1 &lt;-
 &nbsp; brm(data = list(w = 6),&nbsp;
@@ -1403,7 +1403,7 @@ f %&gt;%&nbsp;
 <li>See General Notes -&gt; Notation:&nbsp; for the notation and syntax used in model specification</li>
 <li>It’s a good idea to plot your priors to get a sense of the assumptions in your model.
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: <code>curve(dunif( x, 0, 50), from = -10,&nbsp; to = 60)</code>&nbsp; for σ ~ Uniform( 0, 50 ) constrains the σ to have a positive probability from 0 to 50 cm for a height outcome variable</li>
+<li><span class="ribbon-highlight">Example</span>: <code>curve(dunif( x, 0, 50), from = -10,&nbsp; to = 60)</code>&nbsp; for σ ~ Uniform( 0, 50 ) constrains the σ to have a positive probability from 0 to 50 cm for a height outcome variable</li>
 </ul></li>
 <li>Prior Predictive Distribution
 <ul>
@@ -1509,7 +1509,7 @@ plot(b4.1)</code></pre>
 </ul></li>
 <li>Model
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> single variable regression where height is the outcome and weight the predictor
+<li><span class="ribbon-highlight">Example</span> single variable regression where height is the outcome and weight the predictor
 <ul>
 <li>hi ~ Normal(μ, σ)</li>
 <li>μi = α + βxi</li>
@@ -1601,7 +1601,7 @@ dat %&gt;%
 </ul></li>
 <li>Interpretation of HDPI when x = x0
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Given a person’s weight = 50kg, what does an 89% HDPI around our model’s height prediction mean?
+<li><span class="ribbon-highlight">Example</span>: Given a person’s weight = 50kg, what does an 89% HDPI around our model’s height prediction mean?
 <ul>
 <li>“The central 89% of the ways for the model to produce the data place the average height between about 159cm and 160cm (conditional on the model and data), assuming a weight of 50kg.”</li>
 </ul></li>
@@ -1626,7 +1626,7 @@ mu_at_50 %&gt;%
 <ul>
 <li>Confidence Interval - repeating the calculation for every x0 will give you the regression line CI
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> brms regression line CI</li>
+<li><span class="ribbon-highlight">Example</span> brms regression line CI</li>
 </ul></li>
 </ul>
 <pre><code># x value (weight) range we want for the CI of the line
@@ -1660,7 +1660,7 @@ theme(text = element_text(family = "Times"),
 <li>Sample σ, α, and β from the posterior distribution the same number of times as the number of weights in your range</li>
 <li>simulate the heights from a gaussian distribution (think rnorm) using the weights (along with α and β) in a linear expression for mean argument and the standard deviations from the posterior (see details in book)</li>
 </ol></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> PI and CI around regression line<img src="./_resources/Untitled_Note.resources/unnamed-chunk-101-1.png" class="img-fluid"></li>
+<li><span class="ribbon-highlight">Example</span> PI and CI around regression line<img src="./_resources/Untitled_Note.resources/unnamed-chunk-101-1.png" class="img-fluid"></li>
 </ul></li>
 </ul>
 <pre><code># 95% PIs generated by default
@@ -1716,7 +1716,7 @@ dat %&gt;%&nbsp; ggplot(aes(x = weight)) +
 </ul></li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Temperature vs Time<img src="./_resources/Untitled_Note.resources/Screenshot (87).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Temperature vs Time<img src="./_resources/Untitled_Note.resources/Screenshot (87).png" class="img-fluid">
 <ul>
 <li>“+” indicates a knot (pivot point); there is a (linear in this case) basis function for each knot</li>
 <li>At year 1306, <em>only</em> basis functions B2 and B3 are turned on. w2 and w3 weight the value of each basis function to best fit the mean temperature of that year
@@ -1743,7 +1743,7 @@ dat %&gt;%&nbsp; ggplot(aes(x = weight)) +
 </ul></li>
 </ul></li>
 </ol></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: 15 knots at 5 quantiles, cubic basis functions<img src="./_resources/Untitled_Note.resources/Screenshot (88).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: 15 knots at 5 quantiles, cubic basis functions<img src="./_resources/Untitled_Note.resources/Screenshot (88).png" class="img-fluid">
 <ul>
 <li>Model specification<img src="./_resources/Untitled_Note.resources/ql_1ce75c1d952219fd5f6d8db1e3984252_l3.png" class="img-fluid"></li>
 </ul></li>
@@ -2001,7 +2001,7 @@ r %&gt;%
 </ul></li>
 <li>The scale is that of the data unlike the Predictor Residual plot</li>
 <li>Plot can visualize unrealistic scenarios, so must be careful with interpretation.</li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: How does Divorce Rate (D) (outcome) change when we change Median Age at Marriage (predictor) values? Assumed causal model: <img src="./_resources/Untitled_Note.resources/Screenshot (98).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: How does Divorce Rate (D) (outcome) change when we change Median Age at Marriage (predictor) values? Assumed causal model: <img src="./_resources/Untitled_Note.resources/Screenshot (98).png" class="img-fluid">
 <ul>
 <li>m_model is the relationship between Median Age of Marriage (A) and State Marriage Rate (M) in the causal model. The values of the predictor of interest, A, will be used in this model to get the values of the other predictor, M.</li>
 <li>d_model uses the values of A and the modeled values of M to calculate the estimated values of D.</li>
@@ -2076,7 +2076,7 @@ p2 &lt;- predict(b5.3_A,
 p1 + p2 + plot_annotation(title = "Counterfactual plots for the multivariate divorce model")</code></pre>
 <ul>
 <li><p>This predicted trend in D include both paths: A → D and A → M → D. (left side)<img src="./_resources/Untitled_Note.resources/Screenshot (107).png" class="img-fluid"> As the multi-regression showed, marriage rate, m, has little influence on d.&nbsp;Might be why we see little difference in this graphs.</p></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: What is the expected causal effect of increasing median age at marriage from 20 to 30?</p></li>
+<li><p><span class="ribbon-highlight">Example</span>: What is the expected causal effect of increasing median age at marriage from 20 to 30?</p></li>
 </ul>
 <pre><code>nd &lt;- tibble(a = (c(20, 30) - 26.1) / 1.24,
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; m = 0)
@@ -2089,7 +2089,7 @@ predict(b5.3_A,
 &nbsp; mutate(difference = a30 - a20) %&gt;%&nbsp;
 &nbsp; summarise(mean = mean(difference))</code></pre>
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: How does Divorce Rate (outcome) change when we change values of Marriage Rate (predictor)? The arrow A → M is deleted, because if we control the values of M, then A no longer influences it <img src="./_resources/Untitled_Note.resources/Screenshot (108).png" class="img-fluid"></li>
+<li><span class="ribbon-highlight">Example</span>: How does Divorce Rate (outcome) change when we change values of Marriage Rate (predictor)? The arrow A → M is deleted, because if we control the values of M, then A no longer influences it <img src="./_resources/Untitled_Note.resources/Screenshot (108).png" class="img-fluid"></li>
 </ul>
 <pre><code># see comments above
 nd &lt;- tibble(m = seq(from = -2, to = 2, length.out = 30),
@@ -2195,7 +2195,7 @@ predict(b5.3_A,
 <li>pred_var1’s negative estimated effect on the outcome will increase as compared to its estimated effect in a bivariable regression</li>
 <li>pred_var2’s positive estimated effect on the outcome will increase as compared to its estimated effect in a bivariable regression</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>
+<li><span class="ribbon-highlight">Example</span>
 <ul>
 <li>K (outcome) = mother’s milk kilocalories</li>
 <li>M (pred_var1) = log(Body Mass)</li>
@@ -2434,7 +2434,7 @@ posterior_samples(b5.8) %&gt;%&nbsp;
 <li><p>The contrast, “diff_fm”, is computed in mutate and mean_qi adds the CIs</p></li>
 <li><p>Visualizing contrasts</p>
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Posterior Mean Contrast (1 predictor) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>) <img src="./_resources/Untitled_Note.resources/Screenshot (709).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Posterior Mean Contrast (1 predictor) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>) <img src="./_resources/Untitled_Note.resources/Screenshot (709).png" class="img-fluid">
 <ul>
 <li>Weight was the response with height and sex as predictors
 <ul>
@@ -2445,7 +2445,7 @@ posterior_samples(b5.8) %&gt;%&nbsp;
 <li>Interpretation: The difference in mean weights between the sexes is likely around 6.8 kg but could potentially be from ~5 to ~8.5</li>
 <li>Posterior means for each sex<img src="./_resources/Untitled_Note.resources/Screenshot (709).1.png" class="img-fluid"></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Posterior Predictive Contrast (1 predictor) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>)<img src="./_resources/Untitled_Note.resources/Screenshot (708).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Posterior Predictive Contrast (1 predictor) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>)<img src="./_resources/Untitled_Note.resources/Screenshot (708).png" class="img-fluid">
 <ul>
 <li>Contrast of the individual gender category PPDs</li>
 <li>Weight was the response with height and sex as predictors
@@ -2474,7 +2474,7 @@ female_prop &lt;- sum(W_contrast &lt; 0) / 1000</code></pre>
 <li>These are distributions of female and male weights we expect to see in the wild given the model and these data</li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Posterior Mean Contrast vs Predictor (2 predictors) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>)<img src="./_resources/Untitled_Note.resources/Screenshot (704).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Posterior Mean Contrast vs Predictor (2 predictors) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>)<img src="./_resources/Untitled_Note.resources/Screenshot (704).png" class="img-fluid">
 <ul>
 <li>Weight was the response with height and sex as predictors
 <ul>
@@ -2531,7 +2531,7 @@ female_prop &lt;- sum(W_contrast &lt; 0) / 1000</code></pre>
 <ul>
 <li>Identifying and <em>automatically</em> dropping highly correlated predictors is a mistake. Pairwise correlations are not the problem. It is the conditional associations—not correlations—that matter. And even then, the right thing to do will depend upon what is causing the collinearity. The associations within the data alone are not enough to decide what to do.
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Thinking the situation through causally in order to deal with multicollinearity<img src="./_resources/Untitled_Note.resources/Screenshot (113).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Thinking the situation through causally in order to deal with multicollinearity<img src="./_resources/Untitled_Note.resources/Screenshot (113).png" class="img-fluid">
 <ul>
 <li>L, F, and K are highly correlated with each other and therefore have a multicollinearity issue when used in a multivariate regression.</li>
 <li>Unobserved Density, D, influences both lactose, L, and Fat, F.</li>
@@ -2553,7 +2553,7 @@ female_prop &lt;- sum(W_contrast &lt; 0) / 1000</code></pre>
 <ul>
 <li>“…a useful measure of the expected improvement in prediction that comes from conditioning on the fungus. Although the treatment works, it isn’t 100% effective, and so knowing the treatment is no substitute for knowing whether fungus is present.”</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (adjusting for F masks the treatment effect)
+<li><span class="ribbon-highlight">Example</span> (adjusting for F masks the treatment effect)
 <ul>
 <li>You want to know the difference in growth under different anti-fungal soil treatments, because fungus on the plants tends to reduce their growth.
 <ul>
@@ -2626,7 +2626,7 @@ brm(data = d,&nbsp;
 <li><p>See above for the brms model specification (although includes F) and definition of terms</p></li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (adjusting for F unmasks the treatment effect)
+<li><span class="ribbon-highlight">Example</span> (adjusting for F unmasks the treatment effect)
 <ul>
 <li>Same but Moisture, M,&nbsp; (unobserved) influences both Fungus, F, and Final Height, H<img src="./_resources/Untitled_Note.resources/Screenshot (116).png" class="img-fluid"></li>
 <li>A regression of H1 on T will show no association between the treatment and plant growth. But if we include F in the model, suddenly there will be an association.</li>
@@ -2641,7 +2641,7 @@ brm(data = d,&nbsp;
 <ul>
 <li>Although, the variables involved may be useful for predictive models as the backdoor paths do provide valid information about statistical associations within the data</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (non-misleading)<img src="./_resources/Untitled_Note.resources/Screenshot (120).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span> (non-misleading)<img src="./_resources/Untitled_Note.resources/Screenshot (120).png" class="img-fluid">
 <ul>
 <li>Adjusting for S (collider) induces an association between T and N.</li>
 <li>Once you learn that a grant proposal has been selected (S), then learning its trustworthiness (T) (i.e.&nbsp;the rigorousness of the experimental design) also provides information about its newsworthiness (N) (i.e.&nbsp;importance of the experiment to the public).
@@ -2649,7 +2649,7 @@ brm(data = d,&nbsp;
 <li>We only see the selected grants not the failed grant proposals (i.e.&nbsp;selection bias, adjusting by S), so while there is no association between T and N in the population, if we look at the subset of selected grants (S), we will see an association.</li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (misleading)<img src="./_resources/Untitled_Note.resources/Screenshot (121).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span> (misleading)<img src="./_resources/Untitled_Note.resources/Screenshot (121).png" class="img-fluid">
 <ul>
 <li>Colliders, by inducing a statistical association, can also lead to misleading inferences.</li>
 <li>(fictitious scenario) Happiness, H, and Age, A, are independent of one another, but are influences of Marriage, M.</li>
@@ -3174,7 +3174,7 @@ loo(b8.3) %&gt;% loo::pareto_k_table()</code></pre>
 <li>Also, 1 prior can be used for all categories.</li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: ruggedness x gid (cont x cat) interaction (also see below)
+<li><span class="ribbon-highlight">Example</span>: ruggedness x gid (cont x cat) interaction (also see below)
 <ul>
 <li>Traditional (sort of, it’s algabraically manipulated some)<img src="./_resources/Untitled_Note.resources/Screenshot (878).png" class="img-fluid">
 <ul>
@@ -3663,7 +3663,7 @@ post %&gt;%&nbsp;
 <ul>
 <li>Good since within chain parallelization is now possible with brms</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>:
+<li><span class="ribbon-highlight">Example</span>:
 <ul>
 <li>We find out we need 1000 warmup samples and about 9000 real samples in total.</li>
 <li>Equivalent settings
@@ -3686,7 +3686,7 @@ post %&gt;%&nbsp;
 <li><em>Most often caused by flat priors with not enough data</em></li>
 <li>Occurs when there are broad, flat regions of the posterior density.</li>
 <li>Erratically samples extremely positive and extremely negative parameter values</li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>
+<li><span class="ribbon-highlight">Example</span>
 <ul>
 <li>priors: alpha ~ dnorm( 0 , 1000 ) , sigma ~ dexp( 0.0001 )</li>
 </ul></li>
@@ -3736,7 +3736,7 @@ post %&gt;%&nbsp;
 <ul>
 <li><em>Likely caused by highly correlated predictors</em></li>
 <li>Often, a model that is very slow to sample is under-identified.</li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (bad) priors: a1 ~ dnorm( 0 , 1000 ), a2 ~ dnorm( 0 , 1000 ) <img src="./_resources/Untitled_Note.resources/Screenshot (193).png" class="img-fluid"></li>
+<li><span class="ribbon-highlight">Example</span> (bad) priors: a1 ~ dnorm( 0 , 1000 ), a2 ~ dnorm( 0 , 1000 ) <img src="./_resources/Untitled_Note.resources/Screenshot (193).png" class="img-fluid"></li>
 <li>Solution
 <ul>
 <li>weakly informative priors again: a1 ~ dnorm( 0 , 10 ), a2 ~ dnorm( 0 , 10 )</li>
@@ -3875,7 +3875,7 @@ post %&gt;%&nbsp;
 <ul>
 <li>If you want to use PSIS or WAIC to compare models, use a 0/1 logistic model and NOT a Binomial regression model</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: 0/1 logistic regression
+<li><span class="ribbon-highlight">Example</span>: 0/1 logistic regression
 <ul>
 <li>Objective: Measure prosocial behavior in chimps.</li>
 <li>Experiment: A chimp is at a long table with a lever on the left side and the right side of table. When a lever is pulled, the chimp gets a plate of food. Depending on the lever that’s pulled, a plate of food also goes to the opposite end of the table. Treatment alternates which lever sends food to other end of the table and whether or not there’s another chimp at the far end of the table. Prosocial behavior is defined as the chimp pulling the lever that also sends food to other side of table when another chimp is present.
@@ -4108,7 +4108,7 @@ library(patchwork)
 <li>Rate that the event happens in the world (i.e.&nbsp;change in outcome event probability)</li>
 <li>Base rate matters
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (fictional)
+<li><span class="ribbon-highlight">Example</span> (fictional)
 <ul>
 <li>1/1000 women develop blood clots (base rate), and an experiment shows that taking a pill raises the risk by 200% (relative risk)!! But that’s actually only 3/1000 now. So the absolute risk was only raised by 0.002.</li>
 </ul></li>
@@ -4125,7 +4125,7 @@ library(patchwork)
 <li>Relative measures measures like proportional odds is they ignore what you might think of as the reference or the baseline.</li>
 <li>Can be conditionally very important, when baseline rates of predictor variables change.
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Conditional on being in the ocean, sharks are much more dangerous than bees. So in this situation the relative risk is more important than the absolute risk.
+<li><span class="ribbon-highlight">Example</span>: Conditional on being in the ocean, sharks are much more dangerous than bees. So in this situation the relative risk is more important than the absolute risk.
 <ul>
 <li>The absolute risk says that bees are more dangerous to humans since the base rate for death by bee is larger because humans spend much more time on land with bees than in the ocean with sharks.</li>
 </ul></li>
@@ -4145,7 +4145,7 @@ posterior_samples(b11.4) %&gt;%&nbsp; # model b11.4 is from the 1st [Example]{.r
 <li>Whatever the odds of pulling the left lever were before, by switching from treatment 2 to treatment 4 you expect to reduce the odds of the pulling the left lever by 7%</li>
 </ul></li>
 <li><p>This is what is meant by proportional odds. The new odds are calculated by taking the old odds and multiplying them by the proportional odds, which is 0.93 in this <span class="ribbon-highlight">Example</span>.</p></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Binomial regression (<em>balanced</em> number of trials)</p>
+<li><p><span class="ribbon-highlight">Example</span>: Binomial regression (<em>balanced</em> number of trials)</p>
 <ul>
 <li>balanced - meaning all chimps had 18 trials for each treatment</li>
 </ul></li>
@@ -4185,7 +4185,7 @@ b11.6 &lt;-&nbsp;
 </ul></li>
 <li>** If you want to use PSIS or WAIC to compare models, use a 0/1 logistic model and NOT an aggregated logistic regression model **</li>
 </ul></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Binomial regression (<em>unbalanced</em> number of trials)</p>
+<li><p><span class="ribbon-highlight">Example</span>: Binomial regression (<em>unbalanced</em> number of trials)</p>
 <ul>
 <li>Question: What are the average probabilities of admission for females and males, across all departments?</li>
 <li>Data
@@ -4251,7 +4251,7 @@ rm(UCBadmit)</code></pre>
 <ul>
 <li><p>The log-odds difference is certainly positive, corresponding to a higher probability of admission for male applicants.</p></li>
 <li><p>Also see conclusion of next <span class="ribbon-highlight">Example</span></p></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Binomial regression (<em>unbalanced</em> number of trials)</p>
+<li><p><span class="ribbon-highlight">Example</span>: Binomial regression (<em>unbalanced</em> number of trials)</p>
 <ul>
 <li>Description: Same data as previous <span class="ribbon-highlight">Example</span></li>
 <li>Question: “What is the average difference in probability of admission between females and males within departments?”</li>
@@ -4353,7 +4353,7 @@ print(b11.8)
 <li><p>The model fits the data pretty well. Error bar doesn’t cover the observed proportion for dept A-Female though.</p></li>
 <li><p>Some variation in admission probability between groups of depts (e.g {A,B} and {C,D,E})</p></li>
 <li><p>Females in these data tended not to apply to departments like A and B, which had high overall admission rates. Instead they applied in large numbers to departments like F, which admitted less than 10% of applicants.</p></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: UCB Admissions Binomial Regression (lecture 9 <a href="https://www.youtube.com/watch?v=nPi5yGbfxuo">video</a>)</p>
+<li><p><span class="ribbon-highlight">Example</span>: UCB Admissions Binomial Regression (lecture 9 <a href="https://www.youtube.com/watch?v=nPi5yGbfxuo">video</a>)</p>
 <ul>
 <li>A: Accepted into Grad School</li>
 <li>G: Gender, D: Department</li>
@@ -4630,7 +4630,7 @@ posterior_samples(b11.8) %&gt;%&nbsp;
 <li>The expected value of a binomial distribution is just Np, and its variance is Np(1 − p).</li>
 <li>But when N is very large and p is very small, then expected value and variance are approximately the same. The shape of this distribution is the Poisson</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>
+<li><span class="ribbon-highlight">Example</span>
 <ul>
 <li>Description<img src="./_resources/Untitled_Note.resources/Screenshot (888).png" class="img-fluid">
 <ul>
@@ -4768,7 +4768,7 @@ p2 &lt;-
 <li>Use a negative binomial model (aka Gamma-Poisson)</li>
 <li>Use a more principled scientific model (see 2022 Lecture video for details, it’s just a scientific nonlinear model though)</li>
 </ul></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Counts with varying rates<img src="./_resources/Untitled_Note.resources/Screenshot (10).png" class="img-fluid"></p>
+<li><p><span class="ribbon-highlight">Example</span>: Counts with varying rates<img src="./_resources/Untitled_Note.resources/Screenshot (10).png" class="img-fluid"></p>
 <ul>
 <li><p>Where tau is the offset or exposure (time, area, etc).</p></li>
 <li><p>Description: Two monasteries produce manuscripts but record the number of manuscripts they complete on different time scales. One monastery records daily manuscripts and the other monastery records on a weekly basis.</p></li>
@@ -4871,7 +4871,7 @@ print(b11.12)
 <li>useful when you are interested instead in features of some entity that produces each event, whatever type it turns out to be</li>
 </ul></li>
 </ul></li>
-<li><h2 id="example-multinomial-logistic-regression" data-number="1.12" class="anchored"><span class="header-section-number">1.12</span> <span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Multinomial Logistic Regression</h2>
+<li><h2 id="example-multinomial-logistic-regression" data-number="1.12" class="anchored"><span class="header-section-number">1.12</span> <span class="ribbon-highlight">Example</span>: Multinomial Logistic Regression</h2>
 <pre><code>(1) Predictors matched to outcomes</code></pre>
 <ul>
 <li><p>Description</p>
@@ -5322,7 +5322,11 @@ sigma &nbsp; &nbsp; &nbsp; &nbsp; 1.12 1.11 0.10 0.10 0.97 1.29&nbsp; &nbsp; 1&n
 <ul>
 <li>Column names are Q2.5 and Q97.5</li>
 </ul></li>
-<li>Also, see Heiss article for <a href="https://www.andrewheiss.com/blog/2022/09/26/guide-visualizing-types-posteriors/">details</a> on all these predict functions</li>
+<li>For details on all these predict function, also see
+<ul>
+<li>Heiss <a href="https://www.andrewheiss.com/blog/2022/09/26/guide-visualizing-types-posteriors/">article</a></li>
+<li>mc-stan forum <a href="https://discourse.mc-stan.org/t/confusion-on-difference-between-posterior-epred-and-posterior-predict-in-a-mixed-effects-modelling-context/28813">post</a></li>
+</ul></li>
 <li><code>posterior_linpred</code>&nbsp; - predicted values from the non-transformed left side of the equation
 <ul>
 <li>For OLS, this output is the same as “posterior_predict”</li>
