@@ -73,6 +73,9 @@
         -   Suffers from Simulation Variance (i.e. sensitive to number of samples).
         -   Less familiar to most audiences
 
+    -   Has a direct probabilistic interpretation
+        -   [Example]{.ribbon-highlight}: Given our data and model, there’s an X% probability that the true parameter value lies within the X% HDI (e.g., 95% probability for a 95% HDI).
+    
     -   See [Chapter 4 \>\> Uncertainty](chapter-4.qmd#sec-ch4-uncert){style="color: green"} for brms code
 
 -   [**Maximum a posteriori (MAP)**]{style="color: #009499"} - value with the highest posterior probability, aka mode of the posterior.

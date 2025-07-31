@@ -378,6 +378,8 @@ General Notes
         4.  plot posterior parameters
         5.  plot prior predictive simulations
 -   Differences between Bayesian and Frequentist
+    -   Also see
+        -   [Why I love Bayesian statistics for developmental research](https://www.apadivisions.org/division-7/publications/newsletters/developmental/2018/07/bayesian-statistics)
     -   Parameter estimation
         -   Bayesian Updating - Count the number of ways a parameter value can result in seeing the data sample. The parameter value that can happen the greatest number of ways is the parameter estimate. With new data, the count is updated and a new parameter estimate is chosen.
             -   Domain knowledge (prior formulation) can be used to help the model learn
