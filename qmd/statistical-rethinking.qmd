@@ -2383,6 +2383,8 @@ rbind(fitted(b8.4, newdata = nd, summary = F, nsamples = 20),
         -   They gets stuck in small regions of the posterior because complex models have high correlation regions.
             -   See Chapter 6, multicollinearity. When parameters value combinations contain roughly the same information, they become equally likely. This creates confusion for Gibbs and it gets stuck in these areas for longer periods of time.
             -   Handles U-turn problem (see below) by using a burn-in phase. Unlike HMC's warm-up phase, burn-in uses actual samples from the joint posterior density.
+-   Metropolis adjusted Langevin algorithm (MALA) and Hamiltonian Monte Carlo (HMC) have improved efficiency over non-gradient based methods such as Random Walk Metropolis (RWM), but these methods exhibit decreased robustness to tuning of the algorithm’s parameters. ([source](https://joss.theoj.org/papers/10.21105/joss.08594))
+    -   *The Barker proposal* provides a middle road. It offers similar efficiency in high-dimensional settings as other gradient-based methods such as MALA (Vogrinc et al., 2023), while allowing easier adaptive tuning of the algorithm’s parameters. It also provides improved robustness to certain forms of irregularity, such as skewness, in the target distribution
 -   Hamiltonian Monte Carlo (or Hybrid Monte Carlo, HMC)
     -   Requires more computation time for each sample of the joint posterior but needs fewer samples.
     -   King Monty's Royal Drive (Parable that describes how HMC samples the joint posterior) ![](./_resources/Untitled_Note.resources/Screenshot%20(184).png)
