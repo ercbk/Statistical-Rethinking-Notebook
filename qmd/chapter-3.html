@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,14 +70,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../images/sr-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0d45b1ff1595a53868627e64e30aef28.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-be0bf478834dcd5fa1d207f31fcfa0a3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c11d282c2c3cad6e3bcb56012bbb73ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9f17f01a6c4f1f4745562f60b3d10423.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -141,7 +142,9 @@ gtag('config', 'G-4YPMXNQ97Q', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Statistical Rethinking</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -244,24 +247,24 @@ gtag('config', 'G-4YPMXNQ97Q', { 'anonymize_ip': true});
 <ul>
 <li><p>Sampling from the posterior distribution means we can work with counts (easier, more intuitive) instead of working with the density which is working with integrals. Plus MCMC results are count based.</p></li>
 <li><p><u>Sampling from the posterior density</u></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample</span>(parameter values vector,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">prob =</span> posterior density from output of model,</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">size =</span> <span class="co"># of samples you want,</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">replace =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Parameter values are the conjectures,</li>
 <li>Posterior is all the parameter values’ likelihood x prior (i.e.&nbsp;updated relative plausibilities of the conjectures)
 <ul>
 <li><p>Grid Approximation of a posterior for 1 parameter:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>p_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>( <span class="at">from=</span><span class="dv">0</span>, <span class="at">to=</span><span class="dv">1</span>, <span class="at">length.out=</span><span class="dv">1000</span>) <span class="co"># parameter values vector</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>p_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>( <span class="at">from=</span><span class="dv">0</span>, <span class="at">to=</span><span class="dv">1</span>, <span class="at">length.out=</span><span class="dv">1000</span>) <span class="co"># parameter values vector</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>prior <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">1000</span>) <span class="co"># repeat 1 a thousand times to create a flat prior</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>likelihood <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(<span class="dv">3</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">prob=</span>p_grid) <span class="co"># plausibility of 3 events out of 3 observations for each each conjectured parameter value</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>posterior_unstd <span class="ot">&lt;-</span> likelihood <span class="sc">*</span> prior</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> posterior_unstd <span class="sc">/</span> <span class="fu">sum</span>(posterior_unstd)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sampling the posterior density</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">sample</span>(p_grid, <span class="at">prob =</span> posterior, <span class="at">size =</span> <span class="dv">10000</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">sample</span>(p_grid, <span class="at">prob =</span> posterior, <span class="at">size =</span> <span class="dv">10000</span>, <span class="at">replace =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>“size” is how many samples we’re taking</li>
 <li>(See stat.rethinking brms recode bkmk for ggplot graphs and dplyr code)</li>
@@ -421,7 +424,7 @@ gtag('config', 'G-4YPMXNQ97Q', { 'anonymize_ip': true});
 </ul></li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span>: PPD for tossing the globe</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>( <span class="at">from=</span><span class="dv">0</span>, <span class="at">to=</span><span class="dv">1</span>, <span class="at">length.out=</span><span class="dv">1000</span>) <span class="co"># parameter values vector</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>( <span class="at">from=</span><span class="dv">0</span>, <span class="at">to=</span><span class="dv">1</span>, <span class="at">length.out=</span><span class="dv">1000</span>) <span class="co"># parameter values vector</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>prior <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">1000</span>) <span class="co"># repeat 1 a thousand times to create a flat prior</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>likelihood <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">prob=</span>p_grid) <span class="co"># plausibility of 3 events out of 3 observations for each each conjectured parameter value</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>posterior_unstd <span class="ot">&lt;-</span> likelihood <span class="sc">*</span> prior</span>
@@ -430,9 +433,9 @@ gtag('config', 'G-4YPMXNQ97Q', { 'anonymize_ip': true});
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">sample</span>(p_grid, <span class="at">prob =</span> posterior, <span class="at">size =</span> <span class="fl">1e4</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># sample from posterior</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ppd <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">10000</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">prob =</span> samples) <span class="co"># simulate observations to get the PPD</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ppd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ppd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p><span class="ribbon-highlight">Example</span>: brms way</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>b3<span class="fl">.1</span> <span class="ot">&lt;-</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>b3<span class="fl">.1</span> <span class="ot">&lt;-</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">brm</span>(<span class="at">data =</span> <span class="fu">list</span>(<span class="at">w =</span> <span class="dv">6</span>),&nbsp;</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"identity"</span>),</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; w <span class="sc">|</span> <span class="fu">trials</span>(<span class="dv">9</span>) <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> Intercept,</span>
@@ -477,7 +480,7 @@ gtag('config', 'G-4YPMXNQ97Q', { 'anonymize_ip': true});
 <span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">scale_y_continuous</span>(<span class="cn">NULL</span>, <span class="at">breaks =</span> <span class="cn">NULL</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5000</span>)) <span class="sc">+</span></span>
 <span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">ggtitle</span>(<span class="st">"Posterior predictive distribution"</span>) <span class="sc">+</span></span>
 <span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">9</span>)) <span class="sc">+</span></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Same process is used for a <span style="color: #009499"><strong>Prior Predictive Distribution</strong></span></p>
 <ul>
 <li>The prior distribution takes the place of the posterior density in this case</li>
@@ -564,13 +567,14 @@ gtag('config', 'G-4YPMXNQ97Q', { 'anonymize_ip': true});
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
