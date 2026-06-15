@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Glossary – Statistical Rethinking</title>
+<title>Miscellaneous – Statistical Rethinking</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmd/statistical-rethinking.html" rel="prev">
+<link href="../qmd/chapter-summaries.html" rel="next">
+<link href="../index.html" rel="prev">
 <link href="../images/sr-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -82,35 +83,6 @@ gtag('js', new Date());
 gtag('config', 'G-4YPMXNQ97Q', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -124,7 +96,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/glossary.html">Glossary</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/misc.html">Miscellaneous</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -168,7 +140,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/misc.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmd/misc.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Miscellaneous</span></a>
   </div>
 </li>
@@ -198,7 +170,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/glossary.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmd/glossary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Glossary</span></a>
   </div>
 </li>
@@ -215,7 +187,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-gloss" class="quarto-section-identifier">Glossary</span></h1>
+<h1 class="title"><span id="sec-misc" class="quarto-section-identifier">Miscellaneous</span></h1>
 </div>
 
 
@@ -233,39 +205,10 @@ window.Quarto = {
 
 
 <ul>
-<li><span style="color: #009499"><strong>Credible Interval</strong></span> - General Bayesian term that is interchangeable with confidence interval. Instead an interval of probability density or mass, it’s based on an interval of the posterior probability. If choice of interval (percentile or hdpi) affects inferences being made, then also report entire posterior distribution.</li>
-<li><span style="color: #009499"><strong>Dummy Data</strong></span> are simulated data (aka fake data) to take the place of real data.</li>
-<li><span style="color: #009499"><strong>Highest Posterior Density Interval (HPDI)</strong></span> - The narrowest interval containing the specified probability mass. Guaranteed to have the value with the highest posterior probability.</li>
-<li>The relative number of ways that a value p can produce the data is usually called a <span style="color: #009499"><strong>likelihood</strong></span>.
+<li>Resources
 <ul>
-<li>It is derived by the enumerating all the possible data sequences that could have happened and then eliminating those sequences inconsistent with the data (i.e.&nbsp;paths_consistent_with_data / total_paths).</li>
-<li>As a model component, the likelihood is a function that gives the probability of an observation given a parameter value (conjecture)
-<ul>
-<li>“How likely your sample data is out of all sample data of the same length?”</li>
+<li><a href="https://bayesf22-notebook.classes.andrewheiss.com/rethinking/">Heiss’s SR Notebook</a></li>
 </ul></li>
-</ul></li>
-<li><span style="color: #009499"><strong>Maximum a posteriori (MAP)</strong></span> - value with the highest posterior probability, aka mode of the posterior.</li>
-<li>A conjectured proportion of blue marbles, p, is usually called a <span style="color: #009499"><strong>parameter value</strong></span>. It’s just a way of indexing possible explanations of the data
-<ul>
-<li>Here p, proportion of surface water (See example below), is the unknown parameter, but the conjecture could also be other things like sample size, treatment effect, group variation, etc.</li>
-<li>There can also be multiple unknown parameters for the likelihood to consider.</li>
-<li>Every parameter must have a corresponding prior probability assigned to it.</li>
-</ul></li>
-<li>The new, updated relative plausibility of a specific <em>p</em> is called the <span style="color: #009499"><strong>posterior probability</strong></span>.</li>
-<li>The set of estimates, aka relative plausibilities of different parameter values, aka posterior probabilities, conditional on the data — is known as the <span style="color: #009499"><strong>posterior distribution</strong></span> or <span style="color: #009499"><strong>posterior density</strong></span> (e.g.&nbsp;<span class="math inline">\(Pr(p | N, W)\)</span>).</li>
-<li>The prior plausibility of any specific p is usually called the <span style="color: #009499"><strong>prior probability</strong></span>.
-<ul>
-<li>A distribution initial plausibilities for every value of a parameter</li>
-<li>Expresses prior knowledge about a parameter and constrains estimates to reasonable ranges</li>
-<li>Unless there’s already strong evidence for using a particular prior, multiple priors should be tried to see how sensitive the estimates are to the choice of a prior</li>
-<li>Example where the prior is a probability distribution for the parameter:
-<ul>
-<li>p is distributed Uniformly between 0 and 1, (i.e.&nbsp;each conjecture is equally likely), <span class="math inline">\(p \sim \mbox{Uniform}(0, 1)\)</span><br>
-</li>
-</ul></li>
-</ul></li>
-<li><span style="color: #009499"><strong>Regularizing priors</strong></span> - See Weakly Informative Priors</li>
-<li><span style="color: #009499"><strong>Weakly Informative priors</strong></span> - conservative; guards against inferences of strong association - Mathematically equivalent to penalized likelihood</li>
 </ul>
 
 
@@ -673,11 +616,14 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/statistical-rethinking.html" class="pagination-link" aria-label="Statistical Rethinking">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></span>
+      <a href="../index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../qmd/chapter-summaries.html" class="pagination-link" aria-label="Chapter Summaries">
+        <span class="nav-page-text">Chapter Summaries</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
