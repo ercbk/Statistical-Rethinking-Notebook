@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Rethinking - 1&nbsp; Statistical Rethinking</title>
+<title>1&nbsp; Statistical Rethinking – Statistical Rethinking</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -33,22 +36,29 @@ ul.task-list li input[type="checkbox"] {
 <link href="../qmd/glossary.html" rel="next">
 <link href="../qmd/chapter-3.html" rel="prev">
 <link href="../images/sr-favicon-32.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-709e903f7486fc15c5f7f9cf283d35df.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-97d47a8c4eabc6d189ce98cb45f77069.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,27 +67,38 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4YPMXNQ97Q"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-4YPMXNQ97Q', { 'anonymize_ip': true});
+</script>
 
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/statistical-rethinking.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/statistical-rethinking.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statistical Rethinking</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -87,13 +108,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Statistical Rethinking</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://ericbook.netlify.app/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
-    <a href="https://ercbk.github.io/Data-Science-Notebook/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-database-fill-gear"></i></a>
+    <a href="https://ericbook.netlify.app/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house"></i></a>
+    <a href="https://ercbk.github.io/Data-Science-Notebook/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-database-gear"></i></a>
+    <a href="https://ercbk.github.io/Domain-Knowledge-Notebook/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-lightbulb"></i></a>
     <a href="https://github.com/ercbk/Statistical-Rethinking-Notebook" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -114,6 +136,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/misc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellaneous</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -149,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -187,7 +215,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>TOC</p>
 <ul>
@@ -823,6 +853,10 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Differences between Bayesian and Frequentist
 <ul>
+<li>Also see
+<ul>
+<li><a href="https://www.apadivisions.org/division-7/publications/newsletters/developmental/2018/07/bayesian-statistics">Why I love Bayesian statistics for developmental research</a></li>
+</ul></li>
 <li>Parameter estimation
 <ul>
 <li>Bayesian Updating - Count the number of ways a parameter value can result in seeing the data sample. The parameter value that can happen the greatest number of ways is the parameter estimate. With new data, the count is updated and a new parameter estimate is chosen.
@@ -1048,7 +1082,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>“how likely your sample data is out of all sample data of the same length?”</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (the proportion of water to land on the earth):
+<li><span class="ribbon-highlight">Example</span> (the proportion of water to land on the earth):
 <ul>
 <li>W is distributed Binomially with N trials and a probability of p for W in each trial,&nbsp; <img src="./_resources/Untitled_Note.resources/unknown_filename.3.png" class="img-fluid"></li>
 <li>“The count of ‘water’ observations (finger landing on water), W, is distributed binomially, with probability p of ‘water’ on each toss of a globe and N tosses in total.”</li>
@@ -1269,7 +1303,7 @@ samples &lt;- sample(p_grid, prob = posterior, size = 10000, replace = T)</code>
 <li>therefore maybe the shape is dependent on “size”</li>
 </ul></li>
 <li>the posterior distribution is used as weights to calculate a weighted, average frequency of W observations for each trial.</li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: <code>rbinom(10000, 9, samples)</code>
+<li><span class="ribbon-highlight">Example</span>: <code>rbinom(10000, 9, samples)</code>
 <ul>
 <li>For trial 1, a coin is flipped 9 times.
 <ul>
@@ -1279,7 +1313,7 @@ samples &lt;- sample(p_grid, prob = posterior, size = 10000, replace = T)</code>
 <li>A vector is returned where each value is the total number of heads for that trial (e.g.&nbsp;length in <span class="ribbon-highlight">Example</span> = 10000)</li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: PPD for tossing the globe</li>
+<li><span class="ribbon-highlight">Example</span>: PPD for tossing the globe</li>
 </ul></li>
 </ul>
 <pre><code>p_grid &lt;- seq( from=0, to=1, length.out=1000) # parameter values vector
@@ -1293,7 +1327,7 @@ samples &lt;- sample(p_grid, prob = posterior, size = 1e4, replace = TRUE) # sam
 ppd &lt;- rbinom(10000, size = 9, prob = samples) # simulate observations to get the PPD
 hist(ppd)</code></pre>
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: brms way</li>
+<li><span class="ribbon-highlight">Example</span>: brms way</li>
 </ul>
 <pre><code>b3.1 &lt;-
 &nbsp; brm(data = list(w = 6),&nbsp;
@@ -1392,7 +1426,7 @@ f %&gt;%&nbsp;
 <li>See General Notes -&gt; Notation:&nbsp; for the notation and syntax used in model specification</li>
 <li>It’s a good idea to plot your priors to get a sense of the assumptions in your model.
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: <code>curve(dunif( x, 0, 50), from = -10,&nbsp; to = 60)</code>&nbsp; for σ ~ Uniform( 0, 50 ) constrains the σ to have a positive probability from 0 to 50 cm for a height outcome variable</li>
+<li><span class="ribbon-highlight">Example</span>: <code>curve(dunif( x, 0, 50), from = -10,&nbsp; to = 60)</code>&nbsp; for σ ~ Uniform( 0, 50 ) constrains the σ to have a positive probability from 0 to 50 cm for a height outcome variable</li>
 </ul></li>
 <li>Prior Predictive Distribution
 <ul>
@@ -1498,7 +1532,7 @@ plot(b4.1)</code></pre>
 </ul></li>
 <li>Model
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> single variable regression where height is the outcome and weight the predictor
+<li><span class="ribbon-highlight">Example</span> single variable regression where height is the outcome and weight the predictor
 <ul>
 <li>hi ~ Normal(μ, σ)</li>
 <li>μi = α + βxi</li>
@@ -1590,7 +1624,7 @@ dat %&gt;%
 </ul></li>
 <li>Interpretation of HDPI when x = x0
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Given a person’s weight = 50kg, what does an 89% HDPI around our model’s height prediction mean?
+<li><span class="ribbon-highlight">Example</span>: Given a person’s weight = 50kg, what does an 89% HDPI around our model’s height prediction mean?
 <ul>
 <li>“The central 89% of the ways for the model to produce the data place the average height between about 159cm and 160cm (conditional on the model and data), assuming a weight of 50kg.”</li>
 </ul></li>
@@ -1615,7 +1649,7 @@ mu_at_50 %&gt;%
 <ul>
 <li>Confidence Interval - repeating the calculation for every x0 will give you the regression line CI
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> brms regression line CI</li>
+<li><span class="ribbon-highlight">Example</span> brms regression line CI</li>
 </ul></li>
 </ul>
 <pre><code># x value (weight) range we want for the CI of the line
@@ -1649,7 +1683,7 @@ theme(text = element_text(family = "Times"),
 <li>Sample σ, α, and β from the posterior distribution the same number of times as the number of weights in your range</li>
 <li>simulate the heights from a gaussian distribution (think rnorm) using the weights (along with α and β) in a linear expression for mean argument and the standard deviations from the posterior (see details in book)</li>
 </ol></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> PI and CI around regression line<img src="./_resources/Untitled_Note.resources/unnamed-chunk-101-1.png" class="img-fluid"></li>
+<li><span class="ribbon-highlight">Example</span> PI and CI around regression line<img src="./_resources/Untitled_Note.resources/unnamed-chunk-101-1.png" class="img-fluid"></li>
 </ul></li>
 </ul>
 <pre><code># 95% PIs generated by default
@@ -1705,7 +1739,7 @@ dat %&gt;%&nbsp; ggplot(aes(x = weight)) +
 </ul></li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Temperature vs Time<img src="./_resources/Untitled_Note.resources/Screenshot (87).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Temperature vs Time<img src="./_resources/Untitled_Note.resources/Screenshot (87).png" class="img-fluid">
 <ul>
 <li>“+” indicates a knot (pivot point); there is a (linear in this case) basis function for each knot</li>
 <li>At year 1306, <em>only</em> basis functions B2 and B3 are turned on. w2 and w3 weight the value of each basis function to best fit the mean temperature of that year
@@ -1732,7 +1766,7 @@ dat %&gt;%&nbsp; ggplot(aes(x = weight)) +
 </ul></li>
 </ul></li>
 </ol></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: 15 knots at 5 quantiles, cubic basis functions<img src="./_resources/Untitled_Note.resources/Screenshot (88).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: 15 knots at 5 quantiles, cubic basis functions<img src="./_resources/Untitled_Note.resources/Screenshot (88).png" class="img-fluid">
 <ul>
 <li>Model specification<img src="./_resources/Untitled_Note.resources/ql_1ce75c1d952219fd5f6d8db1e3984252_l3.png" class="img-fluid"></li>
 </ul></li>
@@ -1990,7 +2024,7 @@ r %&gt;%
 </ul></li>
 <li>The scale is that of the data unlike the Predictor Residual plot</li>
 <li>Plot can visualize unrealistic scenarios, so must be careful with interpretation.</li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: How does Divorce Rate (D) (outcome) change when we change Median Age at Marriage (predictor) values? Assumed causal model: <img src="./_resources/Untitled_Note.resources/Screenshot (98).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: How does Divorce Rate (D) (outcome) change when we change Median Age at Marriage (predictor) values? Assumed causal model: <img src="./_resources/Untitled_Note.resources/Screenshot (98).png" class="img-fluid">
 <ul>
 <li>m_model is the relationship between Median Age of Marriage (A) and State Marriage Rate (M) in the causal model. The values of the predictor of interest, A, will be used in this model to get the values of the other predictor, M.</li>
 <li>d_model uses the values of A and the modeled values of M to calculate the estimated values of D.</li>
@@ -2065,7 +2099,7 @@ p2 &lt;- predict(b5.3_A,
 p1 + p2 + plot_annotation(title = "Counterfactual plots for the multivariate divorce model")</code></pre>
 <ul>
 <li><p>This predicted trend in D include both paths: A → D and A → M → D. (left side)<img src="./_resources/Untitled_Note.resources/Screenshot (107).png" class="img-fluid"> As the multi-regression showed, marriage rate, m, has little influence on d.&nbsp;Might be why we see little difference in this graphs.</p></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: What is the expected causal effect of increasing median age at marriage from 20 to 30?</p></li>
+<li><p><span class="ribbon-highlight">Example</span>: What is the expected causal effect of increasing median age at marriage from 20 to 30?</p></li>
 </ul>
 <pre><code>nd &lt;- tibble(a = (c(20, 30) - 26.1) / 1.24,
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; m = 0)
@@ -2078,7 +2112,7 @@ predict(b5.3_A,
 &nbsp; mutate(difference = a30 - a20) %&gt;%&nbsp;
 &nbsp; summarise(mean = mean(difference))</code></pre>
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: How does Divorce Rate (outcome) change when we change values of Marriage Rate (predictor)? The arrow A → M is deleted, because if we control the values of M, then A no longer influences it <img src="./_resources/Untitled_Note.resources/Screenshot (108).png" class="img-fluid"></li>
+<li><span class="ribbon-highlight">Example</span>: How does Divorce Rate (outcome) change when we change values of Marriage Rate (predictor)? The arrow A → M is deleted, because if we control the values of M, then A no longer influences it <img src="./_resources/Untitled_Note.resources/Screenshot (108).png" class="img-fluid"></li>
 </ul>
 <pre><code># see comments above
 nd &lt;- tibble(m = seq(from = -2, to = 2, length.out = 30),
@@ -2184,7 +2218,7 @@ predict(b5.3_A,
 <li>pred_var1’s negative estimated effect on the outcome will increase as compared to its estimated effect in a bivariable regression</li>
 <li>pred_var2’s positive estimated effect on the outcome will increase as compared to its estimated effect in a bivariable regression</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>
+<li><span class="ribbon-highlight">Example</span>
 <ul>
 <li>K (outcome) = mother’s milk kilocalories</li>
 <li>M (pred_var1) = log(Body Mass)</li>
@@ -2423,7 +2457,7 @@ posterior_samples(b5.8) %&gt;%&nbsp;
 <li><p>The contrast, “diff_fm”, is computed in mutate and mean_qi adds the CIs</p></li>
 <li><p>Visualizing contrasts</p>
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Posterior Mean Contrast (1 predictor) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>) <img src="./_resources/Untitled_Note.resources/Screenshot (709).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Posterior Mean Contrast (1 predictor) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>) <img src="./_resources/Untitled_Note.resources/Screenshot (709).png" class="img-fluid">
 <ul>
 <li>Weight was the response with height and sex as predictors
 <ul>
@@ -2434,7 +2468,7 @@ posterior_samples(b5.8) %&gt;%&nbsp;
 <li>Interpretation: The difference in mean weights between the sexes is likely around 6.8 kg but could potentially be from ~5 to ~8.5</li>
 <li>Posterior means for each sex<img src="./_resources/Untitled_Note.resources/Screenshot (709).1.png" class="img-fluid"></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Posterior Predictive Contrast (1 predictor) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>)<img src="./_resources/Untitled_Note.resources/Screenshot (708).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Posterior Predictive Contrast (1 predictor) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>)<img src="./_resources/Untitled_Note.resources/Screenshot (708).png" class="img-fluid">
 <ul>
 <li>Contrast of the individual gender category PPDs</li>
 <li>Weight was the response with height and sex as predictors
@@ -2463,7 +2497,7 @@ female_prop &lt;- sum(W_contrast &lt; 0) / 1000</code></pre>
 <li>These are distributions of female and male weights we expect to see in the wild given the model and these data</li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Posterior Mean Contrast vs Predictor (2 predictors) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>)<img src="./_resources/Untitled_Note.resources/Screenshot (704).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Posterior Mean Contrast vs Predictor (2 predictors) (From <a href="https://youtu.be/QiHKdvAbYII">Lecture 4</a>)<img src="./_resources/Untitled_Note.resources/Screenshot (704).png" class="img-fluid">
 <ul>
 <li>Weight was the response with height and sex as predictors
 <ul>
@@ -2520,7 +2554,7 @@ female_prop &lt;- sum(W_contrast &lt; 0) / 1000</code></pre>
 <ul>
 <li>Identifying and <em>automatically</em> dropping highly correlated predictors is a mistake. Pairwise correlations are not the problem. It is the conditional associations—not correlations—that matter. And even then, the right thing to do will depend upon what is causing the collinearity. The associations within the data alone are not enough to decide what to do.
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Thinking the situation through causally in order to deal with multicollinearity<img src="./_resources/Untitled_Note.resources/Screenshot (113).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>: Thinking the situation through causally in order to deal with multicollinearity<img src="./_resources/Untitled_Note.resources/Screenshot (113).png" class="img-fluid">
 <ul>
 <li>L, F, and K are highly correlated with each other and therefore have a multicollinearity issue when used in a multivariate regression.</li>
 <li>Unobserved Density, D, influences both lactose, L, and Fat, F.</li>
@@ -2542,7 +2576,7 @@ female_prop &lt;- sum(W_contrast &lt; 0) / 1000</code></pre>
 <ul>
 <li>“…a useful measure of the expected improvement in prediction that comes from conditioning on the fungus. Although the treatment works, it isn’t 100% effective, and so knowing the treatment is no substitute for knowing whether fungus is present.”</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (adjusting for F masks the treatment effect)
+<li><span class="ribbon-highlight">Example</span> (adjusting for F masks the treatment effect)
 <ul>
 <li>You want to know the difference in growth under different anti-fungal soil treatments, because fungus on the plants tends to reduce their growth.
 <ul>
@@ -2615,7 +2649,7 @@ brm(data = d,&nbsp;
 <li><p>See above for the brms model specification (although includes F) and definition of terms</p></li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (adjusting for F unmasks the treatment effect)
+<li><span class="ribbon-highlight">Example</span> (adjusting for F unmasks the treatment effect)
 <ul>
 <li>Same but Moisture, M,&nbsp; (unobserved) influences both Fungus, F, and Final Height, H<img src="./_resources/Untitled_Note.resources/Screenshot (116).png" class="img-fluid"></li>
 <li>A regression of H1 on T will show no association between the treatment and plant growth. But if we include F in the model, suddenly there will be an association.</li>
@@ -2630,7 +2664,7 @@ brm(data = d,&nbsp;
 <ul>
 <li>Although, the variables involved may be useful for predictive models as the backdoor paths do provide valid information about statistical associations within the data</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (non-misleading)<img src="./_resources/Untitled_Note.resources/Screenshot (120).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span> (non-misleading)<img src="./_resources/Untitled_Note.resources/Screenshot (120).png" class="img-fluid">
 <ul>
 <li>Adjusting for S (collider) induces an association between T and N.</li>
 <li>Once you learn that a grant proposal has been selected (S), then learning its trustworthiness (T) (i.e.&nbsp;the rigorousness of the experimental design) also provides information about its newsworthiness (N) (i.e.&nbsp;importance of the experiment to the public).
@@ -2638,7 +2672,7 @@ brm(data = d,&nbsp;
 <li>We only see the selected grants not the failed grant proposals (i.e.&nbsp;selection bias, adjusting by S), so while there is no association between T and N in the population, if we look at the subset of selected grants (S), we will see an association.</li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (misleading)<img src="./_resources/Untitled_Note.resources/Screenshot (121).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span> (misleading)<img src="./_resources/Untitled_Note.resources/Screenshot (121).png" class="img-fluid">
 <ul>
 <li>Colliders, by inducing a statistical association, can also lead to misleading inferences.</li>
 <li>(fictitious scenario) Happiness, H, and Age, A, are independent of one another, but are influences of Marriage, M.</li>
@@ -3163,7 +3197,7 @@ loo(b8.3) %&gt;% loo::pareto_k_table()</code></pre>
 <li>Also, 1 prior can be used for all categories.</li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: ruggedness x gid (cont x cat) interaction (also see below)
+<li><span class="ribbon-highlight">Example</span>: ruggedness x gid (cont x cat) interaction (also see below)
 <ul>
 <li>Traditional (sort of, it’s algabraically manipulated some)<img src="./_resources/Untitled_Note.resources/Screenshot (878).png" class="img-fluid">
 <ul>
@@ -3412,6 +3446,10 @@ rbind(fitted(b8.4, newdata = nd, summary = F, nsamples = 20),
 </ul></li>
 </ul></li>
 </ul></li>
+<li>Metropolis adjusted Langevin algorithm (MALA) and Hamiltonian Monte Carlo (HMC) have improved efficiency over non-gradient based methods such as Random Walk Metropolis (RWM), but these methods exhibit decreased robustness to tuning of the algorithm’s parameters. (<a href="https://joss.theoj.org/papers/10.21105/joss.08594">source</a>)
+<ul>
+<li><em>The Barker proposal</em> provides a middle road. It offers similar efficiency in high-dimensional settings as other gradient-based methods such as MALA (Vogrinc et al., 2023), while allowing easier adaptive tuning of the algorithm’s parameters. It also provides improved robustness to certain forms of irregularity, such as skewness, in the target distribution</li>
+</ul></li>
 <li>Hamiltonian Monte Carlo (or Hybrid Monte Carlo, HMC)
 <ul>
 <li>Requires more computation time for each sample of the joint posterior but needs fewer samples.</li>
@@ -3652,7 +3690,7 @@ post %&gt;%&nbsp;
 <ul>
 <li>Good since within chain parallelization is now possible with brms</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>:
+<li><span class="ribbon-highlight">Example</span>:
 <ul>
 <li>We find out we need 1000 warmup samples and about 9000 real samples in total.</li>
 <li>Equivalent settings
@@ -3675,7 +3713,7 @@ post %&gt;%&nbsp;
 <li><em>Most often caused by flat priors with not enough data</em></li>
 <li>Occurs when there are broad, flat regions of the posterior density.</li>
 <li>Erratically samples extremely positive and extremely negative parameter values</li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>
+<li><span class="ribbon-highlight">Example</span>
 <ul>
 <li>priors: alpha ~ dnorm( 0 , 1000 ) , sigma ~ dexp( 0.0001 )</li>
 </ul></li>
@@ -3725,7 +3763,7 @@ post %&gt;%&nbsp;
 <ul>
 <li><em>Likely caused by highly correlated predictors</em></li>
 <li>Often, a model that is very slow to sample is under-identified.</li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (bad) priors: a1 ~ dnorm( 0 , 1000 ), a2 ~ dnorm( 0 , 1000 ) <img src="./_resources/Untitled_Note.resources/Screenshot (193).png" class="img-fluid"></li>
+<li><span class="ribbon-highlight">Example</span> (bad) priors: a1 ~ dnorm( 0 , 1000 ), a2 ~ dnorm( 0 , 1000 ) <img src="./_resources/Untitled_Note.resources/Screenshot (193).png" class="img-fluid"></li>
 <li>Solution
 <ul>
 <li>weakly informative priors again: a1 ~ dnorm( 0 , 10 ), a2 ~ dnorm( 0 , 10 )</li>
@@ -3864,7 +3902,7 @@ post %&gt;%&nbsp;
 <ul>
 <li>If you want to use PSIS or WAIC to compare models, use a 0/1 logistic model and NOT a Binomial regression model</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: 0/1 logistic regression
+<li><span class="ribbon-highlight">Example</span>: 0/1 logistic regression
 <ul>
 <li>Objective: Measure prosocial behavior in chimps.</li>
 <li>Experiment: A chimp is at a long table with a lever on the left side and the right side of table. When a lever is pulled, the chimp gets a plate of food. Depending on the lever that’s pulled, a plate of food also goes to the opposite end of the table. Treatment alternates which lever sends food to other end of the table and whether or not there’s another chimp at the far end of the table. Prosocial behavior is defined as the chimp pulling the lever that also sends food to other side of table when another chimp is present.
@@ -4097,7 +4135,7 @@ library(patchwork)
 <li>Rate that the event happens in the world (i.e.&nbsp;change in outcome event probability)</li>
 <li>Base rate matters
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span> (fictional)
+<li><span class="ribbon-highlight">Example</span> (fictional)
 <ul>
 <li>1/1000 women develop blood clots (base rate), and an experiment shows that taking a pill raises the risk by 200% (relative risk)!! But that’s actually only 3/1000 now. So the absolute risk was only raised by 0.002.</li>
 </ul></li>
@@ -4114,7 +4152,7 @@ library(patchwork)
 <li>Relative measures measures like proportional odds is they ignore what you might think of as the reference or the baseline.</li>
 <li>Can be conditionally very important, when baseline rates of predictor variables change.
 <ul>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Conditional on being in the ocean, sharks are much more dangerous than bees. So in this situation the relative risk is more important than the absolute risk.
+<li><span class="ribbon-highlight">Example</span>: Conditional on being in the ocean, sharks are much more dangerous than bees. So in this situation the relative risk is more important than the absolute risk.
 <ul>
 <li>The absolute risk says that bees are more dangerous to humans since the base rate for death by bee is larger because humans spend much more time on land with bees than in the ocean with sharks.</li>
 </ul></li>
@@ -4134,7 +4172,7 @@ posterior_samples(b11.4) %&gt;%&nbsp; # model b11.4 is from the 1st [Example]{.r
 <li>Whatever the odds of pulling the left lever were before, by switching from treatment 2 to treatment 4 you expect to reduce the odds of the pulling the left lever by 7%</li>
 </ul></li>
 <li><p>This is what is meant by proportional odds. The new odds are calculated by taking the old odds and multiplying them by the proportional odds, which is 0.93 in this <span class="ribbon-highlight">Example</span>.</p></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Binomial regression (<em>balanced</em> number of trials)</p>
+<li><p><span class="ribbon-highlight">Example</span>: Binomial regression (<em>balanced</em> number of trials)</p>
 <ul>
 <li>balanced - meaning all chimps had 18 trials for each treatment</li>
 </ul></li>
@@ -4174,7 +4212,7 @@ b11.6 &lt;-&nbsp;
 </ul></li>
 <li>** If you want to use PSIS or WAIC to compare models, use a 0/1 logistic model and NOT an aggregated logistic regression model **</li>
 </ul></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Binomial regression (<em>unbalanced</em> number of trials)</p>
+<li><p><span class="ribbon-highlight">Example</span>: Binomial regression (<em>unbalanced</em> number of trials)</p>
 <ul>
 <li>Question: What are the average probabilities of admission for females and males, across all departments?</li>
 <li>Data
@@ -4240,7 +4278,7 @@ rm(UCBadmit)</code></pre>
 <ul>
 <li><p>The log-odds difference is certainly positive, corresponding to a higher probability of admission for male applicants.</p></li>
 <li><p>Also see conclusion of next <span class="ribbon-highlight">Example</span></p></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Binomial regression (<em>unbalanced</em> number of trials)</p>
+<li><p><span class="ribbon-highlight">Example</span>: Binomial regression (<em>unbalanced</em> number of trials)</p>
 <ul>
 <li>Description: Same data as previous <span class="ribbon-highlight">Example</span></li>
 <li>Question: “What is the average difference in probability of admission between females and males within departments?”</li>
@@ -4342,7 +4380,7 @@ print(b11.8)
 <li><p>The model fits the data pretty well. Error bar doesn’t cover the observed proportion for dept A-Female though.</p></li>
 <li><p>Some variation in admission probability between groups of depts (e.g {A,B} and {C,D,E})</p></li>
 <li><p>Females in these data tended not to apply to departments like A and B, which had high overall admission rates. Instead they applied in large numbers to departments like F, which admitted less than 10% of applicants.</p></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: UCB Admissions Binomial Regression (lecture 9 <a href="https://www.youtube.com/watch?v=nPi5yGbfxuo">video</a>)</p>
+<li><p><span class="ribbon-highlight">Example</span>: UCB Admissions Binomial Regression (lecture 9 <a href="https://www.youtube.com/watch?v=nPi5yGbfxuo">video</a>)</p>
 <ul>
 <li>A: Accepted into Grad School</li>
 <li>G: Gender, D: Department</li>
@@ -4619,7 +4657,7 @@ posterior_samples(b11.8) %&gt;%&nbsp;
 <li>The expected value of a binomial distribution is just Np, and its variance is Np(1 − p).</li>
 <li>But when N is very large and p is very small, then expected value and variance are approximately the same. The shape of this distribution is the Poisson</li>
 </ul></li>
-<li><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>
+<li><span class="ribbon-highlight">Example</span>
 <ul>
 <li>Description<img src="./_resources/Untitled_Note.resources/Screenshot (888).png" class="img-fluid">
 <ul>
@@ -4757,7 +4795,7 @@ p2 &lt;-
 <li>Use a negative binomial model (aka Gamma-Poisson)</li>
 <li>Use a more principled scientific model (see 2022 Lecture video for details, it’s just a scientific nonlinear model though)</li>
 </ul></li>
-<li><p><span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Counts with varying rates<img src="./_resources/Untitled_Note.resources/Screenshot (10).png" class="img-fluid"></p>
+<li><p><span class="ribbon-highlight">Example</span>: Counts with varying rates<img src="./_resources/Untitled_Note.resources/Screenshot (10).png" class="img-fluid"></p>
 <ul>
 <li><p>Where tau is the offset or exposure (time, area, etc).</p></li>
 <li><p>Description: Two monasteries produce manuscripts but record the number of manuscripts they complete on different time scales. One monastery records daily manuscripts and the other monastery records on a weekly basis.</p></li>
@@ -4860,7 +4898,7 @@ print(b11.12)
 <li>useful when you are interested instead in features of some entity that produces each event, whatever type it turns out to be</li>
 </ul></li>
 </ul></li>
-<li><h2 id="example-multinomial-logistic-regression" data-number="1.12" class="anchored"><span class="header-section-number">1.12</span> <span class="ribbon-highlight"><span class="ribbon-highlight">Example</span></span>: Multinomial Logistic Regression</h2>
+<li><h2 id="example-multinomial-logistic-regression" data-number="1.12" class="anchored"><span class="header-section-number">1.12</span> <span class="ribbon-highlight">Example</span>: Multinomial Logistic Regression</h2>
 <pre><code>(1) Predictors matched to outcomes</code></pre>
 <ul>
 <li><p>Description</p>
@@ -5311,7 +5349,11 @@ sigma &nbsp; &nbsp; &nbsp; &nbsp; 1.12 1.11 0.10 0.10 0.97 1.29&nbsp; &nbsp; 1&n
 <ul>
 <li>Column names are Q2.5 and Q97.5</li>
 </ul></li>
-<li>Also, see Heiss article for <a href="https://www.andrewheiss.com/blog/2022/09/26/guide-visualizing-types-posteriors/">details</a> on all these predict functions</li>
+<li>For details on all these predict function, also see
+<ul>
+<li>Heiss <a href="https://www.andrewheiss.com/blog/2022/09/26/guide-visualizing-types-posteriors/">article</a></li>
+<li>mc-stan forum <a href="https://discourse.mc-stan.org/t/confusion-on-difference-between-posterior-epred-and-posterior-predict-in-a-mixed-effects-modelling-context/28813">post</a></li>
+</ul></li>
 <li><code>posterior_linpred</code>&nbsp; - predicted values from the non-transformed left side of the equation
 <ul>
 <li>For OLS, this output is the same as “posterior_predict”</li>
@@ -5422,43 +5464,58 @@ ggplot() +
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -5466,202 +5523,354 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
       });
     }
-  }
-});
-</script>
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/chapter-3.html" class="pagination-link">
+      <a href="../qmd/chapter-3.html" class="pagination-link" aria-label="Chapter 3">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chapter 3</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/glossary.html" class="pagination-link">
+      <a href="../qmd/glossary.html" class="pagination-link" aria-label="Glossary">
         <span class="nav-page-text">Glossary</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -5675,7 +5884,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../LICENSE.html">Creative Commons Attribution-NonCommercial 4.0 International Public License</a>
+    <a class="nav-link" href="../LICENSE.html">
+<p>Creative Commons Attribution-NonCommercial 4.0 International Public License</p>
+</a>
   </li>  
 </ul>
     </div>
@@ -5684,6 +5895,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

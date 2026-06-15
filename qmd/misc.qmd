@@ -1,0 +1,4 @@
+# Miscellaneous {#sec-misc .unnumbered}
+
+-   Resources
+    -   [Heiss's SR Notebook](https://bayesf22-notebook.classes.andrewheiss.com/rethinking/)

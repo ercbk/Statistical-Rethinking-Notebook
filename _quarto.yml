@@ -27,6 +27,7 @@ book:
         href: https://ercbk.github.io/Domain-Knowledge-Notebook/
   chapters:
     - index.qmd
+    - qmd/misc.qmd
     - qmd/chapter-summaries.qmd
     - qmd/chapter-2.qmd
     - qmd/chapter-3.qmd

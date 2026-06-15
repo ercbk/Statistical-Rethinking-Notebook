@@ -6,3 +6,5 @@
 R/
 qmd2/
 /.quarto/
+
+**/*.quarto_ipynb
